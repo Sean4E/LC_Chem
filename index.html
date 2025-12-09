@@ -108,9 +108,13 @@
             background: var(--bg-secondary);
             border-bottom: 1px solid var(--glass-border);
             overflow-x: auto;
-            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-cyan) var(--bg-tertiary);
         }
-        .nav-container::-webkit-scrollbar { display: none; }
+        .nav-container::-webkit-scrollbar { height: 4px; }
+        .nav-container::-webkit-scrollbar-track { background: var(--bg-tertiary); }
+        .nav-container::-webkit-scrollbar-thumb { background: var(--accent-cyan); border-radius: 2px; }
         .nav {
             max-width: 1400px;
             margin: 0 auto;
@@ -555,10 +559,24 @@
             .element-properties { grid-template-columns: 1fr; }
             .flashcard-inner { height: 250px; }
             .calculator-grid { grid-template-columns: 1fr; }
+            /* Grid navigation for tablets */
+            .nav-container { overflow-x: visible; }
+            .nav { flex-wrap: wrap; justify-content: center; gap: 0.35rem; }
+            .nav-btn { padding: 0.6rem 1rem; font-size: 0.85rem; }
         }
         @media (max-width: 480px) {
-            .nav-btn { padding: 0.6rem 0.9rem; font-size: 0.8rem; }
-            .nav-btn span:not(.icon) { display: none; }
+            /* Compact grid nav for mobile */
+            .nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.25rem; padding: 0.4rem; }
+            .nav-btn {
+                padding: 0.5rem 0.25rem;
+                font-size: 0.7rem;
+                flex-direction: column;
+                gap: 0.2rem;
+                justify-content: center;
+                text-align: center;
+            }
+            .nav-btn .icon { font-size: 1.1rem; }
+            .nav-btn span:not(.icon) { font-size: 0.6rem; display: block; line-height: 1.1; }
             .flashcard-controls { flex-direction: column; }
             select, input[type="text"], input[type="number"] { min-width: 100%; }
             .header { padding: 0.75rem 1rem; }
@@ -576,6 +594,8 @@
             .mindmap-container svg { height: 450px; }
         }
         @media (max-width: 360px) {
+            .nav { grid-template-columns: repeat(3, 1fr); }
+            .nav-btn span:not(.icon) { font-size: 0.55rem; }
             .header-content { gap: 0.5rem; }
             .stat-pill { padding: 0.35rem 0.6rem; font-size: 0.7rem; }
             .section-title { font-size: 1.1rem; }
