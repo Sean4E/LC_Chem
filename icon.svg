@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e14"/>
+      <stop offset="100%" style="stop-color:#1a2230"/>
+    </linearGradient>
+    <linearGradient id="flaskGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff"/>
+      <stop offset="100%" style="stop-color:#8338ec"/>
+    </linearGradient>
+    <linearGradient id="liquidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#00ff88;stop-opacity:0.9"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="url(#bgGrad)"/>
+
+  <!-- Outer glow ring -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="url(#flaskGrad)" stroke-width="3" opacity="0.3"/>
+
+  <!-- Erlenmeyer Flask -->
+  <g filter="url(#glow)">
+    <!-- Flask neck -->
+    <path d="M220 100 L220 180 L292 180 L292 100" fill="none" stroke="url(#flaskGrad)" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- Flask body outline -->
+    <path d="M220 180 L130 340 Q110 380 140 410 L372 410 Q402 380 382 340 L292 180" fill="none" stroke="url(#flaskGrad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Liquid in flask -->
+    <path d="M150 340 Q130 375 155 400 L357 400 Q382 375 362 340 L300 230 L212 230 Z" fill="url(#liquidGrad)" opacity="0.7"/>
+
+    <!-- Bubbles -->
+    <circle cx="200" cy="350" r="12" fill="#00ff88" opacity="0.6"/>
+    <circle cx="260" cy="320" r="8" fill="#00d4ff" opacity="0.7"/>
+    <circle cx="310" cy="360" r="10" fill="#00ff88" opacity="0.5"/>
+    <circle cx="230" cy="380" r="6" fill="#00d4ff" opacity="0.6"/>
+    <circle cx="340" cy="340" r="7" fill="#8338ec" opacity="0.5"/>
+  </g>
+
+  <!-- Atom symbol orbiting -->
+  <g transform="translate(256, 256)" opacity="0.9">
+    <!-- Electron orbits -->
+    <ellipse cx="0" cy="0" rx="180" ry="50" fill="none" stroke="#00d4ff" stroke-width="2" transform="rotate(-30)" opacity="0.4"/>
+    <ellipse cx="0" cy="0" rx="180" ry="50" fill="none" stroke="#8338ec" stroke-width="2" transform="rotate(30)" opacity="0.4"/>
+    <ellipse cx="0" cy="0" rx="180" ry="50" fill="none" stroke="#00ff88" stroke-width="2" transform="rotate(90)" opacity="0.4"/>
+
+    <!-- Electrons -->
+    <circle cx="155" cy="-90" r="10" fill="#00d4ff"/>
+    <circle cx="-155" cy="90" r="10" fill="#8338ec"/>
+    <circle cx="0" cy="-180" r="10" fill="#00ff88"/>
+  </g>
+
+  <!-- LC text badge -->
+  <g transform="translate(380, 420)">
+    <rect x="-45" y="-25" width="90" height="50" rx="12" fill="#00d4ff"/>
+    <text x="0" y="8" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#0a0e14" text-anchor="middle">LC</text>
+  </g>
+</svg>

@@ -7,7 +7,13 @@
     <meta name="description" content="ChemMaster LC - Interactive Irish Leaving Certificate Chemistry study app with flashcards, quizzes, periodic table, and more.">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="ChemMaster LC">
     <title>ChemMaster LC | Irish Leaving Cert Chemistry</title>
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+    <link rel="apple-touch-icon" href="icon-192.svg">
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -614,7 +620,7 @@
         <header class="header">
             <div class="header-content">
                 <div class="logo">
-                    <div class="logo-icon">⚗️</div>
+                    <img src="icon-192.svg" alt="ChemMaster LC" class="logo-icon" style="width: 40px; height: 40px; border-radius: 10px;">
                     <div>
                         <div class="logo-text">ChemMaster LC</div>
                         <div class="logo-sub">Irish Leaving Certificate</div>
@@ -2494,6 +2500,15 @@
             if (document.getElementById('flashcards').classList.contains('active')) { if (e.key === ' ' || e.key === 'Enter') { document.getElementById('flashcard').click(); e.preventDefault(); } if (e.key === 'ArrowLeft') document.getElementById('prevCard').click(); if (e.key === 'ArrowRight') document.getElementById('nextCard').click(); }
             if (e.key === 'Escape') document.getElementById('elementModal').classList.remove('active');
         });
+
+        // ==================== PWA SERVICE WORKER ====================
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('ChemMaster LC: Service Worker registered', reg.scope))
+                    .catch(err => console.log('ChemMaster LC: SW registration failed', err));
+            });
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e14"/>
+      <stop offset="100%" style="stop-color:#1a2230"/>
+    </linearGradient>
+    <linearGradient id="flaskGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff"/>
+      <stop offset="100%" style="stop-color:#8338ec"/>
+    </linearGradient>
+    <linearGradient id="liquidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#00ff88;stop-opacity:0.9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="192" height="192" rx="36" fill="url(#bgGrad)"/>
+
+  <!-- Flask -->
+  <g transform="translate(96, 96) scale(0.35)">
+    <!-- Flask neck -->
+    <path d="M-36 -156 L-36 -76 L36 -76 L36 -156" fill="none" stroke="url(#flaskGrad)" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- Flask body -->
+    <path d="M-36 -76 L-126 84 Q-146 124 -116 154 L116 154 Q146 124 126 84 L36 -76" fill="none" stroke="url(#flaskGrad)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Liquid -->
+    <path d="M-106 84 Q-126 119 -101 144 L101 144 Q126 119 106 84 L44 -26 L-44 -26 Z" fill="url(#liquidGrad)" opacity="0.7"/>
+
+    <!-- Bubbles -->
+    <circle cx="-56" cy="94" r="14" fill="#00ff88" opacity="0.6"/>
+    <circle cx="4" cy="64" r="10" fill="#00d4ff" opacity="0.7"/>
+    <circle cx="54" cy="104" r="12" fill="#00ff88" opacity="0.5"/>
+  </g>
+</svg>

@@ -1,0 +1,28 @@
+{
+  "name": "ChemMaster LC - Irish Leaving Cert Chemistry",
+  "short_name": "ChemMaster LC",
+  "description": "Interactive study app for Irish Leaving Certificate Chemistry with flashcards, quizzes, periodic table, calculators, and more.",
+  "start_url": "/LC_Chem/",
+  "scope": "/LC_Chem/",
+  "display": "standalone",
+  "background_color": "#0a0e14",
+  "theme_color": "#0a0e14",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "lang": "en",
+  "dir": "ltr"
+}
