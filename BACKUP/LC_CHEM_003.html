@@ -2,18 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="theme-color" content="#0a0e14">
-    <meta name="description" content="ChemMaster LC - Interactive Irish Leaving Certificate Chemistry study app with flashcards, quizzes, periodic table, and more.">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="ChemMaster LC">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChemMaster LC | Irish Leaving Cert Chemistry</title>
-    <!-- Favicon & Icons -->
-    <link rel="icon" type="image/svg+xml" href="icon.svg">
-    <link rel="apple-touch-icon" href="icon-192.svg">
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -38,8 +28,6 @@
             --shadow-glow: 0 0 40px rgba(0, 212, 255, 0.15);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { -webkit-tap-highlight-color: transparent; }
-        button, .btn, .nav-btn, .quick-action, .answer-option, .quiz-option { touch-action: manipulation; -webkit-touch-callout: none; }
         body {
             font-family: 'DM Sans', sans-serif;
             background: var(--bg-primary);
@@ -114,13 +102,9 @@
             background: var(--bg-secondary);
             border-bottom: 1px solid var(--glass-border);
             overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: thin;
-            scrollbar-color: var(--accent-cyan) var(--bg-tertiary);
+            scrollbar-width: none;
         }
-        .nav-container::-webkit-scrollbar { height: 4px; }
-        .nav-container::-webkit-scrollbar-track { background: var(--bg-tertiary); }
-        .nav-container::-webkit-scrollbar-thumb { background: var(--accent-cyan); border-radius: 2px; }
+        .nav-container::-webkit-scrollbar { display: none; }
         .nav {
             max-width: 1400px;
             margin: 0 auto;
@@ -565,48 +549,12 @@
             .element-properties { grid-template-columns: 1fr; }
             .flashcard-inner { height: 250px; }
             .calculator-grid { grid-template-columns: 1fr; }
-            /* Grid navigation for tablets */
-            .nav-container { overflow-x: visible; }
-            .nav { flex-wrap: wrap; justify-content: center; gap: 0.35rem; }
-            .nav-btn { padding: 0.6rem 1rem; font-size: 0.85rem; }
         }
         @media (max-width: 480px) {
-            /* Compact grid nav for mobile */
-            .nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.25rem; padding: 0.4rem; }
-            .nav-btn {
-                padding: 0.5rem 0.25rem;
-                font-size: 0.7rem;
-                flex-direction: column;
-                gap: 0.2rem;
-                justify-content: center;
-                text-align: center;
-            }
-            .nav-btn .icon { font-size: 1.1rem; }
-            .nav-btn span:not(.icon) { font-size: 0.6rem; display: block; line-height: 1.1; }
+            .nav-btn { padding: 0.6rem 0.9rem; font-size: 0.8rem; }
+            .nav-btn span:not(.icon) { display: none; }
             .flashcard-controls { flex-direction: column; }
             select, input[type="text"], input[type="number"] { min-width: 100%; }
-            .header { padding: 0.75rem 1rem; }
-            .logo-text { font-size: 1.1rem; }
-            .section-title { font-size: 1.25rem; }
-            .modal { margin: 0.5rem; max-height: 95vh; }
-            .quiz-question { padding: 1.25rem; }
-            .flashcard-inner { height: 220px; }
-            .flashcard-content { font-size: 1rem; }
-            .btn { padding: 0.65rem 1.25rem; font-size: 0.85rem; }
-            .results-score { font-size: 3rem; }
-            .periodic-table { min-width: 750px; }
-            .element { font-size: 0.55rem; }
-            .element .symbol { font-size: 0.75rem; }
-            .mindmap-container svg { height: 450px; }
-        }
-        @media (max-width: 360px) {
-            .nav { grid-template-columns: repeat(3, 1fr); }
-            .nav-btn span:not(.icon) { font-size: 0.55rem; }
-            .header-content { gap: 0.5rem; }
-            .stat-pill { padding: 0.35rem 0.6rem; font-size: 0.7rem; }
-            .section-title { font-size: 1.1rem; }
-            .card { padding: 1rem; }
-            .topic-icon { width: 40px; height: 40px; font-size: 1.2rem; }
         }
         ::-webkit-scrollbar { width: 8px; height: 8px; }
         ::-webkit-scrollbar-track { background: var(--bg-secondary); }
@@ -620,7 +568,7 @@
         <header class="header">
             <div class="header-content">
                 <div class="logo">
-                    <img src="icon-192.svg" alt="ChemMaster LC" class="logo-icon" style="width: 40px; height: 40px; border-radius: 10px;">
+                    <div class="logo-icon">⚗️</div>
                     <div>
                         <div class="logo-text">ChemMaster LC</div>
                         <div class="logo-sub">Irish Leaving Certificate</div>
@@ -1207,26 +1155,16 @@
         };
 
         const topics = [
-            { id: 'atomic', icon: '⚛️', title: 'Atomic Structure', desc: 'Atoms, subatomic particles, electron configuration, isotopes', lessons: 8, questions: 45, progress: 0, content: '<h2>Atomic Structure</h2><h3>The Atom</h3><p>An atom is the smallest particle of an element that retains the chemical properties of that element. Atoms consist of three types of subatomic particles:</p><ul><li><strong>Protons</strong> - positively charged particles found in the nucleus (mass ≈ 1 amu)</li><li><strong>Neutrons</strong> - neutral particles found in the nucleus (mass ≈ 1 amu)</li><li><strong>Electrons</strong> - negatively charged particles orbiting the nucleus (mass ≈ 1/1836 amu)</li></ul><div class="key-point"><div class="key-point-title">Key Definitions</div><p><strong>Atomic Number (Z)</strong> = Number of protons<br><strong>Mass Number (A)</strong> = Protons + Neutrons<br><strong>Relative Atomic Mass</strong> = Weighted average of isotope masses</p></div><h3>Isotopes</h3><p>Isotopes are atoms of the same element with the same number of protons but different numbers of neutrons. Example: ¹²C and ¹⁴C are isotopes of carbon.</p><h3>Electron Configuration</h3><p>Electrons are arranged in energy levels (shells) and subshells (s, p, d, f). The order of filling: 1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p</p><h3>Quantum Numbers</h3><ul><li><strong>n</strong> - principal quantum number (shell)</li><li><strong>l</strong> - angular momentum (subshell shape)</li><li><strong>mₗ</strong> - magnetic (orbital orientation)</li><li><strong>mₛ</strong> - spin (+½ or -½)</li></ul>' },
-            { id: 'periodic', icon: '📊', title: 'Periodic Table & Trends', desc: 'Groups, periods, trends in properties, periodicity', lessons: 7, questions: 40, progress: 0, content: '<h2>Periodic Table & Trends</h2><h3>Organisation</h3><p>Elements arranged by increasing atomic number. Periods (rows) and Groups (columns).</p><div class="key-point"><div class="key-point-title">Periodic Trends</div><ul><li><strong>Atomic Radius:</strong> Decreases across period, increases down group</li><li><strong>Ionisation Energy:</strong> Increases across period, decreases down group</li><li><strong>Electronegativity:</strong> Increases across period, decreases down group</li><li><strong>Electron Affinity:</strong> Generally increases across period</li></ul></div><h3>Groups</h3><ul><li><strong>Group 1 (Alkali Metals):</strong> Very reactive, form +1 ions</li><li><strong>Group 2 (Alkaline Earth):</strong> Reactive, form +2 ions</li><li><strong>Group 17 (Halogens):</strong> Reactive non-metals, form -1 ions</li><li><strong>Group 18 (Noble Gases):</strong> Unreactive, full outer shell</li></ul><h3>Transition Metals</h3><p>Variable oxidation states, form coloured compounds, catalytic properties, form complex ions.</p>' },
-            { id: 'bonding', icon: '🔗', title: 'Chemical Bonding', desc: 'Ionic, covalent, metallic bonding, electronegativity, shapes', lessons: 10, questions: 52, progress: 0, content: '<h2>Chemical Bonding</h2><h3>Ionic Bonding</h3><p>Transfer of electrons from metal to non-metal, creating oppositely charged ions held by electrostatic attraction.</p><div class="key-point"><div class="key-point-title">Properties of Ionic Compounds</div><ul><li>High melting and boiling points</li><li>Conduct electricity when molten or dissolved</li><li>Form crystalline lattice structures</li><li>Brittle solids</li></ul></div><h3>Covalent Bonding</h3><p>Sharing of electron pairs between non-metal atoms.</p><ul><li><strong>Single bond:</strong> 1 shared pair</li><li><strong>Double bond:</strong> 2 shared pairs</li><li><strong>Triple bond:</strong> 3 shared pairs</li><li><strong>Dative/Coordinate bond:</strong> Both electrons from one atom</li></ul><h3>VSEPR Theory & Molecular Shapes</h3><ul><li><strong>Linear:</strong> 2 bonding pairs (180°) - CO₂</li><li><strong>Trigonal planar:</strong> 3 bonding pairs (120°) - BF₃</li><li><strong>Tetrahedral:</strong> 4 bonding pairs (109.5°) - CH₄</li><li><strong>Bent:</strong> 2 bonding + 2 lone pairs - H₂O</li><li><strong>Trigonal pyramidal:</strong> 3 bonding + 1 lone pair - NH₃</li></ul><h3>Intermolecular Forces</h3><ul><li><strong>Van der Waals:</strong> Weakest, all molecules</li><li><strong>Dipole-dipole:</strong> Polar molecules</li><li><strong>Hydrogen bonding:</strong> H bonded to N, O, F</li></ul>' },
-            { id: 'stoichiometry', icon: '⚖️', title: 'Stoichiometry & The Mole', desc: 'Mole concept, calculations, limiting reagents, yields', lessons: 12, questions: 68, progress: 0, content: '<h2>Stoichiometry & The Mole</h2><h3>The Mole Concept</h3><p>The mole is the SI unit for amount of substance. One mole contains exactly 6.022 × 10²³ particles (Avogadro constant).</p><div class="key-point"><div class="key-point-title">Key Formulae</div><p><strong>n = m / M</strong> (moles from mass)<br><strong>n = N / Nₐ</strong> (moles from particles)<br><strong>n = V / 22.4</strong> (moles of gas at STP)<br><strong>n = CV</strong> (moles from concentration)</p></div><h3>Percentage Composition</h3><p>% element = (mass of element in formula / molar mass) × 100</p><h3>Empirical & Molecular Formulae</h3><ul><li><strong>Empirical:</strong> Simplest whole number ratio</li><li><strong>Molecular:</strong> Actual number of atoms</li></ul><h3>Limiting Reagent</h3><p>The reactant that is completely consumed first, determining the maximum yield.</p><h3>Percentage Yield</h3><p>% Yield = (Actual yield / Theoretical yield) × 100</p>' },
-            { id: 'volumetric', icon: '🧪', title: 'Volumetric Analysis', desc: 'Titrations, standard solutions, indicators, calculations', lessons: 10, questions: 55, progress: 0, content: '<h2>Volumetric Analysis</h2><h3>Key Concepts</h3><div class="key-point"><div class="key-point-title">Important Terms</div><ul><li><strong>Primary standard:</strong> Pure, stable, high molar mass, reacts completely</li><li><strong>Standard solution:</strong> Solution of known concentration</li><li><strong>Equivalence point:</strong> Stoichiometric amounts have reacted</li><li><strong>End point:</strong> Indicator colour change</li></ul></div><h3>Titration Procedure</h3><ol><li>Rinse burette with solution to be used</li><li>Fill burette and record initial reading</li><li>Pipette known volume of analyte into flask</li><li>Add indicator</li><li>Titrate slowly until colour change</li><li>Record final reading, calculate titre</li><li>Repeat for concordant results (within 0.1 cm³)</li></ol><h3>Common Indicators</h3><ul><li><strong>Phenolphthalein:</strong> Colourless (acid) → Pink (base)</li><li><strong>Methyl orange:</strong> Red (acid) → Yellow (base)</li><li><strong>Litmus:</strong> Red (acid) → Blue (base)</li></ul><h3>Calculations</h3><p>At equivalence point: n₁/n₂ = stoichiometric ratio<br>C₁V₁/n₁ = C₂V₂/n₂</p>' },
-            { id: 'organic', icon: '🧬', title: 'Organic Chemistry', desc: 'Hydrocarbons, functional groups, reactions, mechanisms', lessons: 18, questions: 95, progress: 0, content: '<h2>Organic Chemistry</h2><h3>Homologous Series</h3><div class="key-point"><div class="key-point-title">Formulae</div><ul><li><strong>Alkanes:</strong> CₙH₂ₙ₊₂ (saturated)</li><li><strong>Alkenes:</strong> CₙH₂ₙ (unsaturated, C=C)</li><li><strong>Alkynes:</strong> CₙH₂ₙ₋₂ (C≡C)</li><li><strong>Alcohols:</strong> CₙH₂ₙ₊₁OH</li><li><strong>Carboxylic acids:</strong> CₙH₂ₙ₊₁COOH</li></ul></div><h3>IUPAC Nomenclature</h3><p>Prefix (substituents) + Root (chain length) + Suffix (functional group)</p><h3>Functional Groups</h3><ul><li><strong>-OH:</strong> Alcohol</li><li><strong>-CHO:</strong> Aldehyde</li><li><strong>>C=O:</strong> Ketone</li><li><strong>-COOH:</strong> Carboxylic acid</li><li><strong>-COO-:</strong> Ester</li><li><strong>-NH₂:</strong> Amine</li><li><strong>-CONH₂:</strong> Amide</li></ul><h3>Reaction Types</h3><ul><li><strong>Addition:</strong> Across double bonds</li><li><strong>Substitution:</strong> Replace atom/group</li><li><strong>Elimination:</strong> Remove atoms to form double bond</li><li><strong>Condensation:</strong> Join molecules, lose small molecule</li></ul>' },
-            { id: 'mechanisms', icon: '⚙️', title: 'Reaction Mechanisms', desc: 'Free radical, electrophilic, nucleophilic mechanisms', lessons: 8, questions: 42, progress: 0, content: '<h2>Reaction Mechanisms</h2><h3>Free Radical Substitution</h3><p>Example: Alkane + Halogen (UV light)</p><div class="key-point"><div class="key-point-title">Steps</div><ol><li><strong>Initiation:</strong> Cl₂ → 2Cl• (homolytic fission)</li><li><strong>Propagation:</strong> CH₄ + Cl• → •CH₃ + HCl<br>•CH₃ + Cl₂ → CH₃Cl + Cl•</li><li><strong>Termination:</strong> Cl• + Cl• → Cl₂</li></ol></div><h3>Electrophilic Addition</h3><p>Example: Alkene + HBr</p><ul><li>Electrophile attacks electron-rich double bond</li><li>Carbocation intermediate forms</li><li>Nucleophile attacks carbocation</li></ul><h3>Nucleophilic Substitution</h3><p>Example: Haloalkane + OH⁻</p><ul><li>Nucleophile attacks carbon bonded to halogen</li><li>Halogen leaves as halide ion</li></ul><h3>Key Terms</h3><ul><li><strong>Electrophile:</strong> Electron-pair acceptor (positive/partial positive)</li><li><strong>Nucleophile:</strong> Electron-pair donor (negative/lone pair)</li><li><strong>Carbocation:</strong> Carbon with positive charge</li></ul>' },
-            { id: 'acids', icon: '🧫', title: 'Acids & Bases', desc: 'pH, neutralisation, titrations, buffer solutions', lessons: 9, questions: 55, progress: 0, content: '<h2>Acids & Bases</h2><h3>Definitions</h3><div class="key-point"><div class="key-point-title">Theories</div><ul><li><strong>Arrhenius:</strong> Acid releases H⁺, Base releases OH⁻</li><li><strong>Brønsted-Lowry:</strong> Acid = H⁺ donor, Base = H⁺ acceptor</li><li><strong>Lewis:</strong> Acid = e⁻ pair acceptor, Base = e⁻ pair donor</li></ul></div><h3>Strong vs Weak</h3><ul><li><strong>Strong acids:</strong> HCl, H₂SO₄, HNO₃ (fully dissociate)</li><li><strong>Weak acids:</strong> CH₃COOH, H₂CO₃ (partially dissociate)</li><li><strong>Strong bases:</strong> NaOH, KOH</li><li><strong>Weak bases:</strong> NH₃</li></ul><h3>pH Calculations</h3><p><strong>pH = -log₁₀[H⁺]</strong><br><strong>pOH = -log₁₀[OH⁻]</strong><br><strong>pH + pOH = 14</strong> (at 25°C)<br><strong>[H⁺][OH⁻] = Kw = 10⁻¹⁴</strong></p><h3>Conjugate Pairs</h3><p>Acid loses H⁺ → conjugate base<br>Base gains H⁺ → conjugate acid</p>' },
-            { id: 'redox', icon: '🔋', title: 'Oxidation & Reduction', desc: 'Redox reactions, oxidation states, electrochemical cells', lessons: 11, questions: 50, progress: 0, content: '<h2>Oxidation & Reduction</h2><div class="key-point"><div class="key-point-title">Remember: OIL RIG</div><p><strong>O</strong>xidation <strong>I</strong>s <strong>L</strong>oss (of electrons)<br><strong>R</strong>eduction <strong>I</strong>s <strong>G</strong>ain (of electrons)</p></div><h3>Oxidation States</h3><ul><li>Elements in free state: 0</li><li>Monatomic ions: equal to charge</li><li>Oxygen: usually -2 (except peroxides -1)</li><li>Hydrogen: usually +1 (except metal hydrides -1)</li><li>Sum in compound = 0</li><li>Sum in polyatomic ion = charge</li></ul><h3>Balancing Redox Equations</h3><ol><li>Assign oxidation states</li><li>Identify what is oxidised and reduced</li><li>Write half-equations</li><li>Balance electrons transferred</li><li>Combine half-equations</li></ol><h3>Electrochemical Cells</h3><ul><li><strong>Galvanic/Voltaic:</strong> Spontaneous, produces electricity</li><li><strong>Electrolytic:</strong> Non-spontaneous, uses electricity</li></ul>' },
-            { id: 'electrolysis', icon: '⚡', title: 'Electrolysis', desc: 'Electrolytic cells, electrodes, products, Faraday', lessons: 7, questions: 38, progress: 0, content: '<h2>Electrolysis</h2><h3>The Process</h3><p>Using electrical energy to drive a non-spontaneous redox reaction.</p><div class="key-point"><div class="key-point-title">Electrode Processes</div><ul><li><strong>Anode (+):</strong> Oxidation occurs (AN OX)</li><li><strong>Cathode (-):</strong> Reduction occurs (RED CAT)</li></ul></div><h3>Electrolysis of Molten NaCl</h3><ul><li>Cathode: Na⁺ + e⁻ → Na</li><li>Anode: 2Cl⁻ → Cl₂ + 2e⁻</li></ul><h3>Electrolysis of Aqueous Solutions</h3><p>Water may be oxidised/reduced instead:</p><ul><li>At cathode: 2H₂O + 2e⁻ → H₂ + 2OH⁻</li><li>At anode: 2H₂O → O₂ + 4H⁺ + 4e⁻</li></ul><h3>Faraday\'s Laws</h3><p><strong>Q = It</strong> (charge = current × time)<br><strong>n = Q / zF</strong> (moles = charge / (electrons × 96500))</p>' },
-            { id: 'rates', icon: '⏱️', title: 'Rates of Reaction', desc: 'Reaction rates, factors affecting rate, collision theory', lessons: 8, questions: 42, progress: 0, content: '<h2>Rates of Reaction</h2><h3>Definition</h3><p>Rate = change in concentration / time (mol dm⁻³ s⁻¹)</p><div class="key-point"><div class="key-point-title">Factors Affecting Rate</div><ol><li><strong>Concentration:</strong> Higher = more collisions</li><li><strong>Temperature:</strong> Higher = faster particles</li><li><strong>Surface area:</strong> Greater = more contact</li><li><strong>Catalyst:</strong> Lower activation energy</li><li><strong>Pressure (gases):</strong> Higher = closer particles</li></ol></div><h3>Collision Theory</h3><p>For reaction to occur:</p><ul><li>Particles must collide</li><li>With sufficient energy (≥ Eₐ)</li><li>With correct orientation</li></ul><h3>Activation Energy</h3><p>Minimum energy required for successful collision. Catalysts provide alternative pathway with lower Eₐ.</p><h3>Measuring Rate</h3><ul><li>Gas volume produced</li><li>Mass change</li><li>Colour change</li><li>Conductivity change</li></ul>' },
-            { id: 'equilibrium', icon: '⚖️', title: 'Chemical Equilibrium', desc: 'Reversible reactions, Kc, Le Chatelier principle', lessons: 9, questions: 45, progress: 0, content: '<h2>Chemical Equilibrium</h2><h3>Dynamic Equilibrium</h3><p>Forward and reverse reactions occur at equal rates. Concentrations remain constant.</p><div class="key-point"><div class="key-point-title">Le Chatelier\'s Principle</div><p>When a system at equilibrium is disturbed, it shifts to counteract the change.</p></div><h3>Equilibrium Constant (Kc)</h3><p>For aA + bB ⇌ cC + dD:</p><p><strong>Kc = [C]ᶜ[D]ᵈ / [A]ᵃ[B]ᵇ</strong></p><ul><li>Kc > 1: Products favoured</li><li>Kc < 1: Reactants favoured</li><li>Kc only changes with temperature</li></ul><h3>Effects on Equilibrium</h3><ul><li><strong>Concentration:</strong> Shifts away from added species</li><li><strong>Pressure:</strong> Shifts to side with fewer gas moles</li><li><strong>Temperature:</strong> Shifts endothermic direction when heated</li><li><strong>Catalyst:</strong> No effect on position (faster both ways)</li></ul>' },
-            { id: 'gases', icon: '💨', title: 'Gases & Gas Laws', desc: 'Gas laws, ideal gas equation, kinetic theory', lessons: 7, questions: 38, progress: 0, content: '<h2>Gases & Gas Laws</h2><h3>Kinetic Theory</h3><ul><li>Particles in constant random motion</li><li>No intermolecular forces (ideal)</li><li>Elastic collisions</li><li>Volume of particles negligible</li></ul><div class="key-point"><div class="key-point-title">Gas Laws</div><ul><li><strong>Boyle\'s:</strong> P₁V₁ = P₂V₂ (T constant)</li><li><strong>Charles\'s:</strong> V₁/T₁ = V₂/T₂ (P constant)</li><li><strong>Gay-Lussac\'s:</strong> P₁/T₁ = P₂/T₂ (V constant)</li><li><strong>Combined:</strong> P₁V₁/T₁ = P₂V₂/T₂</li></ul></div><h3>Ideal Gas Equation</h3><p><strong>PV = nRT</strong></p><ul><li>P = Pressure (Pa or kPa)</li><li>V = Volume (m³ or dm³)</li><li>n = Moles</li><li>R = 8.314 J mol⁻¹ K⁻¹</li><li>T = Temperature (K)</li></ul><h3>STP Conditions</h3><p>0°C (273 K), 1 atm (101.3 kPa)<br>Molar volume = 22.4 L/mol</p>' },
-            { id: 'thermo', icon: '🔥', title: 'Thermochemistry', desc: 'Enthalpy, Hess law, bond energies, calorimetry', lessons: 10, questions: 48, progress: 0, content: '<h2>Thermochemistry</h2><h3>Energy Changes</h3><div class="key-point"><div class="key-point-title">Types of Enthalpy</div><ul><li><strong>ΔHf:</strong> Formation (from elements)</li><li><strong>ΔHc:</strong> Combustion (complete burning)</li><li><strong>ΔHn:</strong> Neutralisation (acid + base)</li><li><strong>ΔHsol:</strong> Solution (dissolving)</li></ul></div><h3>Exothermic vs Endothermic</h3><ul><li><strong>Exothermic (ΔH < 0):</strong> Heat released, feels hot</li><li><strong>Endothermic (ΔH > 0):</strong> Heat absorbed, feels cold</li></ul><h3>Hess\'s Law</h3><p>Total enthalpy change is independent of the route taken.</p><h3>Calculations</h3><p><strong>q = mcΔT</strong> (calorimetry)<br><strong>ΔH = ΣΔHf(products) - ΣΔHf(reactants)</strong><br><strong>ΔH = Bonds broken - Bonds formed</strong></p><h3>Bond Energy</h3><p>Energy required to break 1 mole of bonds in gaseous molecules.</p>' },
-            { id: 'fuels', icon: '⛽', title: 'Fuels & Energy', desc: 'Fossil fuels, combustion, alternative energy, climate', lessons: 6, questions: 32, progress: 0, content: '<h2>Fuels & Energy</h2><h3>Fossil Fuels</h3><ul><li><strong>Coal:</strong> Mostly carbon, high pollution</li><li><strong>Oil:</strong> Hydrocarbons, refined to fractions</li><li><strong>Natural gas:</strong> Mainly methane (CH₄)</li></ul><div class="key-point"><div class="key-point-title">Combustion</div><p><strong>Complete:</strong> fuel + O₂ → CO₂ + H₂O<br><strong>Incomplete:</strong> Limited O₂ → CO + C + H₂O</p></div><h3>Environmental Issues</h3><ul><li><strong>Greenhouse effect:</strong> CO₂, CH₄ trap heat</li><li><strong>Acid rain:</strong> SO₂ + NOₓ form acids</li><li><strong>Particulates:</strong> Soot causes respiratory issues</li></ul><h3>Alternative Fuels</h3><ul><li><strong>Biofuels:</strong> Ethanol, biodiesel</li><li><strong>Hydrogen:</strong> Clean but storage issues</li><li><strong>Solar/Wind:</strong> Renewable electricity</li></ul>' },
-            { id: 'water', icon: '💧', title: 'Water Chemistry', desc: 'Water treatment, hardness, dissolved oxygen, analysis', lessons: 8, questions: 40, progress: 0, content: '<h2>Water Chemistry</h2><h3>Water Treatment</h3><ol><li><strong>Screening:</strong> Remove large debris</li><li><strong>Settling:</strong> Suspended solids sink</li><li><strong>Filtration:</strong> Sand/gravel filters</li><li><strong>Chlorination:</strong> Kill bacteria</li><li><strong>Fluoridation:</strong> Dental health</li><li><strong>pH adjustment:</strong> Add lime if acidic</li></ol><div class="key-point"><div class="key-point-title">Water Hardness</div><p><strong>Temporary:</strong> Ca(HCO₃)₂ - removed by boiling<br><strong>Permanent:</strong> CaSO₄ - removed by ion exchange or washing soda</p></div><h3>Water Analysis</h3><ul><li><strong>Dissolved oxygen:</strong> Winkler method</li><li><strong>Total hardness:</strong> EDTA titration</li><li><strong>pH:</strong> pH meter or indicator</li><li><strong>Chloride:</strong> Silver nitrate test</li></ul>' },
-            { id: 'radioactivity', icon: '☢️', title: 'Radioactivity', desc: 'Nuclear decay, half-life, uses, safety', lessons: 6, questions: 35, progress: 0, content: '<h2>Radioactivity</h2><h3>Types of Radiation</h3><div class="key-point"><div class="key-point-title">Properties</div><ul><li><strong>Alpha (α):</strong> ⁴₂He, +2 charge, low penetration, high ionising</li><li><strong>Beta (β):</strong> ⁰₋₁e, -1 charge, medium penetration</li><li><strong>Gamma (γ):</strong> EM radiation, no charge, high penetration</li></ul></div><h3>Nuclear Equations</h3><p>Mass number and atomic number must balance.</p><h3>Half-life</h3><p>Time for half the radioactive nuclei to decay.<br><strong>N = N₀(½)ⁿ</strong> where n = number of half-lives</p><h3>Uses</h3><ul><li><strong>Medicine:</strong> Tracers, cancer treatment</li><li><strong>Dating:</strong> Carbon-14 for organic, U-238 for rocks</li><li><strong>Energy:</strong> Nuclear power plants</li><li><strong>Industry:</strong> Thickness gauges</li></ul><h3>Safety</h3><p>Time, distance, shielding. Lead for gamma, paper for alpha.</p>' },
-            { id: 'instrumentation', icon: '🔬', title: 'Instrumentation', desc: 'Chromatography, spectroscopy, analysis techniques', lessons: 7, questions: 35, progress: 0, content: '<h2>Instrumentation & Analysis</h2><h3>Chromatography</h3><p>Separation based on differential distribution between mobile and stationary phases.</p><div class="key-point"><div class="key-point-title">Types</div><ul><li><strong>Paper/TLC:</strong> Rf = distance moved by substance / distance moved by solvent</li><li><strong>Column:</strong> Separation by adsorption</li><li><strong>Gas (GC):</strong> Volatile compounds, retention time</li></ul></div><h3>Spectroscopy</h3><ul><li><strong>Mass Spec:</strong> Molecular mass, fragmentation pattern</li><li><strong>IR:</strong> Functional group identification</li><li><strong>UV-Vis:</strong> Concentration (Beer-Lambert)</li></ul><h3>Other Techniques</h3><ul><li><strong>Colorimetry:</strong> Concentration from colour intensity</li><li><strong>Atomic Absorption:</strong> Metal ion concentration</li><li><strong>Flame Tests:</strong> Metal ion identification</li></ul>' },
-            { id: 'options', icon: '📋', title: 'Option Topics', desc: 'Industrial chemistry, materials, atmospheric chemistry', lessons: 10, questions: 45, progress: 0, content: '<h2>Option Topics</h2><h3>Industrial Chemistry</h3><ul><li><strong>Haber Process:</strong> N₂ + 3H₂ ⇌ 2NH₃</li><li><strong>Contact Process:</strong> Making H₂SO₄</li><li><strong>Extraction of metals</strong></li></ul><h3>Materials & Polymers</h3><div class="key-point"><div class="key-point-title">Polymer Types</div><ul><li><strong>Addition:</strong> Monomers add together (polyethene)</li><li><strong>Condensation:</strong> Monomers join, small molecule lost (nylon, polyester)</li></ul></div><h3>Atmospheric Chemistry</h3><ul><li><strong>Ozone layer:</strong> O₃ absorbs UV</li><li><strong>CFCs:</strong> Deplete ozone</li><li><strong>Greenhouse gases:</strong> CO₂, CH₄, N₂O</li></ul><h3>Metals</h3><ul><li>Reactivity series</li><li>Extraction methods</li><li>Corrosion and prevention</li></ul>' },
-            { id: 'environmental', icon: '🌍', title: 'Environmental Chemistry', desc: 'Pollution, green chemistry, sustainability', lessons: 6, questions: 32, progress: 0, content: '<h2>Environmental Chemistry</h2><h3>Air Pollution</h3><ul><li><strong>CO:</strong> Incomplete combustion, toxic</li><li><strong>CO₂:</strong> Greenhouse gas</li><li><strong>SO₂:</strong> Acid rain, respiratory issues</li><li><strong>NOₓ:</strong> Acid rain, smog</li><li><strong>Particulates:</strong> Respiratory disease</li></ul><div class="key-point"><div class="key-point-title">Acid Rain</div><p>SO₂ + H₂O → H₂SO₃<br>2NO₂ + H₂O → HNO₃ + HNO₂</p></div><h3>Green Chemistry Principles</h3><ul><li>Prevent waste</li><li>Atom economy</li><li>Less hazardous synthesis</li><li>Safer solvents</li><li>Renewable feedstocks</li><li>Catalysis over stoichiometric reagents</li></ul><h3>Climate Change</h3><p>Enhanced greenhouse effect from increased CO₂, CH₄, N₂O emissions.</p>' }
+            { id: 'atomic', icon: '⚛️', title: 'Atomic Structure', desc: 'Atoms, subatomic particles, electron configuration, isotopes', lessons: 8, questions: 45, progress: 0, content: '<h2>Atomic Structure</h2><h3>The Atom</h3><p>An atom is the smallest particle of an element that retains the chemical properties of that element. Atoms consist of three types of subatomic particles:</p><ul><li><strong>Protons</strong> - positively charged particles found in the nucleus</li><li><strong>Neutrons</strong> - neutral particles found in the nucleus</li><li><strong>Electrons</strong> - negatively charged particles orbiting the nucleus</li></ul><div class="key-point"><div class="key-point-title">Key Definition</div><p><strong>Atomic Number (Z)</strong> = Number of protons<br><strong>Mass Number (A)</strong> = Protons + Neutrons</p></div><h3>Isotopes</h3><p>Isotopes are atoms of the same element with the same number of protons but different numbers of neutrons.</p><h3>Electron Configuration</h3><p>Electrons are arranged in energy levels (shells) around the nucleus. The maximum number of electrons in each shell is given by 2n².</p>' },
+            { id: 'bonding', icon: '🔗', title: 'Chemical Bonding', desc: 'Ionic, covalent, metallic bonding, electronegativity, shapes', lessons: 10, questions: 52, progress: 0, content: '<h2>Chemical Bonding</h2><h3>Ionic Bonding</h3><p>Ionic bonds form between metals and non-metals through the transfer of electrons.</p><div class="key-point"><div class="key-point-title">Properties of Ionic Compounds</div><ul><li>High melting and boiling points</li><li>Conduct electricity when molten or dissolved</li><li>Form crystalline lattice structures</li></ul></div><h3>Covalent Bonding</h3><p>Covalent bonds form between non-metals through the sharing of electron pairs.</p><h3>Electronegativity</h3><p>Electronegativity is the ability of an atom to attract shared electrons towards itself in a covalent bond.</p>' },
+            { id: 'stoichiometry', icon: '⚖️', title: 'Stoichiometry & The Mole', desc: 'Mole concept, calculations, limiting reagents, yields', lessons: 12, questions: 68, progress: 0, content: '<h2>Stoichiometry & The Mole</h2><h3>The Mole Concept</h3><p>The mole is the SI unit for amount of substance. One mole contains exactly 6.022 × 10²³ particles (Avogadro\'s number).</p><div class="key-point"><div class="key-point-title">Key Formulae</div><p>Number of moles (n) = mass (m) / molar mass (M)<br>Number of moles (n) = number of particles / 6.022 × 10²³<br>Number of moles (n) = volume (L) / 22.4 (at STP for gases)</p></div>' },
+            { id: 'organic', icon: '🧬', title: 'Organic Chemistry', desc: 'Hydrocarbons, functional groups, reactions, polymers', lessons: 15, questions: 85, progress: 0, content: '<h2>Organic Chemistry</h2><h3>Hydrocarbons</h3><div class="key-point"><div class="key-point-title">Homologous Series</div><ul><li><strong>Alkanes</strong> (CₙH₂ₙ₊₂): Single bonds only</li><li><strong>Alkenes</strong> (CₙH₂ₙ): Contains C=C double bond</li><li><strong>Alkynes</strong> (CₙH₂ₙ₋₂): Contains C≡C triple bond</li></ul></div><h3>Functional Groups</h3><ul><li><strong>Alcohols (-OH)</strong></li><li><strong>Aldehydes (-CHO)</strong></li><li><strong>Ketones (C=O)</strong></li><li><strong>Carboxylic acids (-COOH)</strong></li><li><strong>Esters (-COO-)</strong></li></ul>' },
+            { id: 'acids', icon: '🧫', title: 'Acids & Bases', desc: 'pH, neutralisation, titrations, buffer solutions', lessons: 9, questions: 55, progress: 0, content: '<h2>Acids & Bases</h2><div class="key-point"><div class="key-point-title">Brønsted-Lowry Definition</div><p><strong>Acid:</strong> Proton (H⁺) donor<br><strong>Base:</strong> Proton (H⁺) acceptor</p></div><h3>The pH Scale</h3><p>pH = -log₁₀[H⁺]</p><ul><li>pH < 7: Acidic</li><li>pH = 7: Neutral</li><li>pH > 7: Basic/alkaline</li></ul><h3>Neutralisation</h3><p>Acid + Base → Salt + Water</p>' },
+            { id: 'redox', icon: '🔋', title: 'Electrochemistry', desc: 'Oxidation, reduction, electrochemical cells, electrolysis', lessons: 11, questions: 48, progress: 0, content: '<h2>Electrochemistry</h2><div class="key-point"><div class="key-point-title">Remember: OIL RIG</div><p><strong>O</strong>xidation <strong>I</strong>s <strong>L</strong>oss (of electrons)<br><strong>R</strong>eduction <strong>I</strong>s <strong>G</strong>ain (of electrons)</p></div><h3>Electrolysis</h3><p>Electrolysis uses electrical energy to drive a non-spontaneous reaction.</p><ul><li>Oxidation occurs at the anode (positive)</li><li>Reduction occurs at the cathode (negative)</li></ul>' },
+            { id: 'rates', icon: '⏱️', title: 'Rates & Equilibrium', desc: 'Reaction rates, factors affecting rate, Le Chatelier', lessons: 10, questions: 42, progress: 0, content: '<h2>Rates of Reaction & Equilibrium</h2><h3>Factors Affecting Rate</h3><ol><li><strong>Temperature:</strong> Higher = faster</li><li><strong>Concentration:</strong> Higher = faster</li><li><strong>Surface area:</strong> Greater = faster</li><li><strong>Catalyst:</strong> Provides alternative pathway</li><li><strong>Pressure:</strong> (for gases) Higher = faster</li></ol><div class="key-point"><div class="key-point-title">Le Chatelier\'s Principle</div><p>When a system at equilibrium is disturbed, it will shift to counteract the change.</p></div>' },
+            { id: 'gases', icon: '💨', title: 'Gases', desc: 'Gas laws, ideal gas equation, kinetic theory', lessons: 7, questions: 38, progress: 0, content: '<h2>Gases</h2><div class="key-point"><div class="key-point-title">Ideal Gas Equation</div><p><strong>PV = nRT</strong></p><ul><li>P = Pressure</li><li>V = Volume</li><li>n = Moles</li><li>R = Gas constant (8.314 J/mol·K)</li><li>T = Temperature (Kelvin)</li></ul></div><p>At STP (0°C, 1 atm), one mole of any ideal gas occupies 22.4 L</p>' },
+            { id: 'thermo', icon: '🔥', title: 'Thermochemistry', desc: 'Enthalpy, Hess\'s law, bond energies, calorimetry', lessons: 8, questions: 40, progress: 0, content: '<h2>Thermochemistry</h2><div class="key-point"><div class="key-point-title">Exothermic vs Endothermic</div><p><strong>Exothermic (ΔH < 0):</strong> Heat released<br><strong>Endothermic (ΔH > 0):</strong> Heat absorbed</p></div><h3>Heat Energy</h3><p><strong>q = mcΔT</strong></p><ul><li>q = heat energy (J)</li><li>m = mass (g)</li><li>c = specific heat capacity</li><li>ΔT = temperature change</li></ul>' },
+            { id: 'environmental', icon: '🌍', title: 'Environmental Chemistry', desc: 'Water treatment, atmosphere, pollution, green chemistry', lessons: 6, questions: 32, progress: 0, content: '<h2>Environmental Chemistry</h2><h3>Water Treatment</h3><ol><li>Screening</li><li>Settling/Sedimentation</li><li>Filtration</li><li>Chlorination</li><li>Fluoridation</li><li>pH adjustment</li></ol><h3>Pollution</h3><ul><li><strong>Acid rain:</strong> Caused by SO₂ and NOₓ</li><li><strong>Greenhouse effect:</strong> CO₂, CH₄, N₂O</li><li><strong>Ozone depletion:</strong> CFCs</li></ul>' }
         ];
 
         const flashcardsData = {
@@ -1281,99 +1219,8 @@
                 { q: "What are five factors that affect reaction rate?", a: "Temperature, concentration, surface area, catalyst, pressure" },
                 { q: "What is activation energy?", a: "The minimum energy required for a reaction to occur" },
                 { q: "What is a catalyst?", a: "A substance that speeds up a reaction by providing an alternative pathway with lower activation energy" },
-                { q: "How does temperature affect reaction rate?", a: "Higher temperature increases particle kinetic energy, leading to more frequent and energetic collisions" },
-                { q: "What is collision theory?", a: "Particles must collide with sufficient energy and correct orientation for reaction to occur" }
-            ],
-            periodic: [
-                { q: "What are periodic trends?", a: "Regular patterns in properties when moving across periods or down groups" },
-                { q: "How does atomic radius change across a period?", a: "Decreases across a period due to increasing nuclear charge" },
-                { q: "How does ionisation energy change down a group?", a: "Decreases down a group due to increased shielding and atomic radius" },
-                { q: "What is electronegativity?", a: "The ability of an atom to attract shared electrons in a covalent bond" },
-                { q: "What are transition metals known for?", a: "Variable oxidation states, coloured compounds, catalytic properties" }
-            ],
-            volumetric: [
-                { q: "What is a primary standard?", a: "A pure, stable compound with high molar mass that reacts completely" },
-                { q: "What is the equivalence point?", a: "The point where stoichiometric amounts of reactants have reacted" },
-                { q: "What is the end point?", a: "The point where the indicator changes colour" },
-                { q: "What colour change occurs with phenolphthalein?", a: "Colourless in acid to pink in base" },
-                { q: "What are concordant results?", a: "Titration results within 0.1 cm³ of each other" }
-            ],
-            mechanisms: [
-                { q: "What is homolytic fission?", a: "Breaking of a bond where each atom gets one electron, forming radicals" },
-                { q: "What is an electrophile?", a: "An electron-pair acceptor, often positively charged or electron-deficient" },
-                { q: "What is a nucleophile?", a: "An electron-pair donor, often negatively charged or has lone pairs" },
-                { q: "What are the steps of free radical substitution?", a: "Initiation, propagation, and termination" },
-                { q: "What is a carbocation?", a: "A carbon atom with a positive charge" }
-            ],
-            electrolysis: [
-                { q: "What happens at the anode?", a: "Oxidation occurs (AN OX)" },
-                { q: "What happens at the cathode?", a: "Reduction occurs (RED CAT)" },
-                { q: "What is Faraday's constant?", a: "96,500 C/mol - the charge of one mole of electrons" },
-                { q: "What is electrolysis?", a: "Using electrical energy to drive a non-spontaneous reaction" },
-                { q: "In molten NaCl, what forms at cathode?", a: "Sodium metal (Na⁺ + e⁻ → Na)" }
-            ],
-            equilibrium: [
-                { q: "What is dynamic equilibrium?", a: "When forward and reverse reactions occur at equal rates" },
                 { q: "What is Le Chatelier's Principle?", a: "When equilibrium is disturbed, it shifts to counteract the change" },
-                { q: "What does Kc > 1 indicate?", a: "Products are favoured at equilibrium" },
-                { q: "Does a catalyst affect equilibrium position?", a: "No, it speeds up both forward and reverse reactions equally" },
-                { q: "How does pressure affect gas equilibrium?", a: "System shifts to side with fewer gas molecules" }
-            ],
-            gases: [
-                { q: "State the ideal gas equation", a: "PV = nRT" },
-                { q: "What is the molar volume at STP?", a: "22.4 L/mol at 0°C and 1 atm" },
-                { q: "State Boyle's Law", a: "P₁V₁ = P₂V₂ at constant temperature" },
-                { q: "State Charles's Law", a: "V₁/T₁ = V₂/T₂ at constant pressure" },
-                { q: "What assumptions does ideal gas law make?", a: "No intermolecular forces, negligible particle volume, elastic collisions" }
-            ],
-            thermo: [
-                { q: "What is an exothermic reaction?", a: "A reaction that releases heat (ΔH < 0)" },
-                { q: "What is an endothermic reaction?", a: "A reaction that absorbs heat (ΔH > 0)" },
-                { q: "State Hess's Law", a: "Total enthalpy change is independent of the route taken" },
-                { q: "What is bond energy?", a: "Energy required to break 1 mole of bonds in gaseous molecules" },
-                { q: "State the calorimetry equation", a: "q = mcΔT" }
-            ],
-            fuels: [
-                { q: "What is complete combustion?", a: "Burning in excess oxygen to produce CO₂ and H₂O" },
-                { q: "What is incomplete combustion?", a: "Burning in limited oxygen producing CO, C (soot) and H₂O" },
-                { q: "What are the main greenhouse gases?", a: "CO₂, CH₄, N₂O, water vapour" },
-                { q: "What causes acid rain?", a: "SO₂ and NOₓ dissolving in rainwater" },
-                { q: "Name two alternative fuels", a: "Biofuels (ethanol, biodiesel), hydrogen" }
-            ],
-            water: [
-                { q: "What causes temporary hardness?", a: "Dissolved calcium hydrogencarbonate Ca(HCO₃)₂" },
-                { q: "How is temporary hardness removed?", a: "By boiling (precipitates CaCO₃)" },
-                { q: "What causes permanent hardness?", a: "Dissolved calcium sulfate CaSO₄" },
-                { q: "How is dissolved oxygen measured?", a: "Winkler method" },
-                { q: "What is the purpose of chlorination?", a: "To kill harmful bacteria in water" }
-            ],
-            radioactivity: [
-                { q: "What is an alpha particle?", a: "A helium nucleus (2 protons + 2 neutrons), ⁴₂He" },
-                { q: "What is a beta particle?", a: "A high-speed electron emitted from the nucleus, ⁰₋₁e" },
-                { q: "What is gamma radiation?", a: "High-energy electromagnetic radiation" },
-                { q: "What is half-life?", a: "Time for half the radioactive nuclei to decay" },
-                { q: "Which radiation is most penetrating?", a: "Gamma (stopped by thick lead)" }
-            ],
-            instrumentation: [
-                { q: "What is Rf value?", a: "Distance moved by substance / distance moved by solvent" },
-                { q: "What does mass spectrometry measure?", a: "Molecular mass and fragmentation pattern" },
-                { q: "What does IR spectroscopy identify?", a: "Functional groups from characteristic absorptions" },
-                { q: "What is colorimetry based on?", a: "Beer-Lambert law: concentration relates to light absorbance" },
-                { q: "What are flame tests used for?", a: "Identifying metal ions by characteristic flame colours" }
-            ],
-            options: [
-                { q: "What is the Haber process equation?", a: "N₂ + 3H₂ ⇌ 2NH₃" },
-                { q: "What conditions are used in Haber process?", a: "450°C, 200 atm, iron catalyst" },
-                { q: "What is addition polymerisation?", a: "Monomers add together without losing any atoms" },
-                { q: "What is condensation polymerisation?", a: "Monomers join together, losing a small molecule (e.g., H₂O)" },
-                { q: "What depletes the ozone layer?", a: "CFCs (chlorofluorocarbons)" }
-            ],
-            environmental: [
-                { q: "What is the greenhouse effect?", a: "Gases in atmosphere trap heat, warming Earth" },
-                { q: "What is acid rain?", a: "Rain with pH < 5.6 due to dissolved SO₂ and NOₓ" },
-                { q: "What is atom economy?", a: "Percentage of reactant atoms incorporated into desired product" },
-                { q: "What are green chemistry principles?", a: "Prevent waste, use renewable feedstocks, safer solvents, catalysis" },
-                { q: "What is carbon footprint?", a: "Total greenhouse gas emissions from an activity" }
+                { q: "What is dynamic equilibrium?", a: "When the rate of forward reaction equals the rate of reverse reaction" }
             ]
         };
 
@@ -1413,71 +1260,6 @@
                 { q: "Increasing temperature increases rate because:", options: ["More energetic collisions", "Lower activation energy", "Better catalyst", "Equilibrium shifts"], correct: 0, explanation: "Higher temperature means faster particles with more kinetic energy." },
                 { q: "A catalyst works by:", options: ["Increasing temperature", "Providing alternative pathway", "Increasing concentration", "Shifting equilibrium"], correct: 1, explanation: "Catalysts provide an alternative pathway with lower activation energy." },
                 { q: "For an exothermic reaction, increasing temperature will:", options: ["Shift right", "Shift left", "No effect", "Stop reaction"], correct: 1, explanation: "By Le Chatelier's principle, heating favours the endothermic (reverse) direction." }
-            ],
-            periodic: [
-                { q: "Atomic radius decreases across a period because:", options: ["More shells", "Increasing nuclear charge", "Decreasing electrons", "Less shielding"], correct: 1, explanation: "Increasing protons attract electrons more strongly, pulling them closer." },
-                { q: "Which element has the highest first ionisation energy?", options: ["Li", "Na", "K", "He"], correct: 3, explanation: "Helium (noble gas) has highest IE - full shell, small radius." },
-                { q: "Transition metals can form coloured ions because:", options: ["Large atoms", "Partially filled d orbitals", "Low electronegativity", "High melting points"], correct: 1, explanation: "Partially filled d orbitals allow d-d electron transitions, absorbing certain wavelengths." }
-            ],
-            volumetric: [
-                { q: "A primary standard must be:", options: ["A liquid", "Cheap", "Pure and stable", "Coloured"], correct: 2, explanation: "Primary standards must be pure, stable, high molar mass, and react completely." },
-                { q: "Phenolphthalein is pink in:", options: ["Acid", "Base", "Neutral", "Salt solution"], correct: 1, explanation: "Phenolphthalein is colourless in acid and pink in base (above pH ~8.2)." },
-                { q: "The titre is calculated by:", options: ["Initial - final", "Final - initial", "Initial × final", "Final ÷ initial"], correct: 1, explanation: "Titre = final burette reading - initial burette reading." }
-            ],
-            mechanisms: [
-                { q: "Free radical substitution requires:", options: ["Acid catalyst", "UV light", "Heat only", "Water"], correct: 1, explanation: "UV light causes homolytic fission to generate free radicals." },
-                { q: "An electrophile is attracted to:", options: ["Positive charge", "Negative charge/electron density", "Neutral atoms", "Noble gases"], correct: 1, explanation: "Electrophiles are electron-deficient and seek electron-rich regions." },
-                { q: "In electrophilic addition to ethene, bromine acts as:", options: ["Nucleophile", "Electrophile", "Free radical", "Catalyst"], correct: 1, explanation: "Br₂ is polarised by the electron-rich double bond, acting as electrophile." }
-            ],
-            electrolysis: [
-                { q: "During electrolysis of molten NaCl, at the cathode:", options: ["Cl₂ forms", "Na forms", "O₂ forms", "H₂ forms"], correct: 1, explanation: "Na⁺ ions are reduced at cathode: Na⁺ + e⁻ → Na" },
-                { q: "How many moles of electrons in 96,500 C?", options: ["0.5", "1", "2", "10"], correct: 1, explanation: "Faraday's constant: 96,500 C = 1 mole of electrons" },
-                { q: "In aqueous solutions, which ion is preferentially discharged at cathode?", options: ["Na⁺", "H⁺", "Ca²⁺", "K⁺"], correct: 1, explanation: "H⁺ is more easily reduced than reactive metals like Na, K, Ca." }
-            ],
-            equilibrium: [
-                { q: "At equilibrium, which is true?", options: ["Reactions stop", "Forward rate = reverse rate", "Products only", "Reactants only"], correct: 1, explanation: "Dynamic equilibrium: both reactions continue at equal rates." },
-                { q: "Adding more reactant to equilibrium will:", options: ["Shift left", "Shift right", "No change", "Stop reaction"], correct: 1, explanation: "System shifts right to use up added reactant (Le Chatelier)." },
-                { q: "Which does NOT affect Kc?", options: ["Temperature", "Catalyst", "Nothing - all affect it", "Pressure"], correct: 1, explanation: "Catalysts don't affect equilibrium position, only rate of reaching it." }
-            ],
-            gases: [
-                { q: "At STP, 2 moles of gas occupy:", options: ["11.2 L", "22.4 L", "44.8 L", "67.2 L"], correct: 2, explanation: "At STP, 1 mol = 22.4 L, so 2 mol = 44.8 L" },
-                { q: "If pressure doubles (T constant), volume:", options: ["Doubles", "Halves", "Stays same", "Quadruples"], correct: 1, explanation: "Boyle's Law: P₁V₁ = P₂V₂, so if P doubles, V halves." },
-                { q: "Kelvin temperature is calculated as:", options: ["°C + 273", "°C - 273", "°C × 273", "°C ÷ 273"], correct: 0, explanation: "K = °C + 273 (more precisely +273.15)" }
-            ],
-            thermo: [
-                { q: "Bond breaking is:", options: ["Exothermic", "Endothermic", "Neither", "Both"], correct: 1, explanation: "Breaking bonds requires energy input (endothermic)." },
-                { q: "If ΔH is negative, the reaction is:", options: ["Endothermic", "Exothermic", "At equilibrium", "Not possible"], correct: 1, explanation: "Negative ΔH means heat is released (exothermic)." },
-                { q: "Hess's Law states that ΔH:", options: ["Changes with route", "Is independent of route", "Is always positive", "Equals zero"], correct: 1, explanation: "Total enthalpy change depends only on initial and final states." }
-            ],
-            fuels: [
-                { q: "Complete combustion of methane produces:", options: ["CO + H₂O", "CO₂ + H₂O", "C + H₂O", "CO₂ only"], correct: 1, explanation: "CH₄ + 2O₂ → CO₂ + 2H₂O" },
-                { q: "Which is NOT a greenhouse gas?", options: ["CO₂", "CH₄", "N₂", "N₂O"], correct: 2, explanation: "N₂ is not a greenhouse gas - it doesn't absorb infrared." },
-                { q: "Acid rain is primarily caused by:", options: ["CO₂", "SO₂ and NOₓ", "CH₄", "O₃"], correct: 1, explanation: "SO₂ and NOₓ form sulfuric and nitric acids in rain." }
-            ],
-            water: [
-                { q: "Temporary hardness is caused by:", options: ["CaSO₄", "Ca(HCO₃)₂", "NaCl", "MgCl₂"], correct: 1, explanation: "Calcium hydrogencarbonate causes temporary hardness." },
-                { q: "EDTA titration measures:", options: ["pH", "Dissolved oxygen", "Total hardness", "Chloride"], correct: 2, explanation: "EDTA complexes with Ca²⁺ and Mg²⁺ to measure total hardness." },
-                { q: "Chlorination of water:", options: ["Softens water", "Kills bacteria", "Removes hardness", "Increases pH"], correct: 1, explanation: "Chlorine/chloramine kills harmful bacteria and pathogens." }
-            ],
-            radioactivity: [
-                { q: "Alpha particles are:", options: ["Electrons", "Helium nuclei", "Protons", "Neutrons"], correct: 1, explanation: "Alpha particles are ⁴₂He (2 protons + 2 neutrons)." },
-                { q: "After 3 half-lives, what fraction remains?", options: ["1/2", "1/4", "1/8", "1/16"], correct: 2, explanation: "After n half-lives: (1/2)ⁿ = (1/2)³ = 1/8" },
-                { q: "Gamma radiation is stopped by:", options: ["Paper", "Aluminium", "Thick lead", "Nothing"], correct: 2, explanation: "Gamma needs dense materials like thick lead or concrete." }
-            ],
-            instrumentation: [
-                { q: "In chromatography, Rf = 0.6 means the substance moved:", options: ["60% of solvent distance", "6% of solvent distance", "0.6 cm", "60 cm"], correct: 0, explanation: "Rf = substance distance / solvent distance = 0.6 = 60%" },
-                { q: "Mass spectrometry determines:", options: ["Melting point", "Molecular mass", "Colour", "Density"], correct: 1, explanation: "Mass spec shows molecular ion peak (Mr) and fragmentation." },
-                { q: "IR spectroscopy identifies:", options: ["Colour", "Mass", "Functional groups", "Melting point"], correct: 2, explanation: "Different functional groups absorb IR at characteristic frequencies." }
-            ],
-            options: [
-                { q: "The Haber process makes:", options: ["Sulfuric acid", "Ammonia", "Nitric acid", "Ethanol"], correct: 1, explanation: "N₂ + 3H₂ ⇌ 2NH₃ (ammonia production)" },
-                { q: "Addition polymers are formed by:", options: ["Losing water", "Adding monomers together", "Hydrolysis", "Oxidation"], correct: 1, explanation: "Addition polymerisation joins monomers without losing atoms." },
-                { q: "CFCs damage the ozone layer by:", options: ["Absorbing UV", "Releasing Cl radicals", "Absorbing O₃", "Releasing O₂"], correct: 1, explanation: "Cl radicals from CFCs catalyse ozone destruction." }
-            ],
-            environmental: [
-                { q: "The greenhouse effect is caused by gases that:", options: ["Reflect visible light", "Absorb infrared radiation", "Block UV", "Produce ozone"], correct: 1, explanation: "Greenhouse gases absorb and re-emit infrared (heat) radiation." },
-                { q: "Atom economy measures:", options: ["Reaction rate", "% atoms in desired product", "Yield", "Purity"], correct: 1, explanation: "Atom economy = (Mr of desired product / Mr of all reactants) × 100" },
-                { q: "Which is a green chemistry principle?", options: ["Maximise waste", "Use toxic solvents", "Prevent waste", "Ignore safety"], correct: 2, explanation: "Green chemistry aims to prevent waste and minimise environmental impact." }
             ]
         };
 
@@ -1499,40 +1281,14 @@
         ];
 
         const experimentsData = [
-            // Titration Experiments (Volumetric Analysis)
-            { id: 1, title: "Acid-Base Titration", badge: "Titration", icon: "🧪", desc: "Standardise HCl with sodium carbonate or determine acid concentration" },
-            { id: 2, title: "Ethanoic Acid in Vinegar", badge: "Titration", icon: "🍶", desc: "Determine % ethanoic acid in vinegar using NaOH" },
-            { id: 3, title: "Water of Crystallisation", badge: "Titration", icon: "💎", desc: "Find water content in hydrated sodium carbonate" },
-            { id: 4, title: "Redox Titration (KMnO₄)", badge: "Titration", icon: "💜", desc: "Potassium permanganate with ammonium iron(II) sulfate" },
-            { id: 5, title: "Iron in Iron Tablets", badge: "Titration", icon: "💊", desc: "Determine iron content using redox titration" },
-            { id: 6, title: "Iodine-Thiosulfate", badge: "Titration", icon: "🟤", desc: "Iodometric titration with sodium thiosulfate" },
-            { id: 7, title: "Hypochlorite in Bleach", badge: "Titration", icon: "🧴", desc: "Determine available chlorine percentage" },
-            { id: 8, title: "Total Hardness of Water", badge: "Titration", icon: "💧", desc: "EDTA titration for Ca²⁺ and Mg²⁺ ions" },
-            { id: 9, title: "Dissolved Oxygen", badge: "Titration", icon: "🫧", desc: "Winkler method for DO measurement" },
-            // Organic Chemistry Experiments
-            { id: 10, title: "Recrystallisation", badge: "Organic", icon: "❄️", desc: "Purify benzoic acid and determine melting point" },
-            { id: 11, title: "Preparation of Ethyne", badge: "Organic", icon: "⚗️", desc: "Make acetylene from calcium carbide and test properties" },
-            { id: 12, title: "Preparation of Ethene", badge: "Organic", icon: "🧬", desc: "Dehydration of ethanol, test with bromine water" },
-            { id: 13, title: "Preparation of Soap", badge: "Organic", icon: "🧼", desc: "Saponification of fat/oil with NaOH" },
-            { id: 14, title: "Esterification", badge: "Organic", icon: "🍎", desc: "Make ethyl ethanoate from ethanol and ethanoic acid" },
-            { id: 15, title: "Extraction of Clove Oil", badge: "Organic", icon: "🌿", desc: "Steam distillation to extract eugenol" },
-            { id: 16, title: "Ethanal Properties", badge: "Organic", icon: "🔬", desc: "Reactions of acetaldehyde - Tollens, Fehling's" },
-            { id: 17, title: "Ethanoic Acid Properties", badge: "Organic", icon: "🧫", desc: "Characteristic reactions of carboxylic acids" },
-            { id: 18, title: "Paper Chromatography", badge: "Organic", icon: "📜", desc: "Separate and identify indicators" },
-            // General/Inorganic Experiments
-            { id: 19, title: "Flame Tests", badge: "Inorganic", icon: "🔥", desc: "Identify metal ions: Li-red, Na-yellow, K-lilac, Cu-green" },
-            { id: 20, title: "Tests for Anions", badge: "Analytical", icon: "🔬", desc: "Identify CO₃²⁻, SO₄²⁻, Cl⁻, and other anions" },
-            { id: 21, title: "Tests for Cations", badge: "Analytical", icon: "🧪", desc: "Identify metal cations using NaOH and NH₃" },
-            { id: 22, title: "Electrolysis", badge: "Electrochemistry", icon: "⚡", desc: "Electrolysis of water and copper sulfate solution" },
-            // Thermochemistry Experiments
-            { id: 23, title: "Heat of Reaction", badge: "Thermochemistry", icon: "🌡️", desc: "Measure enthalpy of neutralisation using calorimetry" },
-            { id: 24, title: "Heat of Combustion", badge: "Thermochemistry", icon: "🔥", desc: "Determine heat released by burning fuels" },
-            // Rate Experiments
-            { id: 25, title: "Rate of Reaction", badge: "Kinetics", icon: "⏱️", desc: "Effect of concentration on reaction rate (Na₂S₂O₃/HCl)" },
-            { id: 26, title: "Catalysis", badge: "Kinetics", icon: "🔄", desc: "Effect of catalyst on decomposition of H₂O₂" },
-            // Water Analysis
-            { id: 27, title: "Suspended Solids", badge: "Water", icon: "🔍", desc: "Measure total suspended solids in water sample" },
-            { id: 28, title: "Free Chlorine", badge: "Water", icon: "🏊", desc: "Determine free chlorine in swimming pool water" }
+            { id: 1, title: "Flame Tests", badge: "Inorganic", icon: "🔥", desc: "Identify metal ions by flame colour" },
+            { id: 2, title: "Titration (Acid-Base)", badge: "Quantitative", icon: "🧪", desc: "Determine concentration by neutralisation" },
+            { id: 3, title: "Rate of Reaction", badge: "Kinetics", icon: "⏱️", desc: "Measure effect of concentration on rate" },
+            { id: 4, title: "Preparation of Ethene", badge: "Organic", icon: "🧬", desc: "Dehydration of ethanol" },
+            { id: 5, title: "Esterification", badge: "Organic", icon: "🍎", desc: "Prepare an ester from alcohol and acid" },
+            { id: 6, title: "Electrolysis of Water", badge: "Electrochemistry", icon: "⚡", desc: "Decompose water into H₂ and O₂" },
+            { id: 7, title: "Heat of Reaction", badge: "Thermochemistry", icon: "🌡️", desc: "Measure enthalpy of neutralisation" },
+            { id: 8, title: "Tests for Anions", badge: "Analytical", icon: "🔬", desc: "Identify carbonate, sulfate, chloride" }
         ];
 
         // ==================== STATE ====================
@@ -2692,15 +2448,6 @@
             if (document.getElementById('flashcards').classList.contains('active')) { if (e.key === ' ' || e.key === 'Enter') { document.getElementById('flashcard').click(); e.preventDefault(); } if (e.key === 'ArrowLeft') document.getElementById('prevCard').click(); if (e.key === 'ArrowRight') document.getElementById('nextCard').click(); }
             if (e.key === 'Escape') document.getElementById('elementModal').classList.remove('active');
         });
-
-        // ==================== PWA SERVICE WORKER ====================
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js')
-                    .then(reg => console.log('ChemMaster LC: Service Worker registered', reg.scope))
-                    .catch(err => console.log('ChemMaster LC: SW registration failed', err));
-            });
-        }
     </script>
 </body>
 </html>

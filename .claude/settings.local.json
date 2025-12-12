@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git branch:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(python generate_apps.py:*)",
+      "Bash(python build_all_apps.py:*)",
+      "Bash(for dir in LC_MATHS LC_ENGLISH LC_IRISH LC_SPANISH)",
+      "Bash(do cp:*)",
+      "Bash(echo:*)",
+      "Bash(done)",
+      "Bash(python create_manifests_sw.py:*)",
+      "Bash(for dir in LC_ENGLISH LC_IRISH LC_SPANISH)",
+      "Bash(do cd \"c:\\Users\\4edes\\Documents\\4E_Docs\\4E_HTML\\LC_App$dir\")",
+      "Bash(gh repo create:*)",
+      "Bash(where:*)",
+      "Bash(cmd /c \"where gh\")",
+      "Bash(\"C:\\Program Files\\GitHub CLI\\gh.exe\" --version)",
+      "Bash(\"C:\\Program Files (x86)\\GitHub CLI\\gh.exe\" --version)",
+      "Bash(curl:*)",
+      "Bash(git config:*)",
+      "Bash(dir:*)",
+      "Bash(gh:*)"
+    ]
+  }
+}

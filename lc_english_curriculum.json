@@ -1,0 +1,1384 @@
+{
+  "curriculum": {
+    "name": "Irish Leaving Certificate English",
+    "levels": ["Higher Level", "Ordinary Level"],
+    "examStructure": {
+      "paper1": {
+        "name": "Comprehending and Composing",
+        "duration": "170 minutes",
+        "marks": 200,
+        "weight": "50%"
+      },
+      "paper2": {
+        "name": "Poetry, Drama, Fiction, and Comparative Study",
+        "duration": "170 minutes",
+        "marks": 200,
+        "weight": "50%"
+      }
+    }
+  },
+
+  "paper1": {
+    "name": "Comprehending and Composing",
+    "sections": {
+      "comprehending": {
+        "name": "Comprehending (Section 1)",
+        "marks": 100,
+        "components": [
+          {
+            "id": "comp_q1",
+            "name": "Question A - Text 1",
+            "marks": 50,
+            "description": "Questions on first comprehension text",
+            "questionTypes": [
+              "Literal comprehension",
+              "Inferential comprehension",
+              "Language analysis",
+              "Stylistic features",
+              "Tone and mood",
+              "Writer's purpose and audience",
+              "Textual structure",
+              "Personal response"
+            ]
+          },
+          {
+            "id": "comp_q2",
+            "name": "Question B - Text 2",
+            "marks": 50,
+            "description": "Questions on second comprehension text",
+            "questionTypes": [
+              "Comparative analysis",
+              "Contextual understanding",
+              "Language devices",
+              "Argument evaluation",
+              "Evidence analysis",
+              "Critical thinking"
+            ]
+          }
+        ],
+        "textTypes": [
+          "Newspaper articles",
+          "Magazine features",
+          "Essays",
+          "Speeches",
+          "Editorials",
+          "Opinion pieces",
+          "Reportage",
+          "Travel writing",
+          "Biography/Autobiography",
+          "Letters",
+          "Reviews"
+        ]
+      },
+      "composing": {
+        "name": "Composing (Section 2)",
+        "marks": 100,
+        "description": "One composition from choice of formats",
+        "formats": [
+          {
+            "id": "comp_essay",
+            "name": "Essay (Discursive/Persuasive/Descriptive/Narrative)",
+            "types": [
+              "Discursive Essay",
+              "Persuasive Essay",
+              "Descriptive Essay",
+              "Narrative/Personal Essay"
+            ],
+            "keyFeatures": [
+              "Clear thesis statement",
+              "Logical structure (intro, body, conclusion)",
+              "Paragraph development",
+              "Use of evidence and examples",
+              "Formal register",
+              "Coherent argumentation"
+            ]
+          },
+          {
+            "id": "comp_speech",
+            "name": "Speech",
+            "keyFeatures": [
+              "Direct audience address",
+              "Rhetorical devices (Rule of 3, anecdote, rhetorical questions)",
+              "Persuasive techniques",
+              "Strong opening and closing",
+              "Varied tone",
+              "Emotive language"
+            ]
+          },
+          {
+            "id": "comp_article",
+            "name": "Article (Magazine/Newspaper)",
+            "keyFeatures": [
+              "Catchy headline",
+              "Engaging introduction",
+              "Informative content",
+              "Appropriate register",
+              "Journalistic style",
+              "Clear structure"
+            ]
+          },
+          {
+            "id": "comp_personal",
+            "name": "Personal Essay/Memoir",
+            "keyFeatures": [
+              "First-person narrative",
+              "Reflective tone",
+              "Descriptive language",
+              "Personal anecdotes",
+              "Authentic voice",
+              "Emotional resonance"
+            ]
+          },
+          {
+            "id": "comp_short_story",
+            "name": "Short Story",
+            "keyFeatures": [
+              "Plot structure (exposition, rising action, climax, resolution)",
+              "Character development",
+              "Setting description",
+              "Dialogue",
+              "Literary devices",
+              "Show don't tell"
+            ]
+          },
+          {
+            "id": "comp_review",
+            "name": "Review",
+            "keyFeatures": [
+              "Clear subject identification",
+              "Balanced evaluation",
+              "Specific examples",
+              "Informed opinion",
+              "Recommendation",
+              "Engaging style"
+            ]
+          },
+          {
+            "id": "comp_letter",
+            "name": "Formal/Informal Letter",
+            "keyFeatures": [
+              "Appropriate format",
+              "Correct address placement",
+              "Suitable salutation and closing",
+              "Clear purpose",
+              "Appropriate tone",
+              "Organized content"
+            ]
+          }
+        ]
+      }
+    },
+    "markingCriteria": {
+      "clarity": {
+        "name": "Clarity of Purpose (P)",
+        "weight": "15%",
+        "description": "How well the purpose is communicated"
+      },
+      "coherence": {
+        "name": "Coherence of Delivery (C)",
+        "weight": "15%",
+        "description": "Organization and structure"
+      },
+      "efficiency": {
+        "name": "Efficiency of Language Use (E)",
+        "weight": "15%",
+        "description": "Vocabulary, syntax, and mechanics"
+      },
+      "mechanics": {
+        "name": "Mechanics (M)",
+        "weight": "5%",
+        "description": "Spelling, punctuation, grammar"
+      }
+    }
+  },
+
+  "paper2": {
+    "name": "Poetry, Drama, Fiction, and Comparative Study",
+    "sections": {
+      "singleText": {
+        "name": "The Single Text (Section 1)",
+        "description": "Study of one prescribed text",
+        "options": [
+          "Poetry (Prescribed Poets)",
+          "Drama (Shakespearean Drama)",
+          "Fiction (Novel/Short Stories)"
+        ],
+        "marks": 60,
+        "questionFormat": "One essay from choice of questions"
+      },
+      "comparativeStudy": {
+        "name": "Comparative Study (Section 2)",
+        "marks": 70,
+        "description": "Study of 3+ texts (different genres)",
+        "modes": [
+          {
+            "id": "theme_issue",
+            "name": "Theme or Issue",
+            "description": "Comparison of how texts explore themes or issues",
+            "essayPrompts": [
+              "How central character handles conflicts",
+              "Exploration of relationships",
+              "Treatment of social issues",
+              "Journey or quest motifs"
+            ]
+          },
+          {
+            "id": "cultural_context",
+            "name": "Cultural Context",
+            "description": "How texts reflect their cultural/historical settings",
+            "essayPrompts": [
+              "Social values and beliefs",
+              "Historical periods reflected",
+              "Cultural perspectives",
+              "Setting and atmosphere"
+            ]
+          },
+          {
+            "id": "literary_genre",
+            "name": "Literary Genre",
+            "description": "Features and conventions of genre",
+            "essayPrompts": [
+              "Genre characteristics",
+              "Narrative techniques",
+              "Stylistic features",
+              "Genre conventions"
+            ]
+          },
+          {
+            "id": "general_vision",
+            "name": "General Vision and Viewpoint",
+            "description": "Overall outlook and perspective in texts",
+            "essayPrompts": [
+              "Optimistic vs pessimistic worldview",
+              "Author's perspective on life",
+              "Tone and mood",
+              "Hope and despair"
+            ]
+          }
+        ],
+        "textRequirements": {
+          "minimum": 3,
+          "recommended": 4,
+          "genreMix": "Must include different genres (film, novel, play, poetry, short story)"
+        }
+      },
+      "poetry": {
+        "name": "Poetry (Section 1 - Option)",
+        "marks": 60,
+        "prescribedPoets": [
+          {
+            "name": "Eavan Boland",
+            "keyPoems": [
+              "Child of Our Time",
+              "The War Horse",
+              "The Famine Road",
+              "Mise Eire",
+              "In a Time of Violence",
+              "Anna Liffey",
+              "The Emigrant Irish",
+              "This Moment"
+            ],
+            "themes": [
+              "Irish history and identity",
+              "Women's experiences",
+              "Motherhood",
+              "Violence and conflict",
+              "Memory and the past",
+              "Female perspective on Irish history"
+            ]
+          },
+          {
+            "name": "Sylvia Plath",
+            "keyPoems": [
+              "Mirror",
+              "Morning Song",
+              "Poppies in July",
+              "The Arrival of the Bee Box",
+              "Child",
+              "Pheasant",
+              "Elm",
+              "Finisterre"
+            ],
+            "themes": [
+              "Identity and self",
+              "Nature imagery",
+              "Motherhood",
+              "Mental anguish",
+              "Transformation",
+              "Confessional poetry"
+            ]
+          },
+          {
+            "name": "Adrienne Rich",
+            "keyPoems": [
+              "Aunt Jennifer's Tigers",
+              "Living in Sin",
+              "Our Whole Life",
+              "From a Survivor",
+              "The Roofwalker",
+              "Diving into the Wreck"
+            ],
+            "themes": [
+              "Feminism and women's liberation",
+              "Marriage and relationships",
+              "Identity and self-discovery",
+              "Social constraints",
+              "Power and oppression",
+              "Personal transformation"
+            ]
+          },
+          {
+            "name": "John Montague",
+            "keyPoems": [
+              "Like Dolmens Round My Childhood",
+              "The Trout",
+              "A Drink of Milk",
+              "All Legendary Obstacles",
+              "The Cage",
+              "Herbert Street Revisited"
+            ],
+            "themes": [
+              "Irish rural life",
+              "Memory and nostalgia",
+              "Love and relationships",
+              "Loss and separation",
+              "Northern Ireland conflict",
+              "Personal and political history"
+            ]
+          },
+          {
+            "name": "Elizabeth Bishop",
+            "keyPoems": [
+              "The Fish",
+              "Filling Station",
+              "First Death in Nova Scotia",
+              "In the Waiting Room",
+              "Sestina",
+              "The Prodigal"
+            ],
+            "themes": [
+              "Observation and detail",
+              "Loss and grief",
+              "Identity",
+              "Travel and displacement",
+              "Family relationships",
+              "Nature and animals"
+            ]
+          },
+          {
+            "name": "Paula Meehan",
+            "keyPoems": [
+              "The Pattern",
+              "Child Burial",
+              "The Statue of the Virgin at Granard Speaks",
+              "Death of a Field",
+              "Would You Jump Into My Grave As Quick?",
+              "My Father Perceived as a Vision of St Francis"
+            ],
+            "themes": [
+              "Dublin working-class life",
+              "Women's experiences",
+              "Social issues",
+              "Family and childhood",
+              "Urban vs rural",
+              "Irish society and culture"
+            ]
+          }
+        ],
+        "poeticDevices": [
+          "Imagery",
+          "Metaphor",
+          "Simile",
+          "Personification",
+          "Alliteration",
+          "Assonance",
+          "Rhyme scheme",
+          "Rhythm and meter",
+          "Enjambment",
+          "Caesura",
+          "Symbolism",
+          "Tone",
+          "Mood",
+          "Speaker/Persona",
+          "Structure and form"
+        ]
+      },
+      "shakespeareanDrama": {
+        "name": "Shakespearean Drama (Section 1 - Option)",
+        "marks": 60,
+        "prescribedPlays": [
+          {
+            "title": "Hamlet",
+            "genre": "Tragedy",
+            "keyCharacters": [
+              "Hamlet",
+              "Claudius",
+              "Gertrude",
+              "Ophelia",
+              "Polonius",
+              "Laertes",
+              "Horatio",
+              "The Ghost"
+            ],
+            "themes": [
+              "Revenge",
+              "Madness (real and feigned)",
+              "Death and mortality",
+              "Corruption",
+              "Appearance vs reality",
+              "Action vs inaction",
+              "Betrayal"
+            ],
+            "keyScenes": [
+              "Act 1 Scene 5 - Ghost reveals murder",
+              "Act 2 Scene 2 - 'What a piece of work is man'",
+              "Act 3 Scene 1 - 'To be or not to be' soliloquy",
+              "Act 3 Scene 2 - The play within a play",
+              "Act 3 Scene 4 - Closet scene",
+              "Act 5 Scene 2 - Final duel and deaths"
+            ]
+          },
+          {
+            "title": "Othello",
+            "genre": "Tragedy",
+            "keyCharacters": [
+              "Othello",
+              "Iago",
+              "Desdemona",
+              "Cassio",
+              "Emilia",
+              "Roderigo",
+              "Brabantio"
+            ],
+            "themes": [
+              "Jealousy",
+              "Racism and prejudice",
+              "Appearance vs reality",
+              "Manipulation and deception",
+              "Love and trust",
+              "Honor and reputation",
+              "Revenge"
+            ],
+            "keyScenes": [
+              "Act 1 Scene 3 - Othello's defense before the Duke",
+              "Act 2 Scene 1 - Arrival in Cyprus",
+              "Act 3 Scene 3 - Iago plants seeds of jealousy",
+              "Act 4 Scene 1 - Othello's jealous rage",
+              "Act 5 Scene 2 - Murder of Desdemona and Othello's suicide"
+            ]
+          },
+          {
+            "title": "King Lear",
+            "genre": "Tragedy",
+            "keyCharacters": [
+              "King Lear",
+              "Cordelia",
+              "Goneril",
+              "Regan",
+              "Gloucester",
+              "Edmund",
+              "Edgar",
+              "The Fool",
+              "Kent"
+            ],
+            "themes": [
+              "Blindness (literal and metaphorical)",
+              "Madness",
+              "Betrayal and loyalty",
+              "Justice and injustice",
+              "Nature vs nurture",
+              "Power and authority",
+              "Family relationships"
+            ],
+            "keyScenes": [
+              "Act 1 Scene 1 - Love test and division of kingdom",
+              "Act 3 Scene 2 - Storm scene on the heath",
+              "Act 3 Scene 7 - Gloucester's blinding",
+              "Act 4 Scene 6 - Dover Cliff scene",
+              "Act 5 Scene 3 - Deaths of Cordelia and Lear"
+            ]
+          },
+          {
+            "title": "The Merchant of Venice",
+            "genre": "Comedy/Problem Play",
+            "keyCharacters": [
+              "Shylock",
+              "Antonio",
+              "Bassanio",
+              "Portia",
+              "Jessica",
+              "Lorenzo",
+              "Gratiano",
+              "Nerissa"
+            ],
+            "themes": [
+              "Prejudice and discrimination",
+              "Mercy vs justice",
+              "Love and friendship",
+              "Appearance vs reality",
+              "Money and materialism",
+              "Revenge",
+              "Religious conflict"
+            ],
+            "keyScenes": [
+              "Act 1 Scene 3 - The bond agreement",
+              "Act 2 Scene 7-9 - Casket scenes",
+              "Act 3 Scene 1 - 'Hath not a Jew eyes' speech",
+              "Act 4 Scene 1 - Trial scene",
+              "Act 5 Scene 1 - Resolution in Belmont"
+            ]
+          },
+          {
+            "title": "Macbeth",
+            "genre": "Tragedy",
+            "keyCharacters": [
+              "Macbeth",
+              "Lady Macbeth",
+              "Banquo",
+              "Macduff",
+              "Duncan",
+              "Malcolm",
+              "The Three Witches"
+            ],
+            "themes": [
+              "Ambition",
+              "Power and corruption",
+              "Guilt and conscience",
+              "Fate vs free will",
+              "Appearance vs reality",
+              "The supernatural",
+              "Masculinity"
+            ],
+            "keyScenes": [
+              "Act 1 Scene 3 - The witches' prophecies",
+              "Act 1 Scene 7 - Macbeth's hesitation",
+              "Act 2 Scene 2 - Murder of Duncan",
+              "Act 3 Scene 4 - Banquet and ghost",
+              "Act 5 Scene 1 - Lady Macbeth's sleepwalking",
+              "Act 5 Scene 8 - Macbeth's death"
+            ]
+          }
+        ],
+        "dramaticDevices": [
+          "Soliloquy",
+          "Aside",
+          "Dramatic irony",
+          "Tragic flaw (hamartia)",
+          "Imagery",
+          "Symbolism",
+          "Foreshadowing",
+          "Blank verse (iambic pentameter)",
+          "Prose vs verse",
+          "Comic relief",
+          "Stage directions"
+        ]
+      },
+      "fiction": {
+        "name": "Fiction (Section 1 - Option)",
+        "marks": 60,
+        "description": "Study of prescribed novel or short story collection",
+        "commonNovels": [
+          "The Great Gatsby - F. Scott Fitzgerald",
+          "To Kill a Mockingbird - Harper Lee",
+          "Wuthering Heights - Emily Bronte",
+          "Pride and Prejudice - Jane Austen",
+          "The Picture of Dorian Gray - Oscar Wilde",
+          "Foster - Claire Keegan",
+          "Room - Emma Donoghue",
+          "Brooklyn - Colm Toibin"
+        ],
+        "narrativeDevices": [
+          "Point of view (1st/3rd person)",
+          "Narrator reliability",
+          "Plot structure",
+          "Character development",
+          "Setting and atmosphere",
+          "Themes and motifs",
+          "Symbolism",
+          "Dialogue",
+          "Flashback/foreshadowing",
+          "Conflict types"
+        ]
+      }
+    }
+  },
+
+  "literaryTermsGlossary": [
+    {
+      "term": "Alliteration",
+      "definition": "Repetition of consonant sounds at the beginning of words",
+      "example": "Peter Piper picked a peck of pickled peppers"
+    },
+    {
+      "term": "Metaphor",
+      "definition": "Direct comparison between two unlike things without using 'like' or 'as'",
+      "example": "Time is a thief"
+    },
+    {
+      "term": "Simile",
+      "definition": "Comparison using 'like' or 'as'",
+      "example": "Her smile was like sunshine"
+    },
+    {
+      "term": "Personification",
+      "definition": "Giving human qualities to non-human things",
+      "example": "The wind whispered through the trees"
+    },
+    {
+      "term": "Imagery",
+      "definition": "Descriptive language that appeals to the senses",
+      "example": "Visual, auditory, tactile, olfactory, gustatory imagery"
+    },
+    {
+      "term": "Symbolism",
+      "definition": "Use of objects/colors/elements to represent abstract ideas",
+      "example": "A dove symbolizing peace"
+    },
+    {
+      "term": "Irony",
+      "definition": "Contrast between expectation and reality",
+      "types": ["Verbal irony", "Situational irony", "Dramatic irony"]
+    },
+    {
+      "term": "Hyperbole",
+      "definition": "Extreme exaggeration for effect",
+      "example": "I've told you a million times"
+    },
+    {
+      "term": "Oxymoron",
+      "definition": "Two contradictory terms together",
+      "example": "Deafening silence, bitter sweet"
+    },
+    {
+      "term": "Assonance",
+      "definition": "Repetition of vowel sounds",
+      "example": "The rain in Spain falls mainly on the plain"
+    },
+    {
+      "term": "Onomatopoeia",
+      "definition": "Words that imitate sounds",
+      "example": "Buzz, hiss, crash, bang"
+    },
+    {
+      "term": "Enjambment",
+      "definition": "Continuation of sentence beyond line break in poetry",
+      "example": "Line runs on to next line without pause"
+    },
+    {
+      "term": "Caesura",
+      "definition": "A pause in the middle of a line of poetry",
+      "example": "To be, or not to be"
+    },
+    {
+      "term": "Tone",
+      "definition": "Author's attitude toward subject",
+      "examples": ["Serious", "Humorous", "Sarcastic", "Melancholic", "Optimistic"]
+    },
+    {
+      "term": "Mood",
+      "definition": "Emotional atmosphere created for the reader",
+      "examples": ["Tense", "Peaceful", "Ominous", "Joyful", "Nostalgic"]
+    },
+    {
+      "term": "Theme",
+      "definition": "Central idea or message in a literary work",
+      "example": "Love, death, power, identity, justice"
+    },
+    {
+      "term": "Motif",
+      "definition": "Recurring element that has symbolic significance",
+      "example": "Blood in Macbeth, eyes in King Lear"
+    },
+    {
+      "term": "Foreshadowing",
+      "definition": "Hints about future events in the story",
+      "example": "Ominous warnings, prophetic dreams"
+    },
+    {
+      "term": "Flashback",
+      "definition": "Scene set in a time earlier than the main story",
+      "example": "Memory sequences, past events narrated"
+    },
+    {
+      "term": "Soliloquy",
+      "definition": "Character speaks thoughts aloud when alone on stage",
+      "example": "Hamlet's 'To be or not to be'"
+    },
+    {
+      "term": "Aside",
+      "definition": "Brief remark by character to audience, unheard by other characters",
+      "example": "Commentary on action or other characters"
+    },
+    {
+      "term": "Dramatic Irony",
+      "definition": "Audience knows something characters don't",
+      "example": "In Romeo and Juliet, we know Juliet isn't dead"
+    },
+    {
+      "term": "Protagonist",
+      "definition": "Main character in a story",
+      "example": "Hamlet, Elizabeth Bennet, Jay Gatsby"
+    },
+    {
+      "term": "Antagonist",
+      "definition": "Character or force opposing the protagonist",
+      "example": "Claudius in Hamlet, Iago in Othello"
+    },
+    {
+      "term": "Tragic Flaw (Hamartia)",
+      "definition": "Character flaw leading to downfall",
+      "example": "Macbeth's ambition, Othello's jealousy"
+    },
+    {
+      "term": "Catharsis",
+      "definition": "Emotional release audience feels at end of tragedy",
+      "example": "Pity and fear purged through tragic events"
+    },
+    {
+      "term": "Hubris",
+      "definition": "Excessive pride leading to downfall",
+      "example": "Macbeth's overconfidence"
+    },
+    {
+      "term": "Juxtaposition",
+      "definition": "Placing contrasting elements side by side",
+      "example": "Rich vs poor, light vs dark"
+    },
+    {
+      "term": "Anaphora",
+      "definition": "Repetition of word/phrase at beginning of successive clauses",
+      "example": "I have a dream... I have a dream..."
+    },
+    {
+      "term": "Rhetorical Question",
+      "definition": "Question asked for effect, not expecting answer",
+      "example": "Is this a dagger which I see before me?"
+    },
+    {
+      "term": "Allusion",
+      "definition": "Reference to another work, event, or person",
+      "example": "Biblical, mythological, historical references"
+    },
+    {
+      "term": "Connotation",
+      "definition": "Implied or associated meaning of a word",
+      "example": "'Home' connotes warmth, safety, belonging"
+    },
+    {
+      "term": "Denotation",
+      "definition": "Literal dictionary meaning of a word",
+      "example": "'Home' denotes a dwelling place"
+    },
+    {
+      "term": "Euphemism",
+      "definition": "Mild expression substituted for harsh one",
+      "example": "'Passed away' for 'died'"
+    },
+    {
+      "term": "Pathetic Fallacy",
+      "definition": "Nature reflects human emotions",
+      "example": "Storm during emotional turmoil"
+    },
+    {
+      "term": "Diction",
+      "definition": "Choice of words and phrases in writing",
+      "example": "Formal, informal, colloquial, archaic"
+    },
+    {
+      "term": "Syntax",
+      "definition": "Arrangement of words and phrases to create sentences",
+      "example": "Simple, complex, compound sentences"
+    },
+    {
+      "term": "Register",
+      "definition": "Level of formality in language",
+      "example": "Formal, informal, colloquial, technical"
+    },
+    {
+      "term": "Allegory",
+      "definition": "Story with hidden meaning, often moral or political",
+      "example": "Animal Farm as allegory for Russian Revolution"
+    }
+  ],
+
+  "essayStructures": {
+    "poetry": {
+      "introduction": {
+        "components": [
+          "Poet's name and title of poem(s)",
+          "Brief context about poet",
+          "Statement addressing question",
+          "Outline of points to be discussed"
+        ],
+        "example": "Eavan Boland is a contemporary Irish poet whose work explores themes of Irish history, womanhood, and identity. In poems such as 'The Famine Road' and 'The War Horse,' Boland powerfully depicts..."
+      },
+      "bodyParagraphs": {
+        "structure": [
+          "Topic sentence linking to question",
+          "Reference to specific poem",
+          "Quote with line reference",
+          "Analysis of language/imagery/techniques",
+          "Link to theme/question",
+          "Personal response",
+          "Transition to next point"
+        ],
+        "pqe": "Point, Quote, Explain - essential structure"
+      },
+      "conclusion": {
+        "components": [
+          "Restate main argument",
+          "Summarize key points",
+          "Personal evaluation of poet's work",
+          "Final thought on significance"
+        ]
+      }
+    },
+    "shakespeare": {
+      "introduction": {
+        "components": [
+          "Play title and playwright",
+          "Genre (tragedy/comedy)",
+          "Brief plot overview",
+          "Statement addressing question",
+          "Outline of key points"
+        ]
+      },
+      "bodyParagraphs": {
+        "structure": [
+          "Topic sentence",
+          "Reference to act and scene",
+          "Quote with context",
+          "Analysis of dramatic techniques",
+          "Character analysis",
+          "Theme exploration",
+          "Personal response"
+        ],
+        "keyElements": [
+          "Always include Act and Scene references",
+          "Analyze language (imagery, metaphor)",
+          "Discuss dramatic impact",
+          "Consider historical context",
+          "Link to overall themes"
+        ]
+      },
+      "conclusion": {
+        "components": [
+          "Restate thesis",
+          "Summarize character/theme analysis",
+          "Comment on dramatic effectiveness",
+          "Personal evaluation"
+        ]
+      }
+    },
+    "comparative": {
+      "introduction": {
+        "components": [
+          "Name all texts and authors",
+          "Identify mode of comparison",
+          "Statement addressing question",
+          "Brief overview of how texts will be compared"
+        ],
+        "example": "The theme of isolation is explored in three diverse texts: 'The Great Gatsby' by F. Scott Fitzgerald, 'The Shawshank Redemption' directed by Frank Darabont, and 'Wuthering Heights' by Emily Bronte..."
+      },
+      "bodyParagraphs": {
+        "structure": [
+          "Integrated comparison (discuss all texts together)",
+          "Point of comparison",
+          "Evidence from Text 1",
+          "Evidence from Text 2",
+          "Evidence from Text 3",
+          "Analysis and comparison",
+          "Link back to mode and question"
+        ],
+        "avoidSeparation": "Don't discuss each text separately - integrate throughout"
+      },
+      "conclusion": {
+        "components": [
+          "Restate comparison",
+          "Summarize key similarities and differences",
+          "Personal preference with justification",
+          "Final reflection on mode"
+        ]
+      }
+    },
+    "composing": {
+      "essay": {
+        "introduction": {
+          "components": [
+            "Hook (engaging opening)",
+            "Context/background",
+            "Thesis statement (clear position)",
+            "Outline of main points"
+          ]
+        },
+        "bodyParagraphs": {
+          "structure": [
+            "Topic sentence",
+            "Supporting evidence/examples",
+            "Analysis and explanation",
+            "Link to thesis",
+            "Transition to next paragraph"
+          ]
+        },
+        "conclusion": {
+          "components": [
+            "Restate thesis (in new words)",
+            "Summarize main arguments",
+            "Final thought/call to action",
+            "Memorable closing"
+          ]
+        }
+      },
+      "speech": {
+        "structure": [
+          "Powerful opening (anecdote, quote, rhetorical question)",
+          "Direct address to audience",
+          "Clear statement of purpose",
+          "3-4 main points with examples",
+          "Use of rhetorical devices throughout",
+          "Strong, memorable conclusion"
+        ],
+        "techniques": [
+          "Rule of three",
+          "Anecdotes",
+          "Statistics",
+          "Rhetorical questions",
+          "Emotive language",
+          "Direct address",
+          "Inclusive pronouns (we, us, our)"
+        ]
+      },
+      "article": {
+        "structure": [
+          "Catchy headline",
+          "Byline",
+          "Engaging lead paragraph (who, what, where, when, why)",
+          "Body paragraphs with subheadings",
+          "Quotes (if appropriate)",
+          "Conclusion/closing thought"
+        ]
+      }
+    }
+  },
+
+  "markingSchemeCriteria": {
+    "paper1Comprehending": {
+      "P": {
+        "name": "Clarity of Purpose",
+        "description": "Understanding and interpretation of text",
+        "levels": {
+          "exceptional": "Sophisticated understanding, perceptive insights",
+          "competent": "Sound understanding, clear interpretation",
+          "limited": "Basic understanding, superficial interpretation"
+        }
+      },
+      "C": {
+        "name": "Coherence of Delivery",
+        "description": "Organization and structure of answers",
+        "levels": {
+          "exceptional": "Excellently structured, logical flow",
+          "competent": "Well-organized, coherent",
+          "limited": "Some organization, may lack coherence"
+        }
+      },
+      "E": {
+        "name": "Efficiency of Language",
+        "description": "Quality of expression and vocabulary",
+        "levels": {
+          "exceptional": "Fluent, sophisticated vocabulary, varied syntax",
+          "competent": "Clear expression, appropriate vocabulary",
+          "limited": "Basic expression, limited vocabulary"
+        }
+      },
+      "M": {
+        "name": "Mechanics",
+        "description": "Spelling, grammar, punctuation",
+        "levels": {
+          "exceptional": "Virtually error-free",
+          "competent": "Generally accurate, minor errors",
+          "limited": "Frequent errors affecting clarity"
+        }
+      }
+    },
+    "paper1Composing": {
+      "grades": {
+        "A": "90-100 marks - Exceptional quality, sophisticated style",
+        "B": "75-89 marks - High quality, clear competence",
+        "C": "55-74 marks - Competent, generally effective",
+        "D": "40-54 marks - Some competence, limited effectiveness",
+        "E": "25-39 marks - Limited competence, weak execution",
+        "F": "10-24 marks - Very limited competence",
+        "NG": "0-9 marks - Not graded, insufficient work"
+      }
+    },
+    "paper2": {
+      "assessmentCriteria": [
+        "Knowledge and understanding of text",
+        "Analysis of literary techniques",
+        "Personal response and engagement",
+        "Quality of written expression",
+        "Relevance to question",
+        "Use of textual evidence",
+        "Coherent argument/discussion"
+      ]
+    }
+  },
+
+  "sampleQuestions": {
+    "paper1Comprehending": [
+      {
+        "type": "Language Analysis",
+        "question": "Identify and comment on the effectiveness of two language techniques used by the writer in paragraph 3.",
+        "markingNotes": "Look for: imagery, metaphor, tone, diction, syntax, rhetorical questions, etc. Must analyze effectiveness, not just identify."
+      },
+      {
+        "type": "Writer's Purpose",
+        "question": "What do you think is the writer's main purpose in this text? Support your answer with reference to the text.",
+        "markingNotes": "Identify purpose: inform, persuade, entertain, etc. Use evidence from text."
+      },
+      {
+        "type": "Personal Response",
+        "question": "Do you agree with the writer's viewpoint? Give reasons for your answer.",
+        "markingNotes": "State clear position, provide reasoned argument, may use personal experience."
+      },
+      {
+        "type": "Tone and Mood",
+        "question": "Describe the tone of this passage and show how it is created through the writer's use of language.",
+        "markingNotes": "Identify tone (e.g., serious, humorous, critical), quote specific language features that create it."
+      },
+      {
+        "type": "Comprehension",
+        "question": "According to the text, what are the main arguments presented by the writer? Answer in your own words as far as possible.",
+        "markingNotes": "Paraphrase main points, show understanding, avoid direct quotes unless necessary."
+      }
+    ],
+    "paper1Composing": [
+      {
+        "format": "Speech",
+        "prompt": "Write a speech for your class urging them to take action on an environmental issue of your choice.",
+        "keyRequirements": ["Direct audience address", "Persuasive techniques", "Clear environmental issue", "Call to action"]
+      },
+      {
+        "format": "Personal Essay",
+        "prompt": "Write a personal essay about a moment that changed your perspective on life.",
+        "keyRequirements": ["First-person narrative", "Reflective tone", "Specific moment/event", "Personal insight"]
+      },
+      {
+        "format": "Article",
+        "prompt": "Write an article for a teen magazine discussing the impact of social media on young people.",
+        "keyRequirements": ["Headline", "Engaging style", "Balanced discussion", "Relevant to teen audience"]
+      },
+      {
+        "format": "Discursive Essay",
+        "prompt": "Education is about more than exam results. Discuss.",
+        "keyRequirements": ["Clear thesis", "Balanced argument", "Evidence/examples", "Logical structure"]
+      }
+    ],
+    "paper2Poetry": [
+      {
+        "type": "Theme-based",
+        "question": "Discuss how Eavan Boland explores the theme of Irish identity in her poetry. Support your answer with reference to the poems on your course.",
+        "approach": "Select 3-4 relevant poems, analyze specific techniques, link to theme throughout"
+      },
+      {
+        "type": "Personal Response",
+        "question": "Which poems by Sylvia Plath made the strongest impression on you? Explain your answer with reference to the poems.",
+        "approach": "Choose 2-3 poems, explain personal reaction, analyze what made them effective"
+      },
+      {
+        "type": "Technique-focused",
+        "question": "Adrienne Rich uses vivid imagery in her poetry. Discuss this statement with reference to the poems you have studied.",
+        "approach": "Focus on imagery in multiple poems, quote and analyze specific images, discuss effectiveness"
+      }
+    ],
+    "paper2Shakespeare": [
+      {
+        "type": "Character",
+        "question": "Iago is one of Shakespeare's most villainous characters. Discuss this view of the character with reference to the play Othello.",
+        "approach": "Analyze Iago's actions, motivations, language; use specific scenes; consider dramatic impact"
+      },
+      {
+        "type": "Theme",
+        "question": "Discuss how the theme of ambition is explored in Macbeth.",
+        "approach": "Trace theme through play, focus on Macbeth and Lady Macbeth, analyze key scenes, discuss consequences"
+      },
+      {
+        "type": "Dramatic Impact",
+        "question": "Choose two scenes from Hamlet that you found particularly powerful. Explain what made them effective drama.",
+        "approach": "Select 2 scenes, analyze dramatic techniques, language, staging, character development"
+      }
+    ],
+    "paper2Comparative": [
+      {
+        "mode": "Theme or Issue",
+        "question": "Compare the way relationships are presented in the texts on your comparative course.",
+        "approach": "Integrate all texts, compare different types of relationships, analyze presentation techniques"
+      },
+      {
+        "mode": "General Vision and Viewpoint",
+        "question": "Is the general vision and viewpoint in your comparative texts optimistic or pessimistic? Support your answer.",
+        "approach": "Discuss tone/mood of each text, compare outlooks, use specific evidence, give personal evaluation"
+      },
+      {
+        "mode": "Cultural Context",
+        "question": "Discuss how the cultural context of each text shaped its content and meaning.",
+        "approach": "Identify cultural/historical settings, show how context influences themes, compare different contexts"
+      },
+      {
+        "mode": "Literary Genre",
+        "question": "Compare the use of narrative techniques in your comparative texts.",
+        "approach": "Identify genre of each text, discuss genre conventions, compare narrative methods"
+      }
+    ]
+  },
+
+  "studyTips": {
+    "paper1": [
+      "Read quality newspapers and articles regularly",
+      "Practice timed comprehension questions",
+      "Build vocabulary through wide reading",
+      "Study sample answers for different question types",
+      "Practice different composing formats",
+      "Learn essay/speech/article structures",
+      "Time management: 85 minutes per section",
+      "Read questions carefully - answer what's asked"
+    ],
+    "paper2": [
+      "Know texts thoroughly - read multiple times",
+      "Learn key quotes with references (Act/Scene for Shakespeare)",
+      "Practice essay plans for different questions",
+      "Understand themes and how they're developed",
+      "For comparative: integrate texts, don't separate",
+      "Use PQE structure: Point, Quote, Explain",
+      "Write personal response - show engagement",
+      "Time management: allocate time per question"
+    ],
+    "general": [
+      "Start revision early",
+      "Make notes and summaries",
+      "Practice past papers under timed conditions",
+      "Study marking schemes",
+      "Join study groups",
+      "Use flashcards for quotes and literary terms",
+      "Read examiner reports",
+      "Plan essays before writing"
+    ]
+  },
+
+  "examTechnique": {
+    "timeManagement": {
+      "paper1": {
+        "total": "170 minutes (2 hours 50 minutes)",
+        "comprehending": "85 minutes recommended",
+        "composing": "85 minutes recommended",
+        "planning": "Use 10-15 minutes for composing plan"
+      },
+      "paper2": {
+        "total": "170 minutes (2 hours 50 minutes)",
+        "perQuestion": "Approximately 55 minutes per section",
+        "planning": "Use 5-10 minutes per essay for planning"
+      }
+    },
+    "generalAdvice": [
+      "Read all questions carefully before starting",
+      "Answer the question asked, not the one you hoped for",
+      "Use paragraphs consistently",
+      "Quote accurately with references",
+      "Write clearly and legibly",
+      "Leave time to proofread",
+      "Show personal engagement with texts",
+      "Use literary terminology correctly",
+      "Support all points with evidence",
+      "Stay focused on the question throughout"
+    ]
+  },
+
+  "flashcardTopics": [
+    {
+      "category": "Literary Terms",
+      "subcategories": [
+        "Poetic Devices",
+        "Dramatic Devices",
+        "Narrative Techniques",
+        "Rhetorical Devices",
+        "Figurative Language"
+      ]
+    },
+    {
+      "category": "Poetry Quotes",
+      "subcategories": [
+        "Eavan Boland",
+        "Sylvia Plath",
+        "Adrienne Rich",
+        "John Montague",
+        "Elizabeth Bishop",
+        "Paula Meehan"
+      ]
+    },
+    {
+      "category": "Shakespeare Quotes",
+      "subcategories": [
+        "Hamlet",
+        "Othello",
+        "King Lear",
+        "Macbeth",
+        "The Merchant of Venice"
+      ]
+    },
+    {
+      "category": "Themes",
+      "subcategories": [
+        "Poetry Themes",
+        "Shakespeare Themes",
+        "Comparative Modes"
+      ]
+    },
+    {
+      "category": "Essay Structures",
+      "subcategories": [
+        "Poetry Essay Structure",
+        "Shakespeare Essay Structure",
+        "Comparative Essay Structure",
+        "Composing Formats"
+      ]
+    }
+  ],
+
+  "quizQuestionBank": [
+    {
+      "category": "Literary Terms",
+      "questions": [
+        {
+          "question": "What is a metaphor?",
+          "options": [
+            "A direct comparison without using 'like' or 'as'",
+            "A comparison using 'like' or 'as'",
+            "Repetition of consonant sounds",
+            "Exaggeration for effect"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "question": "What is dramatic irony?",
+          "options": [
+            "When a character is being ironic",
+            "When the audience knows something the characters don't",
+            "When the ending is unexpected",
+            "When dialogue is sarcastic"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "question": "What is enjambment?",
+          "options": [
+            "A pause in the middle of a line",
+            "Repetition at the start of lines",
+            "When a line continues to the next without pause",
+            "The rhyme scheme of a poem"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "category": "Poetry - Eavan Boland",
+      "questions": [
+        {
+          "question": "Which poem by Eavan Boland deals with the Great Famine?",
+          "options": [
+            "The War Horse",
+            "The Famine Road",
+            "Anna Liffey",
+            "This Moment"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "question": "What is a major theme in Boland's work?",
+          "options": [
+            "Nature and animals",
+            "Irish history and women's experiences",
+            "War and violence",
+            "Religious faith"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "category": "Shakespeare - Hamlet",
+      "questions": [
+        {
+          "question": "What is Hamlet's tragic flaw?",
+          "options": [
+            "His jealousy",
+            "His ambition",
+            "His indecision/inaction",
+            "His pride"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "question": "Who kills Hamlet?",
+          "options": [
+            "Claudius",
+            "Laertes",
+            "Fortinbras",
+            "Gertrude"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "category": "Comparative Study",
+      "questions": [
+        {
+          "question": "How many texts minimum are required for comparative study?",
+          "options": [
+            "2 texts",
+            "3 texts",
+            "4 texts",
+            "5 texts"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "question": "Which is NOT a mode of comparison?",
+          "options": [
+            "Theme or Issue",
+            "Cultural Context",
+            "Character Development",
+            "General Vision and Viewpoint"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "category": "Paper 1 - Composing",
+      "questions": [
+        {
+          "question": "What is essential for a speech format?",
+          "options": [
+            "Formal letter format",
+            "Direct audience address",
+            "Third-person narration",
+            "Headline"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "question": "What does the 'P' in marking criteria stand for?",
+          "options": [
+            "Punctuation",
+            "Purpose",
+            "Paragraphs",
+            "Poetry"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    }
+  ]
+}

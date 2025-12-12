@@ -1,0 +1,1142 @@
+{
+  "curriculum": {
+    "subject": "Physical Education",
+    "level": ["Higher", "Ordinary"],
+    "assessmentStructure": {
+      "written": {
+        "weight": "50%",
+        "duration": "2 hours",
+        "sections": [
+          {
+            "section": "A",
+            "type": "Short Questions",
+            "marks": 80,
+            "topics": "All areas"
+          },
+          {
+            "section": "B",
+            "type": "Extended Response",
+            "marks": 120,
+            "questions": "4 from 6"
+          }
+        ]
+      },
+      "practical": {
+        "weight": "50%",
+        "components": [
+          {
+            "component": "Performance",
+            "weight": "40%",
+            "description": "Four activities from different categories"
+          },
+          {
+            "component": "Analysis",
+            "weight": "10%",
+            "description": "Written analysis of performance"
+          }
+        ]
+      }
+    },
+    "theoreticalComponents": [
+      {
+        "id": 1,
+        "title": "Anatomy and Physiology",
+        "subtopics": [
+          {
+            "id": "1.1",
+            "name": "Skeletal System",
+            "keyPoints": [
+              "Functions of the skeleton (protection, support, movement, mineral storage, blood cell production)",
+              "Types of bones (long, short, flat, irregular, sesamoid)",
+              "Major bones of the body",
+              "Bone structure (compact and spongy bone, periosteum, marrow)",
+              "Axial vs appendicular skeleton",
+              "Types of joints (fibrous, cartilaginous, synovial)",
+              "Synovial joint types (hinge, ball and socket, pivot, gliding, saddle, condyloid)",
+              "Joint movement terminology (flexion, extension, abduction, adduction, rotation, circumduction)"
+            ],
+            "definitions": {
+              "articulation": "A joint where two or more bones meet",
+              "synovialJoint": "A freely movable joint containing synovial fluid",
+              "ligament": "Connective tissue connecting bone to bone",
+              "cartilage": "Smooth tissue covering bone ends at joints",
+              "flexion": "Decreasing the angle at a joint",
+              "extension": "Increasing the angle at a joint",
+              "abduction": "Movement away from midline",
+              "adduction": "Movement toward midline"
+            },
+            "exampleQuestions": [
+              "Name and describe three functions of the skeletal system",
+              "Identify the type of synovial joint at the shoulder and knee",
+              "Explain the movements possible at a ball and socket joint",
+              "Describe the structure of a synovial joint"
+            ]
+          },
+          {
+            "id": "1.2",
+            "name": "Muscular System",
+            "keyPoints": [
+              "Types of muscle tissue (skeletal, cardiac, smooth)",
+              "Functions of the muscular system",
+              "Major muscle groups and locations",
+              "Muscle structure (fascicles, muscle fibers, myofibrils)",
+              "Muscle fiber types (Type I slow twitch, Type IIa fast oxidative, Type IIb fast glycolytic)",
+              "Muscle contraction (sliding filament theory)",
+              "Types of muscle contraction (isotonic, isometric, isokinetic)",
+              "Isotonic contractions (concentric vs eccentric)",
+              "Agonist, antagonist, fixator muscles",
+              "Origin and insertion points"
+            ],
+            "definitions": {
+              "agonist": "The prime mover muscle causing movement",
+              "antagonist": "Muscle that opposes the agonist",
+              "fixator": "Muscle that stabilizes a joint",
+              "concentric": "Muscle shortens during contraction",
+              "eccentric": "Muscle lengthens during contraction",
+              "isometric": "Muscle contracts without changing length",
+              "origin": "Fixed attachment point of muscle",
+              "insertion": "Movable attachment point of muscle",
+              "myofibril": "Contractile unit within muscle fiber",
+              "slowTwitch": "Type I fibers for endurance activities",
+              "fastTwitch": "Type II fibers for power and speed"
+            },
+            "exampleQuestions": [
+              "Compare and contrast Type I and Type II muscle fibers",
+              "Describe the sliding filament theory of muscle contraction",
+              "Identify the agonist and antagonist during a bicep curl",
+              "Explain the difference between concentric and eccentric contractions"
+            ]
+          },
+          {
+            "id": "1.3",
+            "name": "Cardiovascular System",
+            "keyPoints": [
+              "Structure of the heart (chambers, valves, vessels)",
+              "Cardiac cycle (systole and diastole)",
+              "Blood flow through the heart",
+              "Pulmonary vs systemic circulation",
+              "Structure of blood vessels (arteries, veins, capillaries)",
+              "Blood composition (plasma, red blood cells, white blood cells, platelets)",
+              "Heart rate, stroke volume, cardiac output",
+              "Blood pressure (systolic and diastolic)",
+              "Cardiovascular responses to exercise (acute and chronic)",
+              "Cardiovascular adaptations to training"
+            ],
+            "definitions": {
+              "heartRate": "Number of heart beats per minute (bpm)",
+              "strokeVolume": "Volume of blood pumped per beat (ml)",
+              "cardiacOutput": "Volume of blood pumped per minute (HR x SV)",
+              "systole": "Contraction phase of cardiac cycle",
+              "diastole": "Relaxation phase of cardiac cycle",
+              "systolicPressure": "Pressure during ventricular contraction",
+              "diastolicPressure": "Pressure during ventricular relaxation",
+              "venousReturn": "Blood returning to the heart via veins",
+              "arteriovenousOxygenDifference": "Difference in O2 content between arterial and venous blood"
+            },
+            "exampleQuestions": [
+              "Describe the pathway of blood through the heart",
+              "Calculate cardiac output given HR and SV",
+              "Explain cardiovascular adaptations to aerobic training",
+              "Describe acute cardiovascular responses to exercise"
+            ]
+          },
+          {
+            "id": "1.4",
+            "name": "Respiratory System",
+            "keyPoints": [
+              "Structure of respiratory system (nose, pharynx, larynx, trachea, bronchi, lungs, alveoli)",
+              "Mechanism of breathing (inspiration and expiration)",
+              "Muscles of respiration (diaphragm, intercostals)",
+              "Gaseous exchange at alveoli and muscles",
+              "Lung volumes and capacities (tidal volume, vital capacity, residual volume)",
+              "Respiratory rate and minute ventilation",
+              "Oxygen uptake (VO2) and VO2 max",
+              "Respiratory responses to exercise (acute and chronic)",
+              "Control of breathing (medulla, chemoreceptors)"
+            ],
+            "definitions": {
+              "tidalVolume": "Volume of air breathed in/out per breath",
+              "vitalCapacity": "Maximum volume of air that can be exhaled after max inhalation",
+              "residualVolume": "Air remaining in lungs after maximal exhalation",
+              "minuteVentilation": "Volume of air breathed per minute (TV x RR)",
+              "inspiratoryReserveVolume": "Additional air that can be inhaled after normal breath",
+              "expiratoryReserveVolume": "Additional air that can be exhaled after normal breath",
+              "VO2max": "Maximum oxygen uptake during maximal exercise",
+              "diffusion": "Movement of gases from high to low concentration",
+              "alveoli": "Air sacs where gas exchange occurs"
+            },
+            "exampleQuestions": [
+              "Describe the process of gaseous exchange at the alveoli",
+              "Explain how breathing is controlled during exercise",
+              "Define VO2 max and its significance in performance",
+              "Outline respiratory adaptations to endurance training"
+            ]
+          },
+          {
+            "id": "1.5",
+            "name": "Energy Systems",
+            "keyPoints": [
+              "ATP (adenosine triphosphate) as energy currency",
+              "Three energy systems (ATP-PC, Lactic Acid, Aerobic)",
+              "ATP-PC system (phosphocreatine, alactic, anaerobic)",
+              "Lactic acid system (anaerobic glycolysis)",
+              "Aerobic system (Krebs cycle, electron transport chain)",
+              "Duration, intensity, and recovery for each system",
+              "Energy system continuum",
+              "Fatigue and recovery",
+              "OBLA (Onset of Blood Lactate Accumulation)",
+              "Oxygen debt/EPOC (Excess Post-exercise Oxygen Consumption)"
+            ],
+            "definitions": {
+              "ATP": "Adenosine triphosphate - primary energy source for cells",
+              "phosphocreatine": "High energy compound that regenerates ATP",
+              "aerobic": "With oxygen",
+              "anaerobic": "Without oxygen",
+              "glycolysis": "Breakdown of glucose to pyruvate/lactate",
+              "OBLA": "Point where lactate accumulates faster than removal",
+              "EPOC": "Elevated oxygen consumption after exercise",
+              "lactate": "Byproduct of anaerobic glycolysis",
+              "mitochondria": "Powerhouse of cell where aerobic energy produced"
+            },
+            "exampleQuestions": [
+              "Compare the three energy systems in terms of duration and intensity",
+              "Explain why the ATP-PC system is used in 100m sprint",
+              "Describe the process of aerobic energy production",
+              "Explain the concept of EPOC (oxygen debt)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Exercise Physiology and Training",
+        "subtopics": [
+          {
+            "id": "2.1",
+            "name": "Principles of Training",
+            "keyPoints": [
+              "Specificity",
+              "Progressive Overload",
+              "Reversibility",
+              "Tedium/Variety",
+              "Individual Differences/Response",
+              "FITT principle (Frequency, Intensity, Time, Type)",
+              "Periodization",
+              "Tapering and peaking"
+            ],
+            "definitions": {
+              "specificity": "Training must be relevant to the sport/activity",
+              "progressiveOverload": "Gradually increasing training demands",
+              "reversibility": "Fitness gains are lost when training stops",
+              "periodization": "Planned training phases to peak for competition",
+              "macrocycle": "Overall training period (e.g., yearly plan)",
+              "mesocycle": "Medium-term phase (e.g., 4-12 weeks)",
+              "microcycle": "Short-term phase (e.g., weekly plan)",
+              "tapering": "Reducing training volume before competition"
+            },
+            "exampleQuestions": [
+              "Explain the principle of progressive overload",
+              "Describe how specificity applies to a soccer player's training",
+              "Outline a periodized training plan for a swimmer",
+              "Explain the importance of variety in training programs"
+            ]
+          },
+          {
+            "id": "2.2",
+            "name": "Components of Fitness",
+            "keyPoints": [
+              "Health-related fitness components",
+              "Skill-related fitness components",
+              "Cardiovascular endurance",
+              "Muscular strength",
+              "Muscular endurance",
+              "Flexibility",
+              "Body composition",
+              "Speed",
+              "Power",
+              "Agility",
+              "Balance",
+              "Coordination",
+              "Reaction time"
+            ],
+            "definitions": {
+              "cardiovascularEndurance": "Ability of heart and lungs to supply oxygen during sustained activity",
+              "muscularStrength": "Maximum force a muscle can generate in single effort",
+              "muscularEndurance": "Ability to sustain repeated contractions",
+              "flexibility": "Range of motion at a joint",
+              "bodyComposition": "Ratio of fat mass to lean mass",
+              "speed": "Rate of movement",
+              "power": "Strength x speed (explosive strength)",
+              "agility": "Ability to change direction quickly",
+              "balance": "Maintaining center of gravity",
+              "coordination": "Using different body parts together smoothly",
+              "reactionTime": "Time to respond to stimulus"
+            },
+            "exampleQuestions": [
+              "Distinguish between health-related and skill-related fitness",
+              "Identify the main fitness components needed for basketball",
+              "Define muscular strength and muscular endurance",
+              "Explain the importance of flexibility in preventing injury"
+            ]
+          },
+          {
+            "id": "2.3",
+            "name": "Training Methods",
+            "keyPoints": [
+              "Aerobic training methods (continuous, fartlek, interval)",
+              "Anaerobic training methods (HIIT, sprint training)",
+              "Resistance/weight training",
+              "Circuit training",
+              "Plyometric training",
+              "Flexibility training (static, dynamic, PNF, ballistic)",
+              "Training zones (heart rate zones)",
+              "Heart rate monitoring (maximum HR, target HR)",
+              "RPE (Rating of Perceived Exertion)",
+              "Warm-up and cool-down protocols"
+            ],
+            "definitions": {
+              "continuousTraining": "Sustained aerobic activity at constant intensity",
+              "fartlek": "Speed play - varied intensity running",
+              "intervalTraining": "Periods of work alternating with rest",
+              "HIIT": "High Intensity Interval Training",
+              "plyometrics": "Explosive jump training using stretch-shortening cycle",
+              "circuitTraining": "Series of exercises at different stations",
+              "staticStretching": "Holding stretch in stationary position",
+              "dynamicStretching": "Moving through range of motion",
+              "PNF": "Proprioceptive Neuromuscular Facilitation stretching",
+              "maximumHeartRate": "220 minus age (approximate)",
+              "RPE": "Subjective scale of exercise intensity (e.g., Borg scale)"
+            },
+            "exampleQuestions": [
+              "Design an interval training session for a 400m runner",
+              "Compare continuous training with fartlek training",
+              "Explain the benefits of plyometric training for power athletes",
+              "Describe different flexibility training methods"
+            ]
+          },
+          {
+            "id": "2.4",
+            "name": "Fitness Testing",
+            "keyPoints": [
+              "Purpose of fitness testing",
+              "Validity and reliability of tests",
+              "Cardiovascular endurance tests (Cooper 12-min, multistage fitness test/beep test, step test)",
+              "Muscular strength tests (1RM, grip dynamometer)",
+              "Muscular endurance tests (sit-up test, press-up test)",
+              "Flexibility tests (sit and reach)",
+              "Speed tests (sprint tests)",
+              "Power tests (vertical jump, standing long jump)",
+              "Agility tests (Illinois agility test, T-test)",
+              "Body composition (BMI, skinfold calipers)"
+            ],
+            "definitions": {
+              "validity": "Test measures what it claims to measure",
+              "reliability": "Test produces consistent results",
+              "1RM": "One repetition maximum - heaviest weight lifted once",
+              "BMI": "Body Mass Index - weight(kg) / height(m)^2",
+              "beepTest": "Multistage fitness test with progressive speeds",
+              "sitAndReach": "Flexibility test for hamstrings and lower back",
+              "verticalJump": "Power test measuring jump height",
+              "cooperTest": "12-minute run for cardiovascular endurance"
+            },
+            "exampleQuestions": [
+              "Explain the importance of validity and reliability in fitness testing",
+              "Describe how to conduct the multistage fitness test",
+              "Outline appropriate fitness tests for a rugby player",
+              "Discuss advantages and disadvantages of BMI as a measure"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Skill Acquisition and Sports Psychology",
+        "subtopics": [
+          {
+            "id": "3.1",
+            "name": "Classification of Skills",
+            "keyPoints": [
+              "Open vs closed skills",
+              "Discrete, serial, continuous skills",
+              "Gross vs fine skills",
+              "Simple vs complex skills",
+              "Self-paced vs externally-paced skills",
+              "High organization vs low organization skills"
+            ],
+            "definitions": {
+              "openSkill": "Performed in unpredictable environment (e.g., passing in soccer)",
+              "closedSkill": "Performed in predictable environment (e.g., free throw)",
+              "discreteSkill": "Clear beginning and end (e.g., penalty kick)",
+              "serialSkill": "Series of discrete skills linked together (e.g., gymnastics routine)",
+              "continuousSkill": "No clear beginning or end (e.g., swimming)",
+              "grossSkill": "Large muscle movements (e.g., running)",
+              "fineSkill": "Small, precise movements (e.g., dart throwing)",
+              "simpleSkill": "Few decisions, easy to perform",
+              "complexSkill": "Many decisions, difficult to perform"
+            },
+            "exampleQuestions": [
+              "Classify a tennis serve using different skill classifications",
+              "Explain the difference between open and closed skills with examples",
+              "Discuss why a gymnastics floor routine is a serial skill"
+            ]
+          },
+          {
+            "id": "3.2",
+            "name": "Information Processing",
+            "keyPoints": [
+              "Input - Decision Making - Output model",
+              "Stimulus identification",
+              "Response selection",
+              "Response programming",
+              "Feedback (intrinsic and extrinsic)",
+              "Knowledge of results (KR) and knowledge of performance (KP)",
+              "Reaction time, movement time, response time",
+              "Simple vs choice reaction time",
+              "Factors affecting reaction time",
+              "Anticipation (spatial and temporal)"
+            ],
+            "definitions": {
+              "stimulusIdentification": "Detecting and recognizing relevant information",
+              "responseSelection": "Choosing appropriate action from alternatives",
+              "responseProgramming": "Organizing motor system to execute movement",
+              "intrinsicFeedback": "Internal feedback from proprioceptors",
+              "extrinsicFeedback": "External feedback from coach or video",
+              "knowledgeOfResults": "Feedback about outcome of movement",
+              "knowledgeOfPerformance": "Feedback about execution of movement",
+              "reactionTime": "Time from stimulus to start of movement",
+              "movementTime": "Time to complete movement",
+              "responseTime": "Reaction time + movement time"
+            },
+            "exampleQuestions": [
+              "Describe the information processing model",
+              "Explain the difference between KR and KP with examples",
+              "Discuss factors that affect reaction time in sprint starts",
+              "Outline how anticipation can improve performance"
+            ]
+          },
+          {
+            "id": "3.3",
+            "name": "Learning Theories and Stages",
+            "keyPoints": [
+              "Cognitive stage (Fitts and Posner)",
+              "Associative stage",
+              "Autonomous stage",
+              "Characteristics of each learning stage",
+              "Observational learning (Bandura)",
+              "Modeling and demonstration",
+              "Operant conditioning (Skinner)",
+              "Positive and negative reinforcement",
+              "Punishment",
+              "Whole vs part practice",
+              "Massed vs distributed practice",
+              "Fixed vs varied practice"
+            ],
+            "definitions": {
+              "cognitiveStage": "Beginner stage, many errors, intellectual understanding",
+              "associativeStage": "Practice stage, fewer errors, motor programs developing",
+              "autonomousStage": "Advanced stage, automatic, consistent performance",
+              "modeling": "Learning by watching demonstration",
+              "reinforcement": "Strengthening desired behavior",
+              "positiveReinforcement": "Adding pleasant stimulus to encourage behavior",
+              "negativeReinforcement": "Removing unpleasant stimulus to encourage behavior",
+              "punishment": "Decreasing unwanted behavior",
+              "wholePractice": "Practicing skill in its entirety",
+              "partPractice": "Breaking skill into components",
+              "massedPractice": "Continuous practice with little rest",
+              "distributedPractice": "Practice with rest intervals"
+            },
+            "exampleQuestions": [
+              "Describe the three stages of learning according to Fitts and Posner",
+              "Explain how positive reinforcement can improve skill learning",
+              "Discuss when part practice is more effective than whole practice",
+              "Outline the characteristics of a performer in the autonomous stage"
+            ]
+          },
+          {
+            "id": "3.4",
+            "name": "Guidance and Teaching Styles",
+            "keyPoints": [
+              "Visual guidance (demonstration, video)",
+              "Verbal guidance (instructions, cues)",
+              "Manual/mechanical guidance (physical support)",
+              "Advantages and disadvantages of each",
+              "Command style teaching",
+              "Reciprocal style teaching",
+              "Discovery/problem-solving style",
+              "Appropriate teaching styles for different learners"
+            ],
+            "definitions": {
+              "visualGuidance": "Learning through watching demonstrations",
+              "verbalGuidance": "Learning through instructions and explanations",
+              "manualGuidance": "Physical assistance to guide movement",
+              "mechanicalGuidance": "Equipment used to support learning",
+              "commandStyle": "Teacher-centered, direct instruction",
+              "reciprocalStyle": "Peer learning with feedback",
+              "discoveryStyle": "Learner explores and problem-solves"
+            },
+            "exampleQuestions": [
+              "Discuss advantages and disadvantages of manual guidance",
+              "Explain when verbal guidance is most effective",
+              "Compare command and discovery teaching styles",
+              "Describe appropriate guidance for teaching swimming to beginners"
+            ]
+          },
+          {
+            "id": "3.5",
+            "name": "Motivation and Goal Setting",
+            "keyPoints": [
+              "Intrinsic vs extrinsic motivation",
+              "Achievement motivation",
+              "SMART goals (Specific, Measurable, Achievable, Relevant, Time-bound)",
+              "Outcome, performance, and process goals",
+              "Short-term vs long-term goals",
+              "Self-efficacy and confidence",
+              "Attribution theory"
+            ],
+            "definitions": {
+              "intrinsicMotivation": "Internal drive, enjoyment, personal satisfaction",
+              "extrinsicMotivation": "External rewards, trophies, praise",
+              "achievementMotivation": "Desire to succeed and master skills",
+              "outcomeGoal": "Focused on end result (e.g., winning)",
+              "performanceGoal": "Focused on personal improvement",
+              "processGoal": "Focused on technique and execution",
+              "selfEfficacy": "Belief in one's ability to succeed",
+              "attribution": "Explanation for success or failure"
+            },
+            "exampleQuestions": [
+              "Explain the difference between intrinsic and extrinsic motivation",
+              "Describe how SMART goals can improve performance",
+              "Discuss the importance of process goals for athletes",
+              "Outline how self-efficacy affects performance"
+            ]
+          },
+          {
+            "id": "3.6",
+            "name": "Arousal, Anxiety and Stress",
+            "keyPoints": [
+              "Arousal vs anxiety",
+              "Inverted-U hypothesis",
+              "Drive theory",
+              "Catastrophe theory",
+              "Optimal arousal zones",
+              "Somatic and cognitive anxiety",
+              "Stress management techniques",
+              "Relaxation methods (progressive muscle relaxation, breathing)",
+              "Mental rehearsal and imagery",
+              "Positive self-talk"
+            ],
+            "definitions": {
+              "arousal": "State of alertness and readiness",
+              "anxiety": "Negative emotional state with worry",
+              "invertedU": "Theory that moderate arousal optimizes performance",
+              "driveTheory": "Increased arousal improves performance (dominant response)",
+              "somaticAnxiety": "Physical symptoms (sweating, increased HR)",
+              "cognitiveAnxiety": "Mental worry and negative thoughts",
+              "mentalRehearsal": "Visualizing successful performance",
+              "imagery": "Creating mental pictures of movements",
+              "selfTalk": "Internal dialogue to influence performance"
+            },
+            "exampleQuestions": [
+              "Explain the inverted-U hypothesis with examples",
+              "Describe strategies to control anxiety before competition",
+              "Discuss the difference between arousal and anxiety",
+              "Outline how imagery can improve performance"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Sociology of Sport and Physical Activity",
+        "subtopics": [
+          {
+            "id": "4.1",
+            "name": "Sport and Society",
+            "keyPoints": [
+              "Functions of sport in society",
+              "Sport and social integration",
+              "Sport and national identity",
+              "Sport as entertainment and business",
+              "Media influence on sport",
+              "Commercialization of sport",
+              "Sponsorship and advertising",
+              "Sport and politics"
+            ],
+            "definitions": {
+              "socialization": "Learning values and norms through sport",
+              "socialIntegration": "Sport bringing diverse groups together",
+              "commercialization": "Sport driven by profit and business",
+              "sponsorship": "Financial support in exchange for promotion",
+              "mediaRights": "Broadcasting rights sold to media companies"
+            },
+            "exampleQuestions": [
+              "Discuss the role of sport in promoting national identity",
+              "Explain how media has influenced modern sport",
+              "Analyze the commercialization of the Olympic Games",
+              "Outline positive and negative effects of sponsorship in sport"
+            ]
+          },
+          {
+            "id": "4.2",
+            "name": "Participation and Access",
+            "keyPoints": [
+              "Barriers to participation (financial, geographical, cultural)",
+              "Gender equality in sport",
+              "Disability sport and inclusion",
+              "Socioeconomic factors",
+              "Age and participation",
+              "Ethnic and cultural influences",
+              "Promoting participation initiatives",
+              "Sport for all policies"
+            ],
+            "definitions": {
+              "barrier": "Obstacle preventing participation",
+              "inclusion": "Ensuring all can participate regardless of ability",
+              "genderEquality": "Equal opportunities and treatment for all genders",
+              "socioeconomicStatus": "Social and economic position affecting access",
+              "discrimination": "Unfair treatment based on characteristics"
+            },
+            "exampleQuestions": [
+              "Identify barriers to sport participation for people with disabilities",
+              "Discuss how gender affects participation in sport",
+              "Explain initiatives to increase youth participation in physical activity",
+              "Analyze socioeconomic barriers to sport participation"
+            ]
+          },
+          {
+            "id": "4.3",
+            "name": "Ethics and Fair Play",
+            "keyPoints": [
+              "Sportsmanship and fair play",
+              "Gamesmanship",
+              "Deviance in sport",
+              "Performance-enhancing drugs (PEDs)",
+              "WADA (World Anti-Doping Agency)",
+              "Violence in sport",
+              "Cheating and bending rules",
+              "Ethics of technology in sport",
+              "Role models and behavior"
+            ],
+            "definitions": {
+              "sportsmanship": "Fair, ethical, respectful behavior in sport",
+              "fairPlay": "Following rules and spirit of the game",
+              "gamesmanship": "Bending rules to gain advantage",
+              "deviance": "Behavior that violates norms and rules",
+              "doping": "Using banned substances to enhance performance",
+              "WADA": "Organization monitoring anti-doping worldwide",
+              "ethics": "Moral principles guiding behavior"
+            },
+            "exampleQuestions": [
+              "Distinguish between sportsmanship and gamesmanship",
+              "Discuss reasons why athletes use performance-enhancing drugs",
+              "Explain the role of WADA in preventing doping",
+              "Analyze the responsibilities of athletes as role models"
+            ]
+          },
+          {
+            "id": "4.4",
+            "name": "Health and Well-being",
+            "keyPoints": [
+              "Physical health benefits of activity",
+              "Mental health benefits of activity",
+              "Social benefits of activity",
+              "Physical activity guidelines",
+              "Sedentary lifestyle risks",
+              "Obesity and physical inactivity",
+              "Healthy lifestyle choices",
+              "Nutrition and hydration",
+              "Rest and recovery",
+              "Injury prevention"
+            ],
+            "definitions": {
+              "physicalHealth": "Well-being of body and physiological systems",
+              "mentalHealth": "Psychological and emotional well-being",
+              "socialWellbeing": "Quality of relationships and social interactions",
+              "sedentary": "Inactive lifestyle with little physical activity",
+              "obesity": "Excessive body fat affecting health",
+              "nutrition": "Food intake to support health and performance",
+              "hydration": "Maintaining adequate fluid levels"
+            },
+            "exampleQuestions": [
+              "Outline physical and mental health benefits of regular activity",
+              "Discuss consequences of sedentary lifestyle",
+              "Explain the importance of nutrition for athletic performance",
+              "Describe strategies for injury prevention in sport"
+            ]
+          }
+        ]
+      }
+    ],
+    "practicalComponents": {
+      "description": "Students must perform in FOUR different activities from different categories",
+      "assessmentCriteria": {
+        "technique": "Quality of skill execution",
+        "application": "Use of skills in competitive/performance context",
+        "understanding": "Tactical awareness and decision making",
+        "fitness": "Physical preparation and conditioning"
+      },
+      "activityCategories": [
+        {
+          "category": "Individual Activities",
+          "activities": [
+            "Athletics",
+            "Swimming",
+            "Gymnastics",
+            "Dance"
+          ]
+        },
+        {
+          "category": "Team Games",
+          "activities": [
+            "Gaelic Football",
+            "Hurling",
+            "Camogie",
+            "Soccer",
+            "Basketball",
+            "Volleyball",
+            "Hockey",
+            "Rugby"
+          ]
+        },
+        {
+          "category": "Racket Sports",
+          "activities": [
+            "Badminton",
+            "Tennis",
+            "Table Tennis",
+            "Squash"
+          ]
+        },
+        {
+          "category": "Outdoor Pursuits",
+          "activities": [
+            "Orienteering",
+            "Rock Climbing",
+            "Kayaking",
+            "Surfing"
+          ]
+        },
+        {
+          "category": "Fitness Activities",
+          "activities": [
+            "Circuit Training",
+            "Weight Training",
+            "Aerobics",
+            "Yoga/Pilates"
+          ]
+        }
+      ],
+      "performanceAnalysis": {
+        "description": "Written analysis of own performance in one activity",
+        "components": [
+          "Identify strengths and weaknesses",
+          "Analyze technique and performance",
+          "Create improvement plan",
+          "Apply theoretical knowledge to practical performance"
+        ]
+      }
+    },
+    "flashcardTopics": [
+      {
+        "topic": "Skeletal System",
+        "cards": [
+          {
+            "front": "What are the 5 functions of the skeletal system?",
+            "back": "1. Protection (of organs)\n2. Support (for body structure)\n3. Movement (with muscles)\n4. Mineral storage (calcium, phosphorus)\n5. Blood cell production (in bone marrow)"
+          },
+          {
+            "front": "What type of joint is the shoulder?",
+            "back": "Ball and socket joint - allows movement in all directions (flexion, extension, abduction, adduction, rotation, circumduction)"
+          },
+          {
+            "front": "Define flexion",
+            "back": "Decreasing the angle at a joint (e.g., bending the elbow)"
+          },
+          {
+            "front": "What is a ligament?",
+            "back": "Connective tissue that connects bone to bone and provides joint stability"
+          },
+          {
+            "front": "Name 3 types of bones",
+            "back": "1. Long bones (femur, humerus)\n2. Short bones (carpals, tarsals)\n3. Flat bones (scapula, ribs)"
+          }
+        ]
+      },
+      {
+        "topic": "Muscular System",
+        "cards": [
+          {
+            "front": "Compare Type I and Type II muscle fibers",
+            "back": "Type I (Slow Twitch): Aerobic, fatigue resistant, endurance activities\nType II (Fast Twitch): Anaerobic, fatigue quickly, power and speed activities"
+          },
+          {
+            "front": "What is the difference between concentric and eccentric contractions?",
+            "back": "Concentric: Muscle shortens during contraction (lifting phase)\nEccentric: Muscle lengthens during contraction (lowering phase)"
+          },
+          {
+            "front": "Define agonist and antagonist",
+            "back": "Agonist: Prime mover muscle causing the movement\nAntagonist: Muscle that opposes the agonist (relaxes)"
+          },
+          {
+            "front": "What is an isometric contraction?",
+            "back": "Muscle contracts but does not change length - no visible movement (e.g., holding a plank position)"
+          }
+        ]
+      },
+      {
+        "topic": "Cardiovascular System",
+        "cards": [
+          {
+            "front": "Define cardiac output",
+            "back": "Volume of blood pumped by the heart per minute\nCardiac Output = Heart Rate x Stroke Volume"
+          },
+          {
+            "front": "What is stroke volume?",
+            "back": "The volume of blood pumped out of the left ventricle per beat (measured in ml)"
+          },
+          {
+            "front": "Describe the pathway of blood through the heart",
+            "back": "Vena Cava → Right Atrium → Right Ventricle → Pulmonary Artery → Lungs → Pulmonary Vein → Left Atrium → Left Ventricle → Aorta → Body"
+          },
+          {
+            "front": "What is the difference between systole and diastole?",
+            "back": "Systole: Contraction phase of the cardiac cycle\nDiastole: Relaxation phase of the cardiac cycle"
+          }
+        ]
+      },
+      {
+        "topic": "Respiratory System",
+        "cards": [
+          {
+            "front": "Define VO2 max",
+            "back": "The maximum volume of oxygen that can be taken in and used by the body during maximal exercise (measured in ml/kg/min)"
+          },
+          {
+            "front": "What is tidal volume?",
+            "back": "The volume of air breathed in or out per breath during normal breathing (approximately 500ml at rest)"
+          },
+          {
+            "front": "Describe gaseous exchange at the alveoli",
+            "back": "Oxygen diffuses from high concentration in alveoli to low concentration in blood capillaries. CO2 diffuses from high concentration in blood to low concentration in alveoli"
+          },
+          {
+            "front": "What is minute ventilation?",
+            "back": "Volume of air breathed per minute\nMinute Ventilation = Tidal Volume x Respiratory Rate"
+          }
+        ]
+      },
+      {
+        "topic": "Energy Systems",
+        "cards": [
+          {
+            "front": "Name the 3 energy systems",
+            "back": "1. ATP-PC (Phosphocreatine) System\n2. Lactic Acid System (Anaerobic Glycolysis)\n3. Aerobic System"
+          },
+          {
+            "front": "Describe the ATP-PC system",
+            "back": "Duration: 0-10 seconds\nAnaerobic, no lactic acid\nUsed for: explosive, high-intensity activities (100m sprint, shot put)\nFuel: Phosphocreatine"
+          },
+          {
+            "front": "What is OBLA?",
+            "back": "Onset of Blood Lactate Accumulation - the point during exercise where lactate accumulates faster than it can be removed from the blood"
+          },
+          {
+            "front": "Define EPOC",
+            "back": "Excess Post-exercise Oxygen Consumption - elevated oxygen consumption after exercise to restore body to resting state (also called oxygen debt)"
+          }
+        ]
+      },
+      {
+        "topic": "Training Principles",
+        "cards": [
+          {
+            "front": "What is the principle of specificity?",
+            "back": "Training must be specific to the sport, movement patterns, energy systems, and muscle groups used in that activity"
+          },
+          {
+            "front": "Define progressive overload",
+            "back": "Gradually increasing the training load (intensity, duration, frequency) to improve fitness over time"
+          },
+          {
+            "front": "What is reversibility?",
+            "back": "Fitness gains are lost when training stops or decreases (use it or lose it principle)"
+          },
+          {
+            "front": "Explain the FITT principle",
+            "back": "Frequency: How often you train\nIntensity: How hard you train\nTime: Duration of training\nType: Kind of training/activity"
+          }
+        ]
+      },
+      {
+        "topic": "Skill Acquisition",
+        "cards": [
+          {
+            "front": "What is an open skill?",
+            "back": "A skill performed in an unpredictable, changing environment where performer must adapt (e.g., passing in soccer)"
+          },
+          {
+            "front": "What is a closed skill?",
+            "back": "A skill performed in a stable, predictable environment (e.g., free throw in basketball, penalty kick)"
+          },
+          {
+            "front": "Name Fitts and Posner's 3 stages of learning",
+            "back": "1. Cognitive Stage (beginner)\n2. Associative Stage (practice)\n3. Autonomous Stage (advanced/automatic)"
+          },
+          {
+            "front": "What is knowledge of results (KR)?",
+            "back": "External feedback about the outcome of a movement (e.g., whether a shot went in or not)"
+          },
+          {
+            "front": "What is knowledge of performance (KP)?",
+            "back": "External feedback about the quality and execution of the movement technique"
+          }
+        ]
+      },
+      {
+        "topic": "Sports Psychology",
+        "cards": [
+          {
+            "front": "Explain the inverted-U hypothesis",
+            "back": "Performance improves with increased arousal up to an optimal point, then decreases with further arousal increases. Moderate arousal = best performance"
+          },
+          {
+            "front": "What is intrinsic motivation?",
+            "back": "Internal drive to participate for enjoyment, satisfaction, and personal achievement (no external rewards needed)"
+          },
+          {
+            "front": "What is extrinsic motivation?",
+            "back": "Drive to participate for external rewards such as trophies, money, praise, or recognition"
+          },
+          {
+            "front": "What are SMART goals?",
+            "back": "Specific\nMeasurable\nAchievable\nRelevant\nTime-bound"
+          }
+        ]
+      }
+    ],
+    "quizQuestions": [
+      {
+        "category": "Anatomy",
+        "questions": [
+          {
+            "question": "Which type of joint is the knee?",
+            "options": ["Ball and socket", "Hinge", "Pivot", "Gliding"],
+            "answer": "Hinge",
+            "explanation": "The knee is a hinge joint allowing flexion and extension"
+          },
+          {
+            "question": "What connects muscle to bone?",
+            "options": ["Ligament", "Tendon", "Cartilage", "Fascia"],
+            "answer": "Tendon",
+            "explanation": "Tendons attach muscle to bone, while ligaments connect bone to bone"
+          },
+          {
+            "question": "Which chamber of the heart pumps oxygenated blood to the body?",
+            "options": ["Right atrium", "Right ventricle", "Left atrium", "Left ventricle"],
+            "answer": "Left ventricle",
+            "explanation": "The left ventricle pumps oxygenated blood through the aorta to the body"
+          },
+          {
+            "question": "What is the primary muscle used in breathing?",
+            "options": ["Intercostals", "Diaphragm", "Abdominals", "Pectorals"],
+            "answer": "Diaphragm",
+            "explanation": "The diaphragm is the main respiratory muscle that contracts during inspiration"
+          }
+        ]
+      },
+      {
+        "category": "Training",
+        "questions": [
+          {
+            "question": "Which energy system is primarily used in a 100m sprint?",
+            "options": ["Aerobic", "Lactic acid", "ATP-PC", "All equally"],
+            "answer": "ATP-PC",
+            "explanation": "The ATP-PC system provides immediate energy for explosive activities lasting 0-10 seconds"
+          },
+          {
+            "question": "What does cardiovascular endurance refer to?",
+            "options": ["Maximum force production", "Ability to sustain aerobic activity", "Speed of movement", "Range of motion"],
+            "answer": "Ability to sustain aerobic activity",
+            "explanation": "Cardiovascular endurance is the ability of the heart and lungs to supply oxygen during sustained physical activity"
+          },
+          {
+            "question": "Which is NOT a principle of training?",
+            "options": ["Specificity", "Progressive overload", "Reversibility", "Isolation"],
+            "answer": "Isolation",
+            "explanation": "The main principles of training are specificity, progressive overload, reversibility, tedium, and individual differences"
+          }
+        ]
+      },
+      {
+        "category": "Psychology",
+        "questions": [
+          {
+            "question": "An athlete in the autonomous stage of learning would display:",
+            "options": ["Many errors and inconsistent performance", "Automatic, consistent performance", "Need for constant feedback", "Poor decision making"],
+            "answer": "Automatic, consistent performance",
+            "explanation": "The autonomous stage is characterized by automatic, smooth, and consistent performance with minimal errors"
+          },
+          {
+            "question": "What is positive reinforcement?",
+            "options": ["Removing punishment", "Adding pleasant stimulus", "Negative feedback", "Ignoring behavior"],
+            "answer": "Adding pleasant stimulus",
+            "explanation": "Positive reinforcement involves adding a pleasant stimulus (praise, reward) to encourage desired behavior"
+          }
+        ]
+      },
+      {
+        "category": "Sociology",
+        "questions": [
+          {
+            "question": "What is gamesmanship?",
+            "options": ["Fair play", "Bending rules for advantage", "Following all rules strictly", "Good sportsmanship"],
+            "answer": "Bending rules for advantage",
+            "explanation": "Gamesmanship involves bending rules and using dubious tactics to gain an advantage without technically breaking rules"
+          },
+          {
+            "question": "Which organization monitors anti-doping in sport?",
+            "options": ["FIFA", "IOC", "WADA", "UNESCO"],
+            "answer": "WADA",
+            "explanation": "WADA (World Anti-Doping Agency) is responsible for monitoring and enforcing anti-doping regulations worldwide"
+          }
+        ]
+      }
+    ],
+    "anatomyDiagrams": [
+      {
+        "system": "Skeletal",
+        "diagrams": [
+          "Full skeleton (anterior and posterior views)",
+          "Skull bones",
+          "Vertebral column",
+          "Rib cage",
+          "Upper limb bones (clavicle, scapula, humerus, radius, ulna, carpals, metacarpals, phalanges)",
+          "Lower limb bones (pelvis, femur, patella, tibia, fibula, tarsals, metatarsals, phalanges)",
+          "Synovial joint structure",
+          "Types of synovial joints",
+          "Joint movements"
+        ]
+      },
+      {
+        "system": "Muscular",
+        "diagrams": [
+          "Major muscles (anterior view): pectorals, deltoids, biceps, abdominals, quadriceps, tibialis anterior",
+          "Major muscles (posterior view): trapezius, latissimus dorsi, triceps, gluteals, hamstrings, gastrocnemius",
+          "Muscle fiber structure",
+          "Sliding filament theory",
+          "Agonist-antagonist pairs"
+        ]
+      },
+      {
+        "system": "Cardiovascular",
+        "diagrams": [
+          "Heart structure (chambers, valves, major vessels)",
+          "Blood flow through heart",
+          "Systemic vs pulmonary circulation",
+          "Blood vessel structure (artery, vein, capillary)",
+          "Cardiac cycle"
+        ]
+      },
+      {
+        "system": "Respiratory",
+        "diagrams": [
+          "Respiratory system structure",
+          "Alveoli and gas exchange",
+          "Breathing mechanism (inspiration/expiration)",
+          "Lung volumes and capacities"
+        ]
+      }
+    ],
+    "trainingPlanTemplates": [
+      {
+        "type": "Aerobic Endurance",
+        "duration": "12 weeks",
+        "phases": [
+          {
+            "phase": "Base Building",
+            "weeks": "1-4",
+            "focus": "Continuous training at moderate intensity",
+            "example": "30-40 min runs at 60-70% max HR, 3-4 times per week"
+          },
+          {
+            "phase": "Development",
+            "weeks": "5-8",
+            "focus": "Interval training and increased intensity",
+            "example": "Fartlek sessions, tempo runs, 40-50 min duration"
+          },
+          {
+            "phase": "Peak",
+            "weeks": "9-11",
+            "focus": "High intensity intervals, race pace work",
+            "example": "HIIT sessions, 30-40 min at 75-85% max HR"
+          },
+          {
+            "phase": "Taper",
+            "weeks": "12",
+            "focus": "Reduced volume, maintain intensity",
+            "example": "Light sessions, rest and recovery"
+          }
+        ]
+      },
+      {
+        "type": "Strength Training",
+        "duration": "8 weeks",
+        "phases": [
+          {
+            "phase": "Anatomical Adaptation",
+            "weeks": "1-2",
+            "sets": "2-3",
+            "reps": "12-15",
+            "intensity": "60-70% 1RM",
+            "rest": "60-90 sec"
+          },
+          {
+            "phase": "Hypertrophy",
+            "weeks": "3-5",
+            "sets": "3-4",
+            "reps": "8-12",
+            "intensity": "70-80% 1RM",
+            "rest": "60-90 sec"
+          },
+          {
+            "phase": "Maximum Strength",
+            "weeks": "6-8",
+            "sets": "4-5",
+            "reps": "3-6",
+            "intensity": "85-95% 1RM",
+            "rest": "3-5 min"
+          }
+        ]
+      },
+      {
+        "type": "Circuit Training",
+        "stations": 8,
+        "duration": "30 minutes",
+        "example": [
+          "Station 1: Press-ups (30 sec)",
+          "Station 2: Squats (30 sec)",
+          "Station 3: Plank (30 sec)",
+          "Station 4: Burpees (30 sec)",
+          "Station 5: Lunges (30 sec)",
+          "Station 6: Sit-ups (30 sec)",
+          "Station 7: Star jumps (30 sec)",
+          "Station 8: Mountain climbers (30 sec)",
+          "Rest: 30 sec between stations",
+          "Circuits: 3 rounds"
+        ]
+      }
+    ],
+    "examTips": [
+      "Answer all questions - no choice in Section A",
+      "Read questions carefully - note command words (describe, explain, discuss, outline)",
+      "Use correct terminology and definitions",
+      "Include examples to support answers",
+      "Draw and label diagrams where appropriate",
+      "Manage time - don't spend too long on one question",
+      "Section B extended responses need structure and depth",
+      "Link theory to practical examples from your activities",
+      "Know all body systems thoroughly",
+      "Understand differences between Higher and Ordinary level expectations"
+    ]
+  }
+}

@@ -2,18 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="theme-color" content="#0a0e14">
-    <meta name="description" content="ChemMaster LC - Interactive Irish Leaving Certificate Chemistry study app with flashcards, quizzes, periodic table, and more.">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="ChemMaster LC">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChemMaster LC | Irish Leaving Cert Chemistry</title>
-    <!-- Favicon & Icons -->
-    <link rel="icon" type="image/svg+xml" href="icon.svg">
-    <link rel="apple-touch-icon" href="icon-192.svg">
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -38,8 +28,6 @@
             --shadow-glow: 0 0 40px rgba(0, 212, 255, 0.15);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { -webkit-tap-highlight-color: transparent; }
-        button, .btn, .nav-btn, .quick-action, .answer-option, .quiz-option { touch-action: manipulation; -webkit-touch-callout: none; }
         body {
             font-family: 'DM Sans', sans-serif;
             background: var(--bg-primary);
@@ -114,13 +102,9 @@
             background: var(--bg-secondary);
             border-bottom: 1px solid var(--glass-border);
             overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: thin;
-            scrollbar-color: var(--accent-cyan) var(--bg-tertiary);
+            scrollbar-width: none;
         }
-        .nav-container::-webkit-scrollbar { height: 4px; }
-        .nav-container::-webkit-scrollbar-track { background: var(--bg-tertiary); }
-        .nav-container::-webkit-scrollbar-thumb { background: var(--accent-cyan); border-radius: 2px; }
+        .nav-container::-webkit-scrollbar { display: none; }
         .nav {
             max-width: 1400px;
             margin: 0 auto;
@@ -565,48 +549,12 @@
             .element-properties { grid-template-columns: 1fr; }
             .flashcard-inner { height: 250px; }
             .calculator-grid { grid-template-columns: 1fr; }
-            /* Grid navigation for tablets */
-            .nav-container { overflow-x: visible; }
-            .nav { flex-wrap: wrap; justify-content: center; gap: 0.35rem; }
-            .nav-btn { padding: 0.6rem 1rem; font-size: 0.85rem; }
         }
         @media (max-width: 480px) {
-            /* Compact grid nav for mobile */
-            .nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.25rem; padding: 0.4rem; }
-            .nav-btn {
-                padding: 0.5rem 0.25rem;
-                font-size: 0.7rem;
-                flex-direction: column;
-                gap: 0.2rem;
-                justify-content: center;
-                text-align: center;
-            }
-            .nav-btn .icon { font-size: 1.1rem; }
-            .nav-btn span:not(.icon) { font-size: 0.6rem; display: block; line-height: 1.1; }
+            .nav-btn { padding: 0.6rem 0.9rem; font-size: 0.8rem; }
+            .nav-btn span:not(.icon) { display: none; }
             .flashcard-controls { flex-direction: column; }
             select, input[type="text"], input[type="number"] { min-width: 100%; }
-            .header { padding: 0.75rem 1rem; }
-            .logo-text { font-size: 1.1rem; }
-            .section-title { font-size: 1.25rem; }
-            .modal { margin: 0.5rem; max-height: 95vh; }
-            .quiz-question { padding: 1.25rem; }
-            .flashcard-inner { height: 220px; }
-            .flashcard-content { font-size: 1rem; }
-            .btn { padding: 0.65rem 1.25rem; font-size: 0.85rem; }
-            .results-score { font-size: 3rem; }
-            .periodic-table { min-width: 750px; }
-            .element { font-size: 0.55rem; }
-            .element .symbol { font-size: 0.75rem; }
-            .mindmap-container svg { height: 450px; }
-        }
-        @media (max-width: 360px) {
-            .nav { grid-template-columns: repeat(3, 1fr); }
-            .nav-btn span:not(.icon) { font-size: 0.55rem; }
-            .header-content { gap: 0.5rem; }
-            .stat-pill { padding: 0.35rem 0.6rem; font-size: 0.7rem; }
-            .section-title { font-size: 1.1rem; }
-            .card { padding: 1rem; }
-            .topic-icon { width: 40px; height: 40px; font-size: 1.2rem; }
         }
         ::-webkit-scrollbar { width: 8px; height: 8px; }
         ::-webkit-scrollbar-track { background: var(--bg-secondary); }
@@ -620,7 +568,7 @@
         <header class="header">
             <div class="header-content">
                 <div class="logo">
-                    <img src="icon-192.svg" alt="ChemMaster LC" class="logo-icon" style="width: 40px; height: 40px; border-radius: 10px;">
+                    <div class="logo-icon">⚗️</div>
                     <div>
                         <div class="logo-text">ChemMaster LC</div>
                         <div class="logo-sub">Irish Leaving Certificate</div>
@@ -643,9 +591,6 @@
                 <button class="nav-btn" data-section="formulas"><span class="icon">📐</span><span>Formulas</span></button>
                 <button class="nav-btn" data-section="mindmaps"><span class="icon">🧠</span><span>Mind Maps</span></button>
                 <button class="nav-btn" data-section="experiments"><span class="icon">🧪</span><span>Experiments</span></button>
-                <button class="nav-btn" data-section="dataTables"><span class="icon">📋</span><span>Data Tables</span></button>
-                <button class="nav-btn" data-section="glossary"><span class="icon">📖</span><span>Glossary</span></button>
-                <button class="nav-btn" data-section="examMode"><span class="icon">🎯</span><span>Exam Mode</span></button>
             </nav>
         </div>
         <main class="main">
@@ -697,27 +642,6 @@
                                 <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: var(--bg-tertiary); border-radius: var(--radius-sm);">
                                     <input type="checkbox" id="goal3" style="width: 18px; height: 18px;">
                                     <label for="goal3" style="flex: 1; font-size: 0.9rem;">Study for 30 minutes</label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="card" style="margin-top: 1.5rem;">
-                            <h3 style="margin-bottom: 1rem; text-align: center;">⏰ Exam Countdown</h3>
-                            <div id="examCountdown" style="text-align: center;">
-                                <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent-cyan);" id="daysUntilExam">--</div>
-                                <div style="color: var(--text-secondary); font-size: 0.9rem;">days until LC Chemistry</div>
-                                <div style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.5rem;" id="examDate">June 2025</div>
-                            </div>
-                        </div>
-                        
-                        <div class="card" style="margin-top: 1.5rem;">
-                            <h3 style="margin-bottom: 1rem; text-align: center;">🍅 Pomodoro Timer</h3>
-                            <div style="text-align: center;">
-                                <div style="font-size: 3rem; font-weight: 700; font-family: 'Space Mono', monospace; color: var(--text-primary);" id="pomodoroDisplay">25:00</div>
-                                <div style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1rem;" id="pomodoroStatus">Focus Time</div>
-                                <div style="display: flex; gap: 0.5rem; justify-content: center;">
-                                    <button class="btn btn-primary" id="pomodoroStart" onclick="togglePomodoro()">Start</button>
-                                    <button class="btn btn-secondary" onclick="resetPomodoro()">Reset</button>
                                 </div>
                             </div>
                         </div>
@@ -962,7 +886,7 @@
                 </div>
                 <div class="card">
                     <div class="mindmap-container" id="mindmapContainer">
-                        <svg id="mindmapSvg" width="100%" height="600" viewBox="0 0 1000 600"></svg>
+                        <svg id="mindmapSvg" width="100%" height="500" viewBox="0 0 900 500"></svg>
                     </div>
                     <div class="mindmap-info" id="mindmapInfo" style="margin-top: 1rem; padding: 1rem; background: var(--bg-tertiary); border-radius: var(--radius-sm); display: none;">
                         <h4 id="mindmapInfoTitle" style="color: var(--accent-cyan); margin-bottom: 0.5rem;"></h4>
@@ -978,173 +902,6 @@
                     <p class="section-subtitle">Step-by-step guides for all required practicals</p>
                 </div>
                 <div class="card-grid" id="experimentsGrid"></div>
-            </section>
-
-            <!-- Data Tables -->
-            <section class="section" id="dataTables">
-                <div class="section-header">
-                    <h1 class="section-title">📋 Data Tables</h1>
-                    <p class="section-subtitle">Essential reference data for calculations and exams</p>
-                </div>
-                
-                <div class="formula-categories">
-                    <button class="formula-cat-btn active" data-table="electrochemical">Electrochemical Series</button>
-                    <button class="formula-cat-btn" data-table="bondEnergies">Bond Energies</button>
-                    <button class="formula-cat-btn" data-table="enthalpies">Enthalpies</button>
-                    <button class="formula-cat-btn" data-table="constants">Constants</button>
-                    <button class="formula-cat-btn" data-table="indicators">Indicators</button>
-                </div>
-                
-                <div class="card">
-                    <div id="dataTableContent"></div>
-                </div>
-            </section>
-
-            <!-- Glossary -->
-            <section class="section" id="glossary">
-                <div class="section-header">
-                    <h1 class="section-title">📖 Chemistry Glossary</h1>
-                    <p class="section-subtitle">Searchable definitions of key terms</p>
-                </div>
-                
-                <div class="card" style="margin-bottom: 1.5rem;">
-                    <div class="input-group">
-                        <input type="text" id="glossarySearch" placeholder="Search terms..." oninput="filterGlossary(this.value)" style="width: 100%;">
-                    </div>
-                    <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
-                        <button class="formula-cat-btn active" data-glossary="all" onclick="filterGlossaryCategory('all')">All</button>
-                        <button class="formula-cat-btn" data-glossary="atomic" onclick="filterGlossaryCategory('atomic')">Atomic</button>
-                        <button class="formula-cat-btn" data-glossary="bonding" onclick="filterGlossaryCategory('bonding')">Bonding</button>
-                        <button class="formula-cat-btn" data-glossary="organic" onclick="filterGlossaryCategory('organic')">Organic</button>
-                        <button class="formula-cat-btn" data-glossary="acids" onclick="filterGlossaryCategory('acids')">Acids/Bases</button>
-                        <button class="formula-cat-btn" data-glossary="redox" onclick="filterGlossaryCategory('redox')">Redox</button>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div id="glossaryContent"></div>
-                </div>
-            </section>
-
-            <!-- Exam Mode -->
-            <section class="section" id="examMode">
-                <div class="section-header">
-                    <h1 class="section-title">🎯 Exam Mode</h1>
-                    <p class="section-subtitle">Timed practice under exam conditions</p>
-                </div>
-                
-                <div id="examSetup">
-                    <div class="card" style="max-width: 600px; margin: 0 auto;">
-                        <h3 style="margin-bottom: 1.5rem; text-align: center;">Configure Your Exam</h3>
-                        
-                        <div class="input-group" style="margin-bottom: 1rem;">
-                            <label>Exam Type</label>
-                            <select id="examType" style="width: 100%;">
-                                <option value="mixed">Mixed Questions (All Topics)</option>
-                                <option value="section-a">Section A Style (Short Questions)</option>
-                                <option value="section-b">Section B Style (Long Questions)</option>
-                            </select>
-                        </div>
-                        
-                        <div class="input-group" style="margin-bottom: 1rem;">
-                            <label>Difficulty Level</label>
-                            <select id="examLevel" style="width: 100%;">
-                                <option value="higher">Higher Level</option>
-                                <option value="ordinary">Ordinary Level</option>
-                            </select>
-                        </div>
-                        
-                        <div class="input-group" style="margin-bottom: 1rem;">
-                            <label>Time Limit</label>
-                            <select id="examTime" style="width: 100%;">
-                                <option value="15">15 minutes (Quick Practice)</option>
-                                <option value="30">30 minutes (Half Exam)</option>
-                                <option value="60">60 minutes (Full Practice)</option>
-                                <option value="0">No Time Limit</option>
-                            </select>
-                        </div>
-                        
-                        <div class="input-group" style="margin-bottom: 1.5rem;">
-                            <label>Number of Questions</label>
-                            <select id="examQuestions" style="width: 100%;">
-                                <option value="10">10 Questions</option>
-                                <option value="20">20 Questions</option>
-                                <option value="30">30 Questions</option>
-                            </select>
-                        </div>
-                        
-                        <div style="background: var(--bg-tertiary); border-radius: var(--radius-sm); padding: 1rem; margin-bottom: 1.5rem;">
-                            <h4 style="color: var(--accent-yellow); margin-bottom: 0.5rem;">⚠️ Exam Conditions</h4>
-                            <ul style="font-size: 0.85rem; color: var(--text-secondary); margin: 0; padding-left: 1.25rem;">
-                                <li>Timer will count down (if enabled)</li>
-                                <li>Cannot go back to previous questions</li>
-                                <li>No hints or explanations until the end</li>
-                                <li>Results shown only after completion</li>
-                            </ul>
-                        </div>
-                        
-                        <button class="btn btn-primary" style="width: 100%;" onclick="startExamMode()">🎯 Start Exam</button>
-                    </div>
-                </div>
-                
-                <div id="examInProgress" style="display: none;">
-                    <div class="card" style="max-width: 800px; margin: 0 auto;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--glass-border);">
-                            <div>
-                                <span style="font-size: 0.85rem; color: var(--text-muted);">Question</span>
-                                <div style="font-size: 1.25rem; font-weight: 600;" id="examQuestionNum">1 of 20</div>
-                            </div>
-                            <div style="text-align: center;">
-                                <span style="font-size: 0.85rem; color: var(--text-muted);">Time Remaining</span>
-                                <div style="font-size: 1.5rem; font-weight: 700; font-family: 'Space Mono', monospace; color: var(--accent-cyan);" id="examTimer">30:00</div>
-                            </div>
-                            <div style="text-align: right;">
-                                <span style="font-size: 0.85rem; color: var(--text-muted);">Answered</span>
-                                <div style="font-size: 1.25rem; font-weight: 600;" id="examAnswered">0 / 20</div>
-                            </div>
-                        </div>
-                        
-                        <div id="examQuestionContent"></div>
-                        
-                        <div style="display: flex; justify-content: space-between; margin-top: 1.5rem;">
-                            <button class="btn btn-secondary" onclick="endExamEarly()">End Exam</button>
-                            <button class="btn btn-primary" id="examNextBtn" onclick="nextExamQuestion()">Next Question →</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="examResults" style="display: none;">
-                    <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center;">
-                        <h2 style="margin-bottom: 1rem;">📊 Exam Results</h2>
-                        <div class="results-score" id="examFinalScore">75%</div>
-                        <div class="results-label" id="examScoreLabel">15 out of 20 correct</div>
-                        
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0;">
-                            <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-sm);">
-                                <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-green);" id="examCorrectCount">15</div>
-                                <div style="font-size: 0.8rem; color: var(--text-muted);">Correct</div>
-                            </div>
-                            <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-sm);">
-                                <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-magenta);" id="examWrongCount">5</div>
-                                <div style="font-size: 0.8rem; color: var(--text-muted);">Incorrect</div>
-                            </div>
-                            <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-sm);">
-                                <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-cyan);" id="examTimeSpent">24:32</div>
-                                <div style="font-size: 0.8rem; color: var(--text-muted);">Time Taken</div>
-                            </div>
-                        </div>
-                        
-                        <div id="examGrade" style="background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)); padding: 1.5rem; border-radius: var(--radius); margin-bottom: 1.5rem;">
-                            <div style="font-size: 0.9rem; opacity: 0.8;">Predicted Grade</div>
-                            <div style="font-size: 2.5rem; font-weight: 700;">H2</div>
-                        </div>
-                        
-                        <div style="display: flex; gap: 1rem; justify-content: center;">
-                            <button class="btn btn-secondary" onclick="reviewExamAnswers()">Review Answers</button>
-                            <button class="btn btn-primary" onclick="resetExamMode()">Try Again</button>
-                        </div>
-                    </div>
-                </div>
             </section>
         </main>
     </div>
@@ -1207,26 +964,16 @@
         };
 
         const topics = [
-            { id: 'atomic', icon: '⚛️', title: 'Atomic Structure', desc: 'Atoms, subatomic particles, electron configuration, isotopes', lessons: 8, questions: 45, progress: 0, content: '<h2>Atomic Structure</h2><h3>The Atom</h3><p>An atom is the smallest particle of an element that retains the chemical properties of that element. Atoms consist of three types of subatomic particles:</p><ul><li><strong>Protons</strong> - positively charged particles found in the nucleus (mass ≈ 1 amu)</li><li><strong>Neutrons</strong> - neutral particles found in the nucleus (mass ≈ 1 amu)</li><li><strong>Electrons</strong> - negatively charged particles orbiting the nucleus (mass ≈ 1/1836 amu)</li></ul><div class="key-point"><div class="key-point-title">Key Definitions</div><p><strong>Atomic Number (Z)</strong> = Number of protons<br><strong>Mass Number (A)</strong> = Protons + Neutrons<br><strong>Relative Atomic Mass</strong> = Weighted average of isotope masses</p></div><h3>Isotopes</h3><p>Isotopes are atoms of the same element with the same number of protons but different numbers of neutrons. Example: ¹²C and ¹⁴C are isotopes of carbon.</p><h3>Electron Configuration</h3><p>Electrons are arranged in energy levels (shells) and subshells (s, p, d, f). The order of filling: 1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p</p><h3>Quantum Numbers</h3><ul><li><strong>n</strong> - principal quantum number (shell)</li><li><strong>l</strong> - angular momentum (subshell shape)</li><li><strong>mₗ</strong> - magnetic (orbital orientation)</li><li><strong>mₛ</strong> - spin (+½ or -½)</li></ul>' },
-            { id: 'periodic', icon: '📊', title: 'Periodic Table & Trends', desc: 'Groups, periods, trends in properties, periodicity', lessons: 7, questions: 40, progress: 0, content: '<h2>Periodic Table & Trends</h2><h3>Organisation</h3><p>Elements arranged by increasing atomic number. Periods (rows) and Groups (columns).</p><div class="key-point"><div class="key-point-title">Periodic Trends</div><ul><li><strong>Atomic Radius:</strong> Decreases across period, increases down group</li><li><strong>Ionisation Energy:</strong> Increases across period, decreases down group</li><li><strong>Electronegativity:</strong> Increases across period, decreases down group</li><li><strong>Electron Affinity:</strong> Generally increases across period</li></ul></div><h3>Groups</h3><ul><li><strong>Group 1 (Alkali Metals):</strong> Very reactive, form +1 ions</li><li><strong>Group 2 (Alkaline Earth):</strong> Reactive, form +2 ions</li><li><strong>Group 17 (Halogens):</strong> Reactive non-metals, form -1 ions</li><li><strong>Group 18 (Noble Gases):</strong> Unreactive, full outer shell</li></ul><h3>Transition Metals</h3><p>Variable oxidation states, form coloured compounds, catalytic properties, form complex ions.</p>' },
-            { id: 'bonding', icon: '🔗', title: 'Chemical Bonding', desc: 'Ionic, covalent, metallic bonding, electronegativity, shapes', lessons: 10, questions: 52, progress: 0, content: '<h2>Chemical Bonding</h2><h3>Ionic Bonding</h3><p>Transfer of electrons from metal to non-metal, creating oppositely charged ions held by electrostatic attraction.</p><div class="key-point"><div class="key-point-title">Properties of Ionic Compounds</div><ul><li>High melting and boiling points</li><li>Conduct electricity when molten or dissolved</li><li>Form crystalline lattice structures</li><li>Brittle solids</li></ul></div><h3>Covalent Bonding</h3><p>Sharing of electron pairs between non-metal atoms.</p><ul><li><strong>Single bond:</strong> 1 shared pair</li><li><strong>Double bond:</strong> 2 shared pairs</li><li><strong>Triple bond:</strong> 3 shared pairs</li><li><strong>Dative/Coordinate bond:</strong> Both electrons from one atom</li></ul><h3>VSEPR Theory & Molecular Shapes</h3><ul><li><strong>Linear:</strong> 2 bonding pairs (180°) - CO₂</li><li><strong>Trigonal planar:</strong> 3 bonding pairs (120°) - BF₃</li><li><strong>Tetrahedral:</strong> 4 bonding pairs (109.5°) - CH₄</li><li><strong>Bent:</strong> 2 bonding + 2 lone pairs - H₂O</li><li><strong>Trigonal pyramidal:</strong> 3 bonding + 1 lone pair - NH₃</li></ul><h3>Intermolecular Forces</h3><ul><li><strong>Van der Waals:</strong> Weakest, all molecules</li><li><strong>Dipole-dipole:</strong> Polar molecules</li><li><strong>Hydrogen bonding:</strong> H bonded to N, O, F</li></ul>' },
-            { id: 'stoichiometry', icon: '⚖️', title: 'Stoichiometry & The Mole', desc: 'Mole concept, calculations, limiting reagents, yields', lessons: 12, questions: 68, progress: 0, content: '<h2>Stoichiometry & The Mole</h2><h3>The Mole Concept</h3><p>The mole is the SI unit for amount of substance. One mole contains exactly 6.022 × 10²³ particles (Avogadro constant).</p><div class="key-point"><div class="key-point-title">Key Formulae</div><p><strong>n = m / M</strong> (moles from mass)<br><strong>n = N / Nₐ</strong> (moles from particles)<br><strong>n = V / 22.4</strong> (moles of gas at STP)<br><strong>n = CV</strong> (moles from concentration)</p></div><h3>Percentage Composition</h3><p>% element = (mass of element in formula / molar mass) × 100</p><h3>Empirical & Molecular Formulae</h3><ul><li><strong>Empirical:</strong> Simplest whole number ratio</li><li><strong>Molecular:</strong> Actual number of atoms</li></ul><h3>Limiting Reagent</h3><p>The reactant that is completely consumed first, determining the maximum yield.</p><h3>Percentage Yield</h3><p>% Yield = (Actual yield / Theoretical yield) × 100</p>' },
-            { id: 'volumetric', icon: '🧪', title: 'Volumetric Analysis', desc: 'Titrations, standard solutions, indicators, calculations', lessons: 10, questions: 55, progress: 0, content: '<h2>Volumetric Analysis</h2><h3>Key Concepts</h3><div class="key-point"><div class="key-point-title">Important Terms</div><ul><li><strong>Primary standard:</strong> Pure, stable, high molar mass, reacts completely</li><li><strong>Standard solution:</strong> Solution of known concentration</li><li><strong>Equivalence point:</strong> Stoichiometric amounts have reacted</li><li><strong>End point:</strong> Indicator colour change</li></ul></div><h3>Titration Procedure</h3><ol><li>Rinse burette with solution to be used</li><li>Fill burette and record initial reading</li><li>Pipette known volume of analyte into flask</li><li>Add indicator</li><li>Titrate slowly until colour change</li><li>Record final reading, calculate titre</li><li>Repeat for concordant results (within 0.1 cm³)</li></ol><h3>Common Indicators</h3><ul><li><strong>Phenolphthalein:</strong> Colourless (acid) → Pink (base)</li><li><strong>Methyl orange:</strong> Red (acid) → Yellow (base)</li><li><strong>Litmus:</strong> Red (acid) → Blue (base)</li></ul><h3>Calculations</h3><p>At equivalence point: n₁/n₂ = stoichiometric ratio<br>C₁V₁/n₁ = C₂V₂/n₂</p>' },
-            { id: 'organic', icon: '🧬', title: 'Organic Chemistry', desc: 'Hydrocarbons, functional groups, reactions, mechanisms', lessons: 18, questions: 95, progress: 0, content: '<h2>Organic Chemistry</h2><h3>Homologous Series</h3><div class="key-point"><div class="key-point-title">Formulae</div><ul><li><strong>Alkanes:</strong> CₙH₂ₙ₊₂ (saturated)</li><li><strong>Alkenes:</strong> CₙH₂ₙ (unsaturated, C=C)</li><li><strong>Alkynes:</strong> CₙH₂ₙ₋₂ (C≡C)</li><li><strong>Alcohols:</strong> CₙH₂ₙ₊₁OH</li><li><strong>Carboxylic acids:</strong> CₙH₂ₙ₊₁COOH</li></ul></div><h3>IUPAC Nomenclature</h3><p>Prefix (substituents) + Root (chain length) + Suffix (functional group)</p><h3>Functional Groups</h3><ul><li><strong>-OH:</strong> Alcohol</li><li><strong>-CHO:</strong> Aldehyde</li><li><strong>>C=O:</strong> Ketone</li><li><strong>-COOH:</strong> Carboxylic acid</li><li><strong>-COO-:</strong> Ester</li><li><strong>-NH₂:</strong> Amine</li><li><strong>-CONH₂:</strong> Amide</li></ul><h3>Reaction Types</h3><ul><li><strong>Addition:</strong> Across double bonds</li><li><strong>Substitution:</strong> Replace atom/group</li><li><strong>Elimination:</strong> Remove atoms to form double bond</li><li><strong>Condensation:</strong> Join molecules, lose small molecule</li></ul>' },
-            { id: 'mechanisms', icon: '⚙️', title: 'Reaction Mechanisms', desc: 'Free radical, electrophilic, nucleophilic mechanisms', lessons: 8, questions: 42, progress: 0, content: '<h2>Reaction Mechanisms</h2><h3>Free Radical Substitution</h3><p>Example: Alkane + Halogen (UV light)</p><div class="key-point"><div class="key-point-title">Steps</div><ol><li><strong>Initiation:</strong> Cl₂ → 2Cl• (homolytic fission)</li><li><strong>Propagation:</strong> CH₄ + Cl• → •CH₃ + HCl<br>•CH₃ + Cl₂ → CH₃Cl + Cl•</li><li><strong>Termination:</strong> Cl• + Cl• → Cl₂</li></ol></div><h3>Electrophilic Addition</h3><p>Example: Alkene + HBr</p><ul><li>Electrophile attacks electron-rich double bond</li><li>Carbocation intermediate forms</li><li>Nucleophile attacks carbocation</li></ul><h3>Nucleophilic Substitution</h3><p>Example: Haloalkane + OH⁻</p><ul><li>Nucleophile attacks carbon bonded to halogen</li><li>Halogen leaves as halide ion</li></ul><h3>Key Terms</h3><ul><li><strong>Electrophile:</strong> Electron-pair acceptor (positive/partial positive)</li><li><strong>Nucleophile:</strong> Electron-pair donor (negative/lone pair)</li><li><strong>Carbocation:</strong> Carbon with positive charge</li></ul>' },
-            { id: 'acids', icon: '🧫', title: 'Acids & Bases', desc: 'pH, neutralisation, titrations, buffer solutions', lessons: 9, questions: 55, progress: 0, content: '<h2>Acids & Bases</h2><h3>Definitions</h3><div class="key-point"><div class="key-point-title">Theories</div><ul><li><strong>Arrhenius:</strong> Acid releases H⁺, Base releases OH⁻</li><li><strong>Brønsted-Lowry:</strong> Acid = H⁺ donor, Base = H⁺ acceptor</li><li><strong>Lewis:</strong> Acid = e⁻ pair acceptor, Base = e⁻ pair donor</li></ul></div><h3>Strong vs Weak</h3><ul><li><strong>Strong acids:</strong> HCl, H₂SO₄, HNO₃ (fully dissociate)</li><li><strong>Weak acids:</strong> CH₃COOH, H₂CO₃ (partially dissociate)</li><li><strong>Strong bases:</strong> NaOH, KOH</li><li><strong>Weak bases:</strong> NH₃</li></ul><h3>pH Calculations</h3><p><strong>pH = -log₁₀[H⁺]</strong><br><strong>pOH = -log₁₀[OH⁻]</strong><br><strong>pH + pOH = 14</strong> (at 25°C)<br><strong>[H⁺][OH⁻] = Kw = 10⁻¹⁴</strong></p><h3>Conjugate Pairs</h3><p>Acid loses H⁺ → conjugate base<br>Base gains H⁺ → conjugate acid</p>' },
-            { id: 'redox', icon: '🔋', title: 'Oxidation & Reduction', desc: 'Redox reactions, oxidation states, electrochemical cells', lessons: 11, questions: 50, progress: 0, content: '<h2>Oxidation & Reduction</h2><div class="key-point"><div class="key-point-title">Remember: OIL RIG</div><p><strong>O</strong>xidation <strong>I</strong>s <strong>L</strong>oss (of electrons)<br><strong>R</strong>eduction <strong>I</strong>s <strong>G</strong>ain (of electrons)</p></div><h3>Oxidation States</h3><ul><li>Elements in free state: 0</li><li>Monatomic ions: equal to charge</li><li>Oxygen: usually -2 (except peroxides -1)</li><li>Hydrogen: usually +1 (except metal hydrides -1)</li><li>Sum in compound = 0</li><li>Sum in polyatomic ion = charge</li></ul><h3>Balancing Redox Equations</h3><ol><li>Assign oxidation states</li><li>Identify what is oxidised and reduced</li><li>Write half-equations</li><li>Balance electrons transferred</li><li>Combine half-equations</li></ol><h3>Electrochemical Cells</h3><ul><li><strong>Galvanic/Voltaic:</strong> Spontaneous, produces electricity</li><li><strong>Electrolytic:</strong> Non-spontaneous, uses electricity</li></ul>' },
-            { id: 'electrolysis', icon: '⚡', title: 'Electrolysis', desc: 'Electrolytic cells, electrodes, products, Faraday', lessons: 7, questions: 38, progress: 0, content: '<h2>Electrolysis</h2><h3>The Process</h3><p>Using electrical energy to drive a non-spontaneous redox reaction.</p><div class="key-point"><div class="key-point-title">Electrode Processes</div><ul><li><strong>Anode (+):</strong> Oxidation occurs (AN OX)</li><li><strong>Cathode (-):</strong> Reduction occurs (RED CAT)</li></ul></div><h3>Electrolysis of Molten NaCl</h3><ul><li>Cathode: Na⁺ + e⁻ → Na</li><li>Anode: 2Cl⁻ → Cl₂ + 2e⁻</li></ul><h3>Electrolysis of Aqueous Solutions</h3><p>Water may be oxidised/reduced instead:</p><ul><li>At cathode: 2H₂O + 2e⁻ → H₂ + 2OH⁻</li><li>At anode: 2H₂O → O₂ + 4H⁺ + 4e⁻</li></ul><h3>Faraday\'s Laws</h3><p><strong>Q = It</strong> (charge = current × time)<br><strong>n = Q / zF</strong> (moles = charge / (electrons × 96500))</p>' },
-            { id: 'rates', icon: '⏱️', title: 'Rates of Reaction', desc: 'Reaction rates, factors affecting rate, collision theory', lessons: 8, questions: 42, progress: 0, content: '<h2>Rates of Reaction</h2><h3>Definition</h3><p>Rate = change in concentration / time (mol dm⁻³ s⁻¹)</p><div class="key-point"><div class="key-point-title">Factors Affecting Rate</div><ol><li><strong>Concentration:</strong> Higher = more collisions</li><li><strong>Temperature:</strong> Higher = faster particles</li><li><strong>Surface area:</strong> Greater = more contact</li><li><strong>Catalyst:</strong> Lower activation energy</li><li><strong>Pressure (gases):</strong> Higher = closer particles</li></ol></div><h3>Collision Theory</h3><p>For reaction to occur:</p><ul><li>Particles must collide</li><li>With sufficient energy (≥ Eₐ)</li><li>With correct orientation</li></ul><h3>Activation Energy</h3><p>Minimum energy required for successful collision. Catalysts provide alternative pathway with lower Eₐ.</p><h3>Measuring Rate</h3><ul><li>Gas volume produced</li><li>Mass change</li><li>Colour change</li><li>Conductivity change</li></ul>' },
-            { id: 'equilibrium', icon: '⚖️', title: 'Chemical Equilibrium', desc: 'Reversible reactions, Kc, Le Chatelier principle', lessons: 9, questions: 45, progress: 0, content: '<h2>Chemical Equilibrium</h2><h3>Dynamic Equilibrium</h3><p>Forward and reverse reactions occur at equal rates. Concentrations remain constant.</p><div class="key-point"><div class="key-point-title">Le Chatelier\'s Principle</div><p>When a system at equilibrium is disturbed, it shifts to counteract the change.</p></div><h3>Equilibrium Constant (Kc)</h3><p>For aA + bB ⇌ cC + dD:</p><p><strong>Kc = [C]ᶜ[D]ᵈ / [A]ᵃ[B]ᵇ</strong></p><ul><li>Kc > 1: Products favoured</li><li>Kc < 1: Reactants favoured</li><li>Kc only changes with temperature</li></ul><h3>Effects on Equilibrium</h3><ul><li><strong>Concentration:</strong> Shifts away from added species</li><li><strong>Pressure:</strong> Shifts to side with fewer gas moles</li><li><strong>Temperature:</strong> Shifts endothermic direction when heated</li><li><strong>Catalyst:</strong> No effect on position (faster both ways)</li></ul>' },
-            { id: 'gases', icon: '💨', title: 'Gases & Gas Laws', desc: 'Gas laws, ideal gas equation, kinetic theory', lessons: 7, questions: 38, progress: 0, content: '<h2>Gases & Gas Laws</h2><h3>Kinetic Theory</h3><ul><li>Particles in constant random motion</li><li>No intermolecular forces (ideal)</li><li>Elastic collisions</li><li>Volume of particles negligible</li></ul><div class="key-point"><div class="key-point-title">Gas Laws</div><ul><li><strong>Boyle\'s:</strong> P₁V₁ = P₂V₂ (T constant)</li><li><strong>Charles\'s:</strong> V₁/T₁ = V₂/T₂ (P constant)</li><li><strong>Gay-Lussac\'s:</strong> P₁/T₁ = P₂/T₂ (V constant)</li><li><strong>Combined:</strong> P₁V₁/T₁ = P₂V₂/T₂</li></ul></div><h3>Ideal Gas Equation</h3><p><strong>PV = nRT</strong></p><ul><li>P = Pressure (Pa or kPa)</li><li>V = Volume (m³ or dm³)</li><li>n = Moles</li><li>R = 8.314 J mol⁻¹ K⁻¹</li><li>T = Temperature (K)</li></ul><h3>STP Conditions</h3><p>0°C (273 K), 1 atm (101.3 kPa)<br>Molar volume = 22.4 L/mol</p>' },
-            { id: 'thermo', icon: '🔥', title: 'Thermochemistry', desc: 'Enthalpy, Hess law, bond energies, calorimetry', lessons: 10, questions: 48, progress: 0, content: '<h2>Thermochemistry</h2><h3>Energy Changes</h3><div class="key-point"><div class="key-point-title">Types of Enthalpy</div><ul><li><strong>ΔHf:</strong> Formation (from elements)</li><li><strong>ΔHc:</strong> Combustion (complete burning)</li><li><strong>ΔHn:</strong> Neutralisation (acid + base)</li><li><strong>ΔHsol:</strong> Solution (dissolving)</li></ul></div><h3>Exothermic vs Endothermic</h3><ul><li><strong>Exothermic (ΔH < 0):</strong> Heat released, feels hot</li><li><strong>Endothermic (ΔH > 0):</strong> Heat absorbed, feels cold</li></ul><h3>Hess\'s Law</h3><p>Total enthalpy change is independent of the route taken.</p><h3>Calculations</h3><p><strong>q = mcΔT</strong> (calorimetry)<br><strong>ΔH = ΣΔHf(products) - ΣΔHf(reactants)</strong><br><strong>ΔH = Bonds broken - Bonds formed</strong></p><h3>Bond Energy</h3><p>Energy required to break 1 mole of bonds in gaseous molecules.</p>' },
-            { id: 'fuels', icon: '⛽', title: 'Fuels & Energy', desc: 'Fossil fuels, combustion, alternative energy, climate', lessons: 6, questions: 32, progress: 0, content: '<h2>Fuels & Energy</h2><h3>Fossil Fuels</h3><ul><li><strong>Coal:</strong> Mostly carbon, high pollution</li><li><strong>Oil:</strong> Hydrocarbons, refined to fractions</li><li><strong>Natural gas:</strong> Mainly methane (CH₄)</li></ul><div class="key-point"><div class="key-point-title">Combustion</div><p><strong>Complete:</strong> fuel + O₂ → CO₂ + H₂O<br><strong>Incomplete:</strong> Limited O₂ → CO + C + H₂O</p></div><h3>Environmental Issues</h3><ul><li><strong>Greenhouse effect:</strong> CO₂, CH₄ trap heat</li><li><strong>Acid rain:</strong> SO₂ + NOₓ form acids</li><li><strong>Particulates:</strong> Soot causes respiratory issues</li></ul><h3>Alternative Fuels</h3><ul><li><strong>Biofuels:</strong> Ethanol, biodiesel</li><li><strong>Hydrogen:</strong> Clean but storage issues</li><li><strong>Solar/Wind:</strong> Renewable electricity</li></ul>' },
-            { id: 'water', icon: '💧', title: 'Water Chemistry', desc: 'Water treatment, hardness, dissolved oxygen, analysis', lessons: 8, questions: 40, progress: 0, content: '<h2>Water Chemistry</h2><h3>Water Treatment</h3><ol><li><strong>Screening:</strong> Remove large debris</li><li><strong>Settling:</strong> Suspended solids sink</li><li><strong>Filtration:</strong> Sand/gravel filters</li><li><strong>Chlorination:</strong> Kill bacteria</li><li><strong>Fluoridation:</strong> Dental health</li><li><strong>pH adjustment:</strong> Add lime if acidic</li></ol><div class="key-point"><div class="key-point-title">Water Hardness</div><p><strong>Temporary:</strong> Ca(HCO₃)₂ - removed by boiling<br><strong>Permanent:</strong> CaSO₄ - removed by ion exchange or washing soda</p></div><h3>Water Analysis</h3><ul><li><strong>Dissolved oxygen:</strong> Winkler method</li><li><strong>Total hardness:</strong> EDTA titration</li><li><strong>pH:</strong> pH meter or indicator</li><li><strong>Chloride:</strong> Silver nitrate test</li></ul>' },
-            { id: 'radioactivity', icon: '☢️', title: 'Radioactivity', desc: 'Nuclear decay, half-life, uses, safety', lessons: 6, questions: 35, progress: 0, content: '<h2>Radioactivity</h2><h3>Types of Radiation</h3><div class="key-point"><div class="key-point-title">Properties</div><ul><li><strong>Alpha (α):</strong> ⁴₂He, +2 charge, low penetration, high ionising</li><li><strong>Beta (β):</strong> ⁰₋₁e, -1 charge, medium penetration</li><li><strong>Gamma (γ):</strong> EM radiation, no charge, high penetration</li></ul></div><h3>Nuclear Equations</h3><p>Mass number and atomic number must balance.</p><h3>Half-life</h3><p>Time for half the radioactive nuclei to decay.<br><strong>N = N₀(½)ⁿ</strong> where n = number of half-lives</p><h3>Uses</h3><ul><li><strong>Medicine:</strong> Tracers, cancer treatment</li><li><strong>Dating:</strong> Carbon-14 for organic, U-238 for rocks</li><li><strong>Energy:</strong> Nuclear power plants</li><li><strong>Industry:</strong> Thickness gauges</li></ul><h3>Safety</h3><p>Time, distance, shielding. Lead for gamma, paper for alpha.</p>' },
-            { id: 'instrumentation', icon: '🔬', title: 'Instrumentation', desc: 'Chromatography, spectroscopy, analysis techniques', lessons: 7, questions: 35, progress: 0, content: '<h2>Instrumentation & Analysis</h2><h3>Chromatography</h3><p>Separation based on differential distribution between mobile and stationary phases.</p><div class="key-point"><div class="key-point-title">Types</div><ul><li><strong>Paper/TLC:</strong> Rf = distance moved by substance / distance moved by solvent</li><li><strong>Column:</strong> Separation by adsorption</li><li><strong>Gas (GC):</strong> Volatile compounds, retention time</li></ul></div><h3>Spectroscopy</h3><ul><li><strong>Mass Spec:</strong> Molecular mass, fragmentation pattern</li><li><strong>IR:</strong> Functional group identification</li><li><strong>UV-Vis:</strong> Concentration (Beer-Lambert)</li></ul><h3>Other Techniques</h3><ul><li><strong>Colorimetry:</strong> Concentration from colour intensity</li><li><strong>Atomic Absorption:</strong> Metal ion concentration</li><li><strong>Flame Tests:</strong> Metal ion identification</li></ul>' },
-            { id: 'options', icon: '📋', title: 'Option Topics', desc: 'Industrial chemistry, materials, atmospheric chemistry', lessons: 10, questions: 45, progress: 0, content: '<h2>Option Topics</h2><h3>Industrial Chemistry</h3><ul><li><strong>Haber Process:</strong> N₂ + 3H₂ ⇌ 2NH₃</li><li><strong>Contact Process:</strong> Making H₂SO₄</li><li><strong>Extraction of metals</strong></li></ul><h3>Materials & Polymers</h3><div class="key-point"><div class="key-point-title">Polymer Types</div><ul><li><strong>Addition:</strong> Monomers add together (polyethene)</li><li><strong>Condensation:</strong> Monomers join, small molecule lost (nylon, polyester)</li></ul></div><h3>Atmospheric Chemistry</h3><ul><li><strong>Ozone layer:</strong> O₃ absorbs UV</li><li><strong>CFCs:</strong> Deplete ozone</li><li><strong>Greenhouse gases:</strong> CO₂, CH₄, N₂O</li></ul><h3>Metals</h3><ul><li>Reactivity series</li><li>Extraction methods</li><li>Corrosion and prevention</li></ul>' },
-            { id: 'environmental', icon: '🌍', title: 'Environmental Chemistry', desc: 'Pollution, green chemistry, sustainability', lessons: 6, questions: 32, progress: 0, content: '<h2>Environmental Chemistry</h2><h3>Air Pollution</h3><ul><li><strong>CO:</strong> Incomplete combustion, toxic</li><li><strong>CO₂:</strong> Greenhouse gas</li><li><strong>SO₂:</strong> Acid rain, respiratory issues</li><li><strong>NOₓ:</strong> Acid rain, smog</li><li><strong>Particulates:</strong> Respiratory disease</li></ul><div class="key-point"><div class="key-point-title">Acid Rain</div><p>SO₂ + H₂O → H₂SO₃<br>2NO₂ + H₂O → HNO₃ + HNO₂</p></div><h3>Green Chemistry Principles</h3><ul><li>Prevent waste</li><li>Atom economy</li><li>Less hazardous synthesis</li><li>Safer solvents</li><li>Renewable feedstocks</li><li>Catalysis over stoichiometric reagents</li></ul><h3>Climate Change</h3><p>Enhanced greenhouse effect from increased CO₂, CH₄, N₂O emissions.</p>' }
+            { id: 'atomic', icon: '⚛️', title: 'Atomic Structure', desc: 'Atoms, subatomic particles, electron configuration, isotopes', lessons: 8, questions: 45, progress: 0, content: '<h2>Atomic Structure</h2><h3>The Atom</h3><p>An atom is the smallest particle of an element that retains the chemical properties of that element. Atoms consist of three types of subatomic particles:</p><ul><li><strong>Protons</strong> - positively charged particles found in the nucleus</li><li><strong>Neutrons</strong> - neutral particles found in the nucleus</li><li><strong>Electrons</strong> - negatively charged particles orbiting the nucleus</li></ul><div class="key-point"><div class="key-point-title">Key Definition</div><p><strong>Atomic Number (Z)</strong> = Number of protons<br><strong>Mass Number (A)</strong> = Protons + Neutrons</p></div><h3>Isotopes</h3><p>Isotopes are atoms of the same element with the same number of protons but different numbers of neutrons.</p><h3>Electron Configuration</h3><p>Electrons are arranged in energy levels (shells) around the nucleus. The maximum number of electrons in each shell is given by 2n².</p>' },
+            { id: 'bonding', icon: '🔗', title: 'Chemical Bonding', desc: 'Ionic, covalent, metallic bonding, electronegativity, shapes', lessons: 10, questions: 52, progress: 0, content: '<h2>Chemical Bonding</h2><h3>Ionic Bonding</h3><p>Ionic bonds form between metals and non-metals through the transfer of electrons.</p><div class="key-point"><div class="key-point-title">Properties of Ionic Compounds</div><ul><li>High melting and boiling points</li><li>Conduct electricity when molten or dissolved</li><li>Form crystalline lattice structures</li></ul></div><h3>Covalent Bonding</h3><p>Covalent bonds form between non-metals through the sharing of electron pairs.</p><h3>Electronegativity</h3><p>Electronegativity is the ability of an atom to attract shared electrons towards itself in a covalent bond.</p>' },
+            { id: 'stoichiometry', icon: '⚖️', title: 'Stoichiometry & The Mole', desc: 'Mole concept, calculations, limiting reagents, yields', lessons: 12, questions: 68, progress: 0, content: '<h2>Stoichiometry & The Mole</h2><h3>The Mole Concept</h3><p>The mole is the SI unit for amount of substance. One mole contains exactly 6.022 × 10²³ particles (Avogadro\'s number).</p><div class="key-point"><div class="key-point-title">Key Formulae</div><p>Number of moles (n) = mass (m) / molar mass (M)<br>Number of moles (n) = number of particles / 6.022 × 10²³<br>Number of moles (n) = volume (L) / 22.4 (at STP for gases)</p></div>' },
+            { id: 'organic', icon: '🧬', title: 'Organic Chemistry', desc: 'Hydrocarbons, functional groups, reactions, polymers', lessons: 15, questions: 85, progress: 0, content: '<h2>Organic Chemistry</h2><h3>Hydrocarbons</h3><div class="key-point"><div class="key-point-title">Homologous Series</div><ul><li><strong>Alkanes</strong> (CₙH₂ₙ₊₂): Single bonds only</li><li><strong>Alkenes</strong> (CₙH₂ₙ): Contains C=C double bond</li><li><strong>Alkynes</strong> (CₙH₂ₙ₋₂): Contains C≡C triple bond</li></ul></div><h3>Functional Groups</h3><ul><li><strong>Alcohols (-OH)</strong></li><li><strong>Aldehydes (-CHO)</strong></li><li><strong>Ketones (C=O)</strong></li><li><strong>Carboxylic acids (-COOH)</strong></li><li><strong>Esters (-COO-)</strong></li></ul>' },
+            { id: 'acids', icon: '🧫', title: 'Acids & Bases', desc: 'pH, neutralisation, titrations, buffer solutions', lessons: 9, questions: 55, progress: 0, content: '<h2>Acids & Bases</h2><div class="key-point"><div class="key-point-title">Brønsted-Lowry Definition</div><p><strong>Acid:</strong> Proton (H⁺) donor<br><strong>Base:</strong> Proton (H⁺) acceptor</p></div><h3>The pH Scale</h3><p>pH = -log₁₀[H⁺]</p><ul><li>pH < 7: Acidic</li><li>pH = 7: Neutral</li><li>pH > 7: Basic/alkaline</li></ul><h3>Neutralisation</h3><p>Acid + Base → Salt + Water</p>' },
+            { id: 'redox', icon: '🔋', title: 'Electrochemistry', desc: 'Oxidation, reduction, electrochemical cells, electrolysis', lessons: 11, questions: 48, progress: 0, content: '<h2>Electrochemistry</h2><div class="key-point"><div class="key-point-title">Remember: OIL RIG</div><p><strong>O</strong>xidation <strong>I</strong>s <strong>L</strong>oss (of electrons)<br><strong>R</strong>eduction <strong>I</strong>s <strong>G</strong>ain (of electrons)</p></div><h3>Electrolysis</h3><p>Electrolysis uses electrical energy to drive a non-spontaneous reaction.</p><ul><li>Oxidation occurs at the anode (positive)</li><li>Reduction occurs at the cathode (negative)</li></ul>' },
+            { id: 'rates', icon: '⏱️', title: 'Rates & Equilibrium', desc: 'Reaction rates, factors affecting rate, Le Chatelier', lessons: 10, questions: 42, progress: 0, content: '<h2>Rates of Reaction & Equilibrium</h2><h3>Factors Affecting Rate</h3><ol><li><strong>Temperature:</strong> Higher = faster</li><li><strong>Concentration:</strong> Higher = faster</li><li><strong>Surface area:</strong> Greater = faster</li><li><strong>Catalyst:</strong> Provides alternative pathway</li><li><strong>Pressure:</strong> (for gases) Higher = faster</li></ol><div class="key-point"><div class="key-point-title">Le Chatelier\'s Principle</div><p>When a system at equilibrium is disturbed, it will shift to counteract the change.</p></div>' },
+            { id: 'gases', icon: '💨', title: 'Gases', desc: 'Gas laws, ideal gas equation, kinetic theory', lessons: 7, questions: 38, progress: 0, content: '<h2>Gases</h2><div class="key-point"><div class="key-point-title">Ideal Gas Equation</div><p><strong>PV = nRT</strong></p><ul><li>P = Pressure</li><li>V = Volume</li><li>n = Moles</li><li>R = Gas constant (8.314 J/mol·K)</li><li>T = Temperature (Kelvin)</li></ul></div><p>At STP (0°C, 1 atm), one mole of any ideal gas occupies 22.4 L</p>' },
+            { id: 'thermo', icon: '🔥', title: 'Thermochemistry', desc: 'Enthalpy, Hess\'s law, bond energies, calorimetry', lessons: 8, questions: 40, progress: 0, content: '<h2>Thermochemistry</h2><div class="key-point"><div class="key-point-title">Exothermic vs Endothermic</div><p><strong>Exothermic (ΔH < 0):</strong> Heat released<br><strong>Endothermic (ΔH > 0):</strong> Heat absorbed</p></div><h3>Heat Energy</h3><p><strong>q = mcΔT</strong></p><ul><li>q = heat energy (J)</li><li>m = mass (g)</li><li>c = specific heat capacity</li><li>ΔT = temperature change</li></ul>' },
+            { id: 'environmental', icon: '🌍', title: 'Environmental Chemistry', desc: 'Water treatment, atmosphere, pollution, green chemistry', lessons: 6, questions: 32, progress: 0, content: '<h2>Environmental Chemistry</h2><h3>Water Treatment</h3><ol><li>Screening</li><li>Settling/Sedimentation</li><li>Filtration</li><li>Chlorination</li><li>Fluoridation</li><li>pH adjustment</li></ol><h3>Pollution</h3><ul><li><strong>Acid rain:</strong> Caused by SO₂ and NOₓ</li><li><strong>Greenhouse effect:</strong> CO₂, CH₄, N₂O</li><li><strong>Ozone depletion:</strong> CFCs</li></ul>' }
         ];
 
         const flashcardsData = {
@@ -1281,99 +1028,8 @@
                 { q: "What are five factors that affect reaction rate?", a: "Temperature, concentration, surface area, catalyst, pressure" },
                 { q: "What is activation energy?", a: "The minimum energy required for a reaction to occur" },
                 { q: "What is a catalyst?", a: "A substance that speeds up a reaction by providing an alternative pathway with lower activation energy" },
-                { q: "How does temperature affect reaction rate?", a: "Higher temperature increases particle kinetic energy, leading to more frequent and energetic collisions" },
-                { q: "What is collision theory?", a: "Particles must collide with sufficient energy and correct orientation for reaction to occur" }
-            ],
-            periodic: [
-                { q: "What are periodic trends?", a: "Regular patterns in properties when moving across periods or down groups" },
-                { q: "How does atomic radius change across a period?", a: "Decreases across a period due to increasing nuclear charge" },
-                { q: "How does ionisation energy change down a group?", a: "Decreases down a group due to increased shielding and atomic radius" },
-                { q: "What is electronegativity?", a: "The ability of an atom to attract shared electrons in a covalent bond" },
-                { q: "What are transition metals known for?", a: "Variable oxidation states, coloured compounds, catalytic properties" }
-            ],
-            volumetric: [
-                { q: "What is a primary standard?", a: "A pure, stable compound with high molar mass that reacts completely" },
-                { q: "What is the equivalence point?", a: "The point where stoichiometric amounts of reactants have reacted" },
-                { q: "What is the end point?", a: "The point where the indicator changes colour" },
-                { q: "What colour change occurs with phenolphthalein?", a: "Colourless in acid to pink in base" },
-                { q: "What are concordant results?", a: "Titration results within 0.1 cm³ of each other" }
-            ],
-            mechanisms: [
-                { q: "What is homolytic fission?", a: "Breaking of a bond where each atom gets one electron, forming radicals" },
-                { q: "What is an electrophile?", a: "An electron-pair acceptor, often positively charged or electron-deficient" },
-                { q: "What is a nucleophile?", a: "An electron-pair donor, often negatively charged or has lone pairs" },
-                { q: "What are the steps of free radical substitution?", a: "Initiation, propagation, and termination" },
-                { q: "What is a carbocation?", a: "A carbon atom with a positive charge" }
-            ],
-            electrolysis: [
-                { q: "What happens at the anode?", a: "Oxidation occurs (AN OX)" },
-                { q: "What happens at the cathode?", a: "Reduction occurs (RED CAT)" },
-                { q: "What is Faraday's constant?", a: "96,500 C/mol - the charge of one mole of electrons" },
-                { q: "What is electrolysis?", a: "Using electrical energy to drive a non-spontaneous reaction" },
-                { q: "In molten NaCl, what forms at cathode?", a: "Sodium metal (Na⁺ + e⁻ → Na)" }
-            ],
-            equilibrium: [
-                { q: "What is dynamic equilibrium?", a: "When forward and reverse reactions occur at equal rates" },
                 { q: "What is Le Chatelier's Principle?", a: "When equilibrium is disturbed, it shifts to counteract the change" },
-                { q: "What does Kc > 1 indicate?", a: "Products are favoured at equilibrium" },
-                { q: "Does a catalyst affect equilibrium position?", a: "No, it speeds up both forward and reverse reactions equally" },
-                { q: "How does pressure affect gas equilibrium?", a: "System shifts to side with fewer gas molecules" }
-            ],
-            gases: [
-                { q: "State the ideal gas equation", a: "PV = nRT" },
-                { q: "What is the molar volume at STP?", a: "22.4 L/mol at 0°C and 1 atm" },
-                { q: "State Boyle's Law", a: "P₁V₁ = P₂V₂ at constant temperature" },
-                { q: "State Charles's Law", a: "V₁/T₁ = V₂/T₂ at constant pressure" },
-                { q: "What assumptions does ideal gas law make?", a: "No intermolecular forces, negligible particle volume, elastic collisions" }
-            ],
-            thermo: [
-                { q: "What is an exothermic reaction?", a: "A reaction that releases heat (ΔH < 0)" },
-                { q: "What is an endothermic reaction?", a: "A reaction that absorbs heat (ΔH > 0)" },
-                { q: "State Hess's Law", a: "Total enthalpy change is independent of the route taken" },
-                { q: "What is bond energy?", a: "Energy required to break 1 mole of bonds in gaseous molecules" },
-                { q: "State the calorimetry equation", a: "q = mcΔT" }
-            ],
-            fuels: [
-                { q: "What is complete combustion?", a: "Burning in excess oxygen to produce CO₂ and H₂O" },
-                { q: "What is incomplete combustion?", a: "Burning in limited oxygen producing CO, C (soot) and H₂O" },
-                { q: "What are the main greenhouse gases?", a: "CO₂, CH₄, N₂O, water vapour" },
-                { q: "What causes acid rain?", a: "SO₂ and NOₓ dissolving in rainwater" },
-                { q: "Name two alternative fuels", a: "Biofuels (ethanol, biodiesel), hydrogen" }
-            ],
-            water: [
-                { q: "What causes temporary hardness?", a: "Dissolved calcium hydrogencarbonate Ca(HCO₃)₂" },
-                { q: "How is temporary hardness removed?", a: "By boiling (precipitates CaCO₃)" },
-                { q: "What causes permanent hardness?", a: "Dissolved calcium sulfate CaSO₄" },
-                { q: "How is dissolved oxygen measured?", a: "Winkler method" },
-                { q: "What is the purpose of chlorination?", a: "To kill harmful bacteria in water" }
-            ],
-            radioactivity: [
-                { q: "What is an alpha particle?", a: "A helium nucleus (2 protons + 2 neutrons), ⁴₂He" },
-                { q: "What is a beta particle?", a: "A high-speed electron emitted from the nucleus, ⁰₋₁e" },
-                { q: "What is gamma radiation?", a: "High-energy electromagnetic radiation" },
-                { q: "What is half-life?", a: "Time for half the radioactive nuclei to decay" },
-                { q: "Which radiation is most penetrating?", a: "Gamma (stopped by thick lead)" }
-            ],
-            instrumentation: [
-                { q: "What is Rf value?", a: "Distance moved by substance / distance moved by solvent" },
-                { q: "What does mass spectrometry measure?", a: "Molecular mass and fragmentation pattern" },
-                { q: "What does IR spectroscopy identify?", a: "Functional groups from characteristic absorptions" },
-                { q: "What is colorimetry based on?", a: "Beer-Lambert law: concentration relates to light absorbance" },
-                { q: "What are flame tests used for?", a: "Identifying metal ions by characteristic flame colours" }
-            ],
-            options: [
-                { q: "What is the Haber process equation?", a: "N₂ + 3H₂ ⇌ 2NH₃" },
-                { q: "What conditions are used in Haber process?", a: "450°C, 200 atm, iron catalyst" },
-                { q: "What is addition polymerisation?", a: "Monomers add together without losing any atoms" },
-                { q: "What is condensation polymerisation?", a: "Monomers join together, losing a small molecule (e.g., H₂O)" },
-                { q: "What depletes the ozone layer?", a: "CFCs (chlorofluorocarbons)" }
-            ],
-            environmental: [
-                { q: "What is the greenhouse effect?", a: "Gases in atmosphere trap heat, warming Earth" },
-                { q: "What is acid rain?", a: "Rain with pH < 5.6 due to dissolved SO₂ and NOₓ" },
-                { q: "What is atom economy?", a: "Percentage of reactant atoms incorporated into desired product" },
-                { q: "What are green chemistry principles?", a: "Prevent waste, use renewable feedstocks, safer solvents, catalysis" },
-                { q: "What is carbon footprint?", a: "Total greenhouse gas emissions from an activity" }
+                { q: "What is dynamic equilibrium?", a: "When the rate of forward reaction equals the rate of reverse reaction" }
             ]
         };
 
@@ -1413,71 +1069,6 @@
                 { q: "Increasing temperature increases rate because:", options: ["More energetic collisions", "Lower activation energy", "Better catalyst", "Equilibrium shifts"], correct: 0, explanation: "Higher temperature means faster particles with more kinetic energy." },
                 { q: "A catalyst works by:", options: ["Increasing temperature", "Providing alternative pathway", "Increasing concentration", "Shifting equilibrium"], correct: 1, explanation: "Catalysts provide an alternative pathway with lower activation energy." },
                 { q: "For an exothermic reaction, increasing temperature will:", options: ["Shift right", "Shift left", "No effect", "Stop reaction"], correct: 1, explanation: "By Le Chatelier's principle, heating favours the endothermic (reverse) direction." }
-            ],
-            periodic: [
-                { q: "Atomic radius decreases across a period because:", options: ["More shells", "Increasing nuclear charge", "Decreasing electrons", "Less shielding"], correct: 1, explanation: "Increasing protons attract electrons more strongly, pulling them closer." },
-                { q: "Which element has the highest first ionisation energy?", options: ["Li", "Na", "K", "He"], correct: 3, explanation: "Helium (noble gas) has highest IE - full shell, small radius." },
-                { q: "Transition metals can form coloured ions because:", options: ["Large atoms", "Partially filled d orbitals", "Low electronegativity", "High melting points"], correct: 1, explanation: "Partially filled d orbitals allow d-d electron transitions, absorbing certain wavelengths." }
-            ],
-            volumetric: [
-                { q: "A primary standard must be:", options: ["A liquid", "Cheap", "Pure and stable", "Coloured"], correct: 2, explanation: "Primary standards must be pure, stable, high molar mass, and react completely." },
-                { q: "Phenolphthalein is pink in:", options: ["Acid", "Base", "Neutral", "Salt solution"], correct: 1, explanation: "Phenolphthalein is colourless in acid and pink in base (above pH ~8.2)." },
-                { q: "The titre is calculated by:", options: ["Initial - final", "Final - initial", "Initial × final", "Final ÷ initial"], correct: 1, explanation: "Titre = final burette reading - initial burette reading." }
-            ],
-            mechanisms: [
-                { q: "Free radical substitution requires:", options: ["Acid catalyst", "UV light", "Heat only", "Water"], correct: 1, explanation: "UV light causes homolytic fission to generate free radicals." },
-                { q: "An electrophile is attracted to:", options: ["Positive charge", "Negative charge/electron density", "Neutral atoms", "Noble gases"], correct: 1, explanation: "Electrophiles are electron-deficient and seek electron-rich regions." },
-                { q: "In electrophilic addition to ethene, bromine acts as:", options: ["Nucleophile", "Electrophile", "Free radical", "Catalyst"], correct: 1, explanation: "Br₂ is polarised by the electron-rich double bond, acting as electrophile." }
-            ],
-            electrolysis: [
-                { q: "During electrolysis of molten NaCl, at the cathode:", options: ["Cl₂ forms", "Na forms", "O₂ forms", "H₂ forms"], correct: 1, explanation: "Na⁺ ions are reduced at cathode: Na⁺ + e⁻ → Na" },
-                { q: "How many moles of electrons in 96,500 C?", options: ["0.5", "1", "2", "10"], correct: 1, explanation: "Faraday's constant: 96,500 C = 1 mole of electrons" },
-                { q: "In aqueous solutions, which ion is preferentially discharged at cathode?", options: ["Na⁺", "H⁺", "Ca²⁺", "K⁺"], correct: 1, explanation: "H⁺ is more easily reduced than reactive metals like Na, K, Ca." }
-            ],
-            equilibrium: [
-                { q: "At equilibrium, which is true?", options: ["Reactions stop", "Forward rate = reverse rate", "Products only", "Reactants only"], correct: 1, explanation: "Dynamic equilibrium: both reactions continue at equal rates." },
-                { q: "Adding more reactant to equilibrium will:", options: ["Shift left", "Shift right", "No change", "Stop reaction"], correct: 1, explanation: "System shifts right to use up added reactant (Le Chatelier)." },
-                { q: "Which does NOT affect Kc?", options: ["Temperature", "Catalyst", "Nothing - all affect it", "Pressure"], correct: 1, explanation: "Catalysts don't affect equilibrium position, only rate of reaching it." }
-            ],
-            gases: [
-                { q: "At STP, 2 moles of gas occupy:", options: ["11.2 L", "22.4 L", "44.8 L", "67.2 L"], correct: 2, explanation: "At STP, 1 mol = 22.4 L, so 2 mol = 44.8 L" },
-                { q: "If pressure doubles (T constant), volume:", options: ["Doubles", "Halves", "Stays same", "Quadruples"], correct: 1, explanation: "Boyle's Law: P₁V₁ = P₂V₂, so if P doubles, V halves." },
-                { q: "Kelvin temperature is calculated as:", options: ["°C + 273", "°C - 273", "°C × 273", "°C ÷ 273"], correct: 0, explanation: "K = °C + 273 (more precisely +273.15)" }
-            ],
-            thermo: [
-                { q: "Bond breaking is:", options: ["Exothermic", "Endothermic", "Neither", "Both"], correct: 1, explanation: "Breaking bonds requires energy input (endothermic)." },
-                { q: "If ΔH is negative, the reaction is:", options: ["Endothermic", "Exothermic", "At equilibrium", "Not possible"], correct: 1, explanation: "Negative ΔH means heat is released (exothermic)." },
-                { q: "Hess's Law states that ΔH:", options: ["Changes with route", "Is independent of route", "Is always positive", "Equals zero"], correct: 1, explanation: "Total enthalpy change depends only on initial and final states." }
-            ],
-            fuels: [
-                { q: "Complete combustion of methane produces:", options: ["CO + H₂O", "CO₂ + H₂O", "C + H₂O", "CO₂ only"], correct: 1, explanation: "CH₄ + 2O₂ → CO₂ + 2H₂O" },
-                { q: "Which is NOT a greenhouse gas?", options: ["CO₂", "CH₄", "N₂", "N₂O"], correct: 2, explanation: "N₂ is not a greenhouse gas - it doesn't absorb infrared." },
-                { q: "Acid rain is primarily caused by:", options: ["CO₂", "SO₂ and NOₓ", "CH₄", "O₃"], correct: 1, explanation: "SO₂ and NOₓ form sulfuric and nitric acids in rain." }
-            ],
-            water: [
-                { q: "Temporary hardness is caused by:", options: ["CaSO₄", "Ca(HCO₃)₂", "NaCl", "MgCl₂"], correct: 1, explanation: "Calcium hydrogencarbonate causes temporary hardness." },
-                { q: "EDTA titration measures:", options: ["pH", "Dissolved oxygen", "Total hardness", "Chloride"], correct: 2, explanation: "EDTA complexes with Ca²⁺ and Mg²⁺ to measure total hardness." },
-                { q: "Chlorination of water:", options: ["Softens water", "Kills bacteria", "Removes hardness", "Increases pH"], correct: 1, explanation: "Chlorine/chloramine kills harmful bacteria and pathogens." }
-            ],
-            radioactivity: [
-                { q: "Alpha particles are:", options: ["Electrons", "Helium nuclei", "Protons", "Neutrons"], correct: 1, explanation: "Alpha particles are ⁴₂He (2 protons + 2 neutrons)." },
-                { q: "After 3 half-lives, what fraction remains?", options: ["1/2", "1/4", "1/8", "1/16"], correct: 2, explanation: "After n half-lives: (1/2)ⁿ = (1/2)³ = 1/8" },
-                { q: "Gamma radiation is stopped by:", options: ["Paper", "Aluminium", "Thick lead", "Nothing"], correct: 2, explanation: "Gamma needs dense materials like thick lead or concrete." }
-            ],
-            instrumentation: [
-                { q: "In chromatography, Rf = 0.6 means the substance moved:", options: ["60% of solvent distance", "6% of solvent distance", "0.6 cm", "60 cm"], correct: 0, explanation: "Rf = substance distance / solvent distance = 0.6 = 60%" },
-                { q: "Mass spectrometry determines:", options: ["Melting point", "Molecular mass", "Colour", "Density"], correct: 1, explanation: "Mass spec shows molecular ion peak (Mr) and fragmentation." },
-                { q: "IR spectroscopy identifies:", options: ["Colour", "Mass", "Functional groups", "Melting point"], correct: 2, explanation: "Different functional groups absorb IR at characteristic frequencies." }
-            ],
-            options: [
-                { q: "The Haber process makes:", options: ["Sulfuric acid", "Ammonia", "Nitric acid", "Ethanol"], correct: 1, explanation: "N₂ + 3H₂ ⇌ 2NH₃ (ammonia production)" },
-                { q: "Addition polymers are formed by:", options: ["Losing water", "Adding monomers together", "Hydrolysis", "Oxidation"], correct: 1, explanation: "Addition polymerisation joins monomers without losing atoms." },
-                { q: "CFCs damage the ozone layer by:", options: ["Absorbing UV", "Releasing Cl radicals", "Absorbing O₃", "Releasing O₂"], correct: 1, explanation: "Cl radicals from CFCs catalyse ozone destruction." }
-            ],
-            environmental: [
-                { q: "The greenhouse effect is caused by gases that:", options: ["Reflect visible light", "Absorb infrared radiation", "Block UV", "Produce ozone"], correct: 1, explanation: "Greenhouse gases absorb and re-emit infrared (heat) radiation." },
-                { q: "Atom economy measures:", options: ["Reaction rate", "% atoms in desired product", "Yield", "Purity"], correct: 1, explanation: "Atom economy = (Mr of desired product / Mr of all reactants) × 100" },
-                { q: "Which is a green chemistry principle?", options: ["Maximise waste", "Use toxic solvents", "Prevent waste", "Ignore safety"], correct: 2, explanation: "Green chemistry aims to prevent waste and minimise environmental impact." }
             ]
         };
 
@@ -1499,40 +1090,14 @@
         ];
 
         const experimentsData = [
-            // Titration Experiments (Volumetric Analysis)
-            { id: 1, title: "Acid-Base Titration", badge: "Titration", icon: "🧪", desc: "Standardise HCl with sodium carbonate or determine acid concentration" },
-            { id: 2, title: "Ethanoic Acid in Vinegar", badge: "Titration", icon: "🍶", desc: "Determine % ethanoic acid in vinegar using NaOH" },
-            { id: 3, title: "Water of Crystallisation", badge: "Titration", icon: "💎", desc: "Find water content in hydrated sodium carbonate" },
-            { id: 4, title: "Redox Titration (KMnO₄)", badge: "Titration", icon: "💜", desc: "Potassium permanganate with ammonium iron(II) sulfate" },
-            { id: 5, title: "Iron in Iron Tablets", badge: "Titration", icon: "💊", desc: "Determine iron content using redox titration" },
-            { id: 6, title: "Iodine-Thiosulfate", badge: "Titration", icon: "🟤", desc: "Iodometric titration with sodium thiosulfate" },
-            { id: 7, title: "Hypochlorite in Bleach", badge: "Titration", icon: "🧴", desc: "Determine available chlorine percentage" },
-            { id: 8, title: "Total Hardness of Water", badge: "Titration", icon: "💧", desc: "EDTA titration for Ca²⁺ and Mg²⁺ ions" },
-            { id: 9, title: "Dissolved Oxygen", badge: "Titration", icon: "🫧", desc: "Winkler method for DO measurement" },
-            // Organic Chemistry Experiments
-            { id: 10, title: "Recrystallisation", badge: "Organic", icon: "❄️", desc: "Purify benzoic acid and determine melting point" },
-            { id: 11, title: "Preparation of Ethyne", badge: "Organic", icon: "⚗️", desc: "Make acetylene from calcium carbide and test properties" },
-            { id: 12, title: "Preparation of Ethene", badge: "Organic", icon: "🧬", desc: "Dehydration of ethanol, test with bromine water" },
-            { id: 13, title: "Preparation of Soap", badge: "Organic", icon: "🧼", desc: "Saponification of fat/oil with NaOH" },
-            { id: 14, title: "Esterification", badge: "Organic", icon: "🍎", desc: "Make ethyl ethanoate from ethanol and ethanoic acid" },
-            { id: 15, title: "Extraction of Clove Oil", badge: "Organic", icon: "🌿", desc: "Steam distillation to extract eugenol" },
-            { id: 16, title: "Ethanal Properties", badge: "Organic", icon: "🔬", desc: "Reactions of acetaldehyde - Tollens, Fehling's" },
-            { id: 17, title: "Ethanoic Acid Properties", badge: "Organic", icon: "🧫", desc: "Characteristic reactions of carboxylic acids" },
-            { id: 18, title: "Paper Chromatography", badge: "Organic", icon: "📜", desc: "Separate and identify indicators" },
-            // General/Inorganic Experiments
-            { id: 19, title: "Flame Tests", badge: "Inorganic", icon: "🔥", desc: "Identify metal ions: Li-red, Na-yellow, K-lilac, Cu-green" },
-            { id: 20, title: "Tests for Anions", badge: "Analytical", icon: "🔬", desc: "Identify CO₃²⁻, SO₄²⁻, Cl⁻, and other anions" },
-            { id: 21, title: "Tests for Cations", badge: "Analytical", icon: "🧪", desc: "Identify metal cations using NaOH and NH₃" },
-            { id: 22, title: "Electrolysis", badge: "Electrochemistry", icon: "⚡", desc: "Electrolysis of water and copper sulfate solution" },
-            // Thermochemistry Experiments
-            { id: 23, title: "Heat of Reaction", badge: "Thermochemistry", icon: "🌡️", desc: "Measure enthalpy of neutralisation using calorimetry" },
-            { id: 24, title: "Heat of Combustion", badge: "Thermochemistry", icon: "🔥", desc: "Determine heat released by burning fuels" },
-            // Rate Experiments
-            { id: 25, title: "Rate of Reaction", badge: "Kinetics", icon: "⏱️", desc: "Effect of concentration on reaction rate (Na₂S₂O₃/HCl)" },
-            { id: 26, title: "Catalysis", badge: "Kinetics", icon: "🔄", desc: "Effect of catalyst on decomposition of H₂O₂" },
-            // Water Analysis
-            { id: 27, title: "Suspended Solids", badge: "Water", icon: "🔍", desc: "Measure total suspended solids in water sample" },
-            { id: 28, title: "Free Chlorine", badge: "Water", icon: "🏊", desc: "Determine free chlorine in swimming pool water" }
+            { id: 1, title: "Flame Tests", badge: "Inorganic", icon: "🔥", desc: "Identify metal ions by flame colour" },
+            { id: 2, title: "Titration (Acid-Base)", badge: "Quantitative", icon: "🧪", desc: "Determine concentration by neutralisation" },
+            { id: 3, title: "Rate of Reaction", badge: "Kinetics", icon: "⏱️", desc: "Measure effect of concentration on rate" },
+            { id: 4, title: "Preparation of Ethene", badge: "Organic", icon: "🧬", desc: "Dehydration of ethanol" },
+            { id: 5, title: "Esterification", badge: "Organic", icon: "🍎", desc: "Prepare an ester from alcohol and acid" },
+            { id: 6, title: "Electrolysis of Water", badge: "Electrochemistry", icon: "⚡", desc: "Decompose water into H₂ and O₂" },
+            { id: 7, title: "Heat of Reaction", badge: "Thermochemistry", icon: "🌡️", desc: "Measure enthalpy of neutralisation" },
+            { id: 8, title: "Tests for Anions", badge: "Analytical", icon: "🔬", desc: "Identify carbonate, sulfate, chloride" }
         ];
 
         // ==================== STATE ====================
@@ -1553,17 +1118,9 @@
             initFormulas();
             initExperiments();
             initMindMaps();
-            initDataTables();
-            initGlossary();
-            initExamCountdown();
             loadProgress();
             updateStats();
             initDashboard();
-            
-            // Request notification permission for Pomodoro
-            if ('Notification' in window && Notification.permission === 'default') {
-                Notification.requestPermission();
-            }
         });
 
         function createMolecules() {
@@ -2008,54 +1565,44 @@
             const svg = document.getElementById('mindmapSvg');
             svg.innerHTML = '';
             
-            const width = 1000, height = 600;
-            svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+            const width = 900, height = 500;
             const centerX = width / 2, centerY = height / 2;
             
             // Get parent nodes (no parent property)
             const parentNodes = data.nodes.filter(n => !n.parent);
             const childNodes = data.nodes.filter(n => n.parent);
             
-            // Calculate positions for parent nodes in a circle - more space
-            const parentRadius = 200;
+            // Calculate positions for parent nodes in a circle
+            const parentRadius = 160;
             parentNodes.forEach((node, i) => {
                 const angle = (i / parentNodes.length) * 2 * Math.PI - Math.PI / 2;
                 node.x = centerX + Math.cos(angle) * parentRadius;
                 node.y = centerY + Math.sin(angle) * parentRadius;
             });
             
-            // Calculate positions for child nodes - spread them out more
+            // Calculate positions for child nodes
             childNodes.forEach(node => {
                 const parent = parentNodes.find(p => p.id === node.parent) || childNodes.find(p => p.id === node.parent);
                 if (parent) {
                     const siblings = childNodes.filter(n => n.parent === node.parent);
                     const idx = siblings.indexOf(node);
-                    const baseAngle = Math.atan2(parent.y - centerY, parent.x - centerX);
-                    const spreadAngle = 0.6; // Increased spread
-                    const childAngle = baseAngle + (idx - (siblings.length - 1) / 2) * spreadAngle;
-                    const childRadius = 100; // Increased distance
+                    const angle = Math.atan2(parent.y - centerY, parent.x - centerX);
+                    const spread = 0.5;
+                    const childAngle = angle + (idx - (siblings.length - 1) / 2) * spread;
+                    const childRadius = 80;
                     node.x = parent.x + Math.cos(childAngle) * childRadius;
                     node.y = parent.y + Math.sin(childAngle) * childRadius;
-                    
-                    // Keep nodes within bounds
-                    node.x = Math.max(60, Math.min(width - 60, node.x));
-                    node.y = Math.max(50, Math.min(height - 50, node.y));
                 }
             });
             
-            // Draw curved links from center to parents
+            // Draw links from center to parents
             parentNodes.forEach(node => {
                 const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                const dx = node.x - centerX;
-                const dy = node.y - centerY;
-                const ctrl1X = centerX + dx * 0.3;
-                const ctrl1Y = centerY + dy * 0.1;
-                const ctrl2X = centerX + dx * 0.7;
-                const ctrl2Y = centerY + dy * 0.9;
-                path.setAttribute('d', `M ${centerX} ${centerY} C ${ctrl1X} ${ctrl1Y}, ${ctrl2X} ${ctrl2Y}, ${node.x} ${node.y}`);
+                const midX = (centerX + node.x) / 2;
+                const midY = (centerY + node.y) / 2;
+                path.setAttribute('d', `M ${centerX} ${centerY} Q ${midX} ${midY} ${node.x} ${node.y}`);
                 path.setAttribute('class', 'mindmap-link');
                 path.setAttribute('stroke', node.color);
-                path.setAttribute('stroke-width', '2.5');
                 svg.appendChild(path);
             });
             
@@ -2063,15 +1610,15 @@
             childNodes.forEach(node => {
                 const parent = parentNodes.find(p => p.id === node.parent) || childNodes.find(p => p.id === node.parent);
                 if (parent) {
-                    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                    const midX = (parent.x + node.x) / 2;
-                    const midY = (parent.y + node.y) / 2;
-                    path.setAttribute('d', `M ${parent.x} ${parent.y} Q ${midX} ${midY} ${node.x} ${node.y}`);
-                    path.setAttribute('class', 'mindmap-link');
-                    path.setAttribute('stroke', node.color);
-                    path.setAttribute('stroke-opacity', '0.6');
-                    path.setAttribute('stroke-width', '1.5');
-                    svg.appendChild(path);
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    line.setAttribute('x1', parent.x);
+                    line.setAttribute('y1', parent.y);
+                    line.setAttribute('x2', node.x);
+                    line.setAttribute('y2', node.y);
+                    line.setAttribute('class', 'mindmap-link');
+                    line.setAttribute('stroke', node.color);
+                    line.setAttribute('stroke-opacity', '0.5');
+                    svg.appendChild(line);
                 }
             });
             
@@ -2082,10 +1629,10 @@
             const centerCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
             centerCircle.setAttribute('cx', centerX);
             centerCircle.setAttribute('cy', centerY);
-            centerCircle.setAttribute('r', 55);
+            centerCircle.setAttribute('r', 45);
             centerCircle.setAttribute('fill', data.center.color);
             centerCircle.setAttribute('stroke', '#fff');
-            centerCircle.setAttribute('stroke-width', '3');
+            centerCircle.setAttribute('stroke-width', '2');
             
             const centerText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             centerText.setAttribute('x', centerX);
@@ -2093,77 +1640,26 @@
             centerText.setAttribute('text-anchor', 'middle');
             centerText.setAttribute('dominant-baseline', 'middle');
             centerText.setAttribute('fill', '#fff');
-            centerText.setAttribute('font-size', '13px');
-            centerText.setAttribute('font-weight', '600');
             centerText.textContent = data.center.label;
             
             centerGroup.appendChild(centerCircle);
             centerGroup.appendChild(centerText);
             svg.appendChild(centerGroup);
             
-            // Draw parent nodes first (larger)
-            parentNodes.forEach(node => {
+            // Draw all nodes
+            [...parentNodes, ...childNodes].forEach(node => {
                 const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
                 group.setAttribute('class', 'mindmap-node');
                 group.style.cursor = 'pointer';
                 
-                const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-                circle.setAttribute('cx', node.x);
-                circle.setAttribute('cy', node.y);
-                circle.setAttribute('r', 42);
-                circle.setAttribute('fill', node.color);
-                circle.setAttribute('stroke', '#fff');
-                circle.setAttribute('stroke-width', '2');
-                
-                const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-                text.setAttribute('x', node.x);
-                text.setAttribute('y', node.y);
-                text.setAttribute('text-anchor', 'middle');
-                text.setAttribute('dominant-baseline', 'middle');
-                text.setAttribute('font-size', '10px');
-                text.setAttribute('fill', '#fff');
-                text.setAttribute('font-weight', '500');
-                
-                // Word wrap for labels
-                const words = node.label.split(' ');
-                if (words.length > 2 || node.label.length > 12) {
-                    const mid = Math.ceil(words.length / 2);
-                    const line1 = words.slice(0, mid).join(' ');
-                    const line2 = words.slice(mid).join(' ');
-                    
-                    const tspan1 = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
-                    tspan1.setAttribute('x', node.x);
-                    tspan1.setAttribute('dy', '-0.5em');
-                    tspan1.textContent = line1;
-                    
-                    const tspan2 = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
-                    tspan2.setAttribute('x', node.x);
-                    tspan2.setAttribute('dy', '1.2em');
-                    tspan2.textContent = line2;
-                    
-                    text.appendChild(tspan1);
-                    text.appendChild(tspan2);
-                } else {
-                    text.textContent = node.label;
-                }
-                
-                group.appendChild(circle);
-                group.appendChild(text);
-                group.addEventListener('click', () => showMindmapInfo(node));
-                svg.appendChild(group);
-            });
-            
-            // Draw child nodes (smaller)
-            childNodes.forEach(node => {
-                const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-                group.setAttribute('class', 'mindmap-node');
-                group.style.cursor = 'pointer';
+                const isChild = !!node.parent;
+                const radius = isChild ? 28 : 35;
                 
                 const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
                 circle.setAttribute('cx', node.x);
                 circle.setAttribute('cy', node.y);
-                circle.setAttribute('r', 32);
-                circle.setAttribute('fill', 'rgba(10, 14, 20, 0.8)');
+                circle.setAttribute('r', radius);
+                circle.setAttribute('fill', isChild ? 'rgba(0,0,0,0.3)' : node.color);
                 circle.setAttribute('stroke', node.color);
                 circle.setAttribute('stroke-width', '2');
                 
@@ -2172,8 +1668,7 @@
                 text.setAttribute('y', node.y);
                 text.setAttribute('text-anchor', 'middle');
                 text.setAttribute('dominant-baseline', 'middle');
-                text.setAttribute('font-size', '8px');
-                text.setAttribute('fill', '#fff');
+                text.setAttribute('font-size', isChild ? '9px' : '10px');
                 
                 // Word wrap for labels
                 const words = node.label.split(' ');
@@ -2184,7 +1679,7 @@
                     
                     const tspan1 = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
                     tspan1.setAttribute('x', node.x);
-                    tspan1.setAttribute('dy', '-0.5em');
+                    tspan1.setAttribute('dy', '-0.4em');
                     tspan1.textContent = line1;
                     
                     const tspan2 = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
@@ -2200,7 +1695,9 @@
                 
                 group.appendChild(circle);
                 group.appendChild(text);
+                
                 group.addEventListener('click', () => showMindmapInfo(node));
+                
                 svg.appendChild(group);
             });
             
@@ -2267,440 +1764,11 @@
         function updateStats() { document.getElementById('streakCount').textContent = streak; document.getElementById('xpCount').textContent = xp; }
         function addXP(amount) { xp += amount; localStorage.setItem('xp', xp); updateStats(); }
 
-        // ==================== EXAM COUNTDOWN ====================
-        function initExamCountdown() {
-            // LC Chemistry typically in June
-            const examDate = new Date('2025-06-11'); // Approximate LC date
-            const today = new Date();
-            const diffTime = examDate - today;
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            
-            document.getElementById('daysUntilExam').textContent = diffDays > 0 ? diffDays : 'Exam Passed';
-            document.getElementById('examDate').textContent = examDate.toLocaleDateString('en-IE', { day: 'numeric', month: 'long', year: 'numeric' });
-        }
-
-        // ==================== POMODORO TIMER ====================
-        let pomodoroInterval = null;
-        let pomodoroTime = 25 * 60;
-        let pomodoroRunning = false;
-        let isBreak = false;
-
-        function togglePomodoro() {
-            if (pomodoroRunning) {
-                clearInterval(pomodoroInterval);
-                document.getElementById('pomodoroStart').textContent = 'Resume';
-            } else {
-                pomodoroInterval = setInterval(updatePomodoro, 1000);
-                document.getElementById('pomodoroStart').textContent = 'Pause';
-            }
-            pomodoroRunning = !pomodoroRunning;
-        }
-
-        function updatePomodoro() {
-            if (pomodoroTime > 0) {
-                pomodoroTime--;
-                const mins = Math.floor(pomodoroTime / 60);
-                const secs = pomodoroTime % 60;
-                document.getElementById('pomodoroDisplay').textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-            } else {
-                clearInterval(pomodoroInterval);
-                pomodoroRunning = false;
-                if (!isBreak) {
-                    isBreak = true;
-                    pomodoroTime = 5 * 60;
-                    document.getElementById('pomodoroStatus').textContent = '☕ Break Time!';
-                    document.getElementById('pomodoroStart').textContent = 'Start Break';
-                    addXP(25);
-                } else {
-                    isBreak = false;
-                    pomodoroTime = 25 * 60;
-                    document.getElementById('pomodoroStatus').textContent = 'Focus Time';
-                    document.getElementById('pomodoroStart').textContent = 'Start';
-                }
-                document.getElementById('pomodoroDisplay').textContent = `${Math.floor(pomodoroTime / 60)}:00`;
-                if (Notification.permission === 'granted') {
-                    new Notification('Pomodoro Complete!', { body: isBreak ? 'Time for a break!' : 'Break over, back to studying!' });
-                }
-            }
-        }
-
-        function resetPomodoro() {
-            clearInterval(pomodoroInterval);
-            pomodoroRunning = false;
-            isBreak = false;
-            pomodoroTime = 25 * 60;
-            document.getElementById('pomodoroDisplay').textContent = '25:00';
-            document.getElementById('pomodoroStatus').textContent = 'Focus Time';
-            document.getElementById('pomodoroStart').textContent = 'Start';
-        }
-
-        // ==================== DATA TABLES ====================
-        const dataTables = {
-            electrochemical: {
-                title: 'Standard Electrode Potentials (E°)',
-                headers: ['Half-Reaction', 'E° (V)'],
-                data: [
-                    ['Li⁺ + e⁻ → Li', '-3.04'],
-                    ['K⁺ + e⁻ → K', '-2.93'],
-                    ['Ca²⁺ + 2e⁻ → Ca', '-2.87'],
-                    ['Na⁺ + e⁻ → Na', '-2.71'],
-                    ['Mg²⁺ + 2e⁻ → Mg', '-2.37'],
-                    ['Al³⁺ + 3e⁻ → Al', '-1.66'],
-                    ['Zn²⁺ + 2e⁻ → Zn', '-0.76'],
-                    ['Fe²⁺ + 2e⁻ → Fe', '-0.44'],
-                    ['Ni²⁺ + 2e⁻ → Ni', '-0.26'],
-                    ['Sn²⁺ + 2e⁻ → Sn', '-0.14'],
-                    ['Pb²⁺ + 2e⁻ → Pb', '-0.13'],
-                    ['2H⁺ + 2e⁻ → H₂', '0.00'],
-                    ['Cu²⁺ + 2e⁻ → Cu', '+0.34'],
-                    ['I₂ + 2e⁻ → 2I⁻', '+0.54'],
-                    ['Ag⁺ + e⁻ → Ag', '+0.80'],
-                    ['Br₂ + 2e⁻ → 2Br⁻', '+1.07'],
-                    ['Cl₂ + 2e⁻ → 2Cl⁻', '+1.36'],
-                    ['Au³⁺ + 3e⁻ → Au', '+1.50'],
-                    ['F₂ + 2e⁻ → 2F⁻', '+2.87']
-                ],
-                note: 'More positive E° = stronger oxidising agent. More negative E° = stronger reducing agent.'
-            },
-            bondEnergies: {
-                title: 'Average Bond Energies',
-                headers: ['Bond', 'Energy (kJ/mol)', 'Bond', 'Energy (kJ/mol)'],
-                data: [
-                    ['H-H', '436', 'C-C', '347'],
-                    ['H-C', '413', 'C=C', '612'],
-                    ['H-N', '391', 'C≡C', '838'],
-                    ['H-O', '463', 'C-O', '358'],
-                    ['H-F', '568', 'C=O', '805'],
-                    ['H-Cl', '432', 'C-N', '286'],
-                    ['H-Br', '366', 'C≡N', '890'],
-                    ['H-I', '298', 'N-N', '158'],
-                    ['O-O', '146', 'N=N', '418'],
-                    ['O=O', '498', 'N≡N', '945'],
-                    ['Cl-Cl', '243', 'C-Cl', '346'],
-                    ['Br-Br', '193', 'C-Br', '290']
-                ],
-                note: 'Bond breaking is endothermic (+). Bond forming is exothermic (-).'
-            },
-            enthalpies: {
-                title: 'Standard Enthalpies of Formation (ΔHf°)',
-                headers: ['Compound', 'ΔHf° (kJ/mol)', 'Compound', 'ΔHf° (kJ/mol)'],
-                data: [
-                    ['H₂O(l)', '-286', 'CO₂(g)', '-394'],
-                    ['H₂O(g)', '-242', 'CO(g)', '-111'],
-                    ['HCl(g)', '-92', 'CH₄(g)', '-75'],
-                    ['HBr(g)', '-36', 'C₂H₆(g)', '-85'],
-                    ['NH₃(g)', '-46', 'C₂H₄(g)', '+52'],
-                    ['NO(g)', '+90', 'C₂H₂(g)', '+227'],
-                    ['NO₂(g)', '+34', 'CH₃OH(l)', '-239'],
-                    ['N₂O(g)', '+82', 'C₂H₅OH(l)', '-278'],
-                    ['SO₂(g)', '-297', 'C₆H₁₂O₆(s)', '-1271'],
-                    ['SO₃(g)', '-396', 'NaCl(s)', '-411']
-                ],
-                note: 'Elements in standard states have ΔHf° = 0 by definition.'
-            },
-            constants: {
-                title: 'Important Constants & Values',
-                headers: ['Constant', 'Value'],
-                data: [
-                    ['Avogadro constant (Nₐ)', '6.022 × 10²³ mol⁻¹'],
-                    ['Gas constant (R)', '8.314 J mol⁻¹ K⁻¹'],
-                    ['Gas constant (R)', '0.0821 L atm mol⁻¹ K⁻¹'],
-                    ['Faraday constant (F)', '96,500 C mol⁻¹'],
-                    ['Molar volume at STP', '22.4 L mol⁻¹'],
-                    ['Standard pressure', '101.325 kPa (1 atm)'],
-                    ['Standard temperature', '273 K (0°C)'],
-                    ['Planck constant (h)', '6.626 × 10⁻³⁴ J s'],
-                    ['Speed of light (c)', '3.00 × 10⁸ m s⁻¹'],
-                    ['Specific heat of water', '4.18 J g⁻¹ °C⁻¹'],
-                    ['Density of water', '1.00 g cm⁻³'],
-                    ['Ionic product of water (Kw)', '1.0 × 10⁻¹⁴ mol² L⁻² at 25°C']
-                ],
-                note: 'These values are commonly given on the exam data sheet.'
-            },
-            indicators: {
-                title: 'Acid-Base Indicators',
-                headers: ['Indicator', 'pH Range', 'Acid Colour', 'Base Colour'],
-                data: [
-                    ['Methyl orange', '3.1 - 4.4', 'Red', 'Yellow'],
-                    ['Methyl red', '4.4 - 6.2', 'Red', 'Yellow'],
-                    ['Bromothymol blue', '6.0 - 7.6', 'Yellow', 'Blue'],
-                    ['Litmus', '5.0 - 8.0', 'Red', 'Blue'],
-                    ['Phenolphthalein', '8.2 - 10.0', 'Colourless', 'Pink'],
-                    ['Universal indicator', '1 - 14', 'Red/Orange', 'Blue/Purple']
-                ],
-                note: 'Use methyl orange for strong acid/weak base. Use phenolphthalein for weak acid/strong base.'
-            }
-        };
-
-        function initDataTables() {
-            renderDataTable('electrochemical');
-            document.querySelectorAll('[data-table]').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    document.querySelectorAll('[data-table]').forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    renderDataTable(btn.dataset.table);
-                });
-            });
-        }
-
-        function renderDataTable(tableId) {
-            const table = dataTables[tableId];
-            let html = `<h3 style="margin-bottom: 1rem; color: var(--accent-cyan);">${table.title}</h3>`;
-            html += `<div style="overflow-x: auto;"><table style="width: 100%; border-collapse: collapse;">`;
-            html += `<thead><tr>${table.headers.map(h => `<th style="text-align: left; padding: 0.75rem; background: var(--bg-tertiary); border-bottom: 2px solid var(--accent-cyan); font-weight: 600;">${h}</th>`).join('')}</tr></thead>`;
-            html += `<tbody>`;
-            table.data.forEach((row, i) => {
-                html += `<tr style="background: ${i % 2 === 0 ? 'var(--bg-secondary)' : 'transparent'};">`;
-                row.forEach(cell => {
-                    html += `<td style="padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--glass-border); font-family: 'Space Mono', monospace; font-size: 0.85rem;">${cell}</td>`;
-                });
-                html += `</tr>`;
-            });
-            html += `</tbody></table></div>`;
-            html += `<div style="margin-top: 1rem; padding: 1rem; background: rgba(0, 212, 255, 0.1); border-left: 3px solid var(--accent-cyan); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 0.85rem; color: var(--text-secondary);">💡 ${table.note}</div>`;
-            document.getElementById('dataTableContent').innerHTML = html;
-        }
-
-        // ==================== GLOSSARY ====================
-        const glossaryTerms = [
-            { term: 'Atom', def: 'The smallest particle of an element that retains its chemical properties.', cat: 'atomic' },
-            { term: 'Atomic Number', def: 'The number of protons in the nucleus of an atom.', cat: 'atomic' },
-            { term: 'Mass Number', def: 'The total number of protons and neutrons in an atom.', cat: 'atomic' },
-            { term: 'Isotope', def: 'Atoms of the same element with different numbers of neutrons.', cat: 'atomic' },
-            { term: 'Ion', def: 'An atom or group of atoms with a net electric charge due to loss or gain of electrons.', cat: 'atomic' },
-            { term: 'Electron Configuration', def: 'The arrangement of electrons in an atom\'s orbitals.', cat: 'atomic' },
-            { term: 'Ground State', def: 'The lowest energy state of an atom where electrons occupy the lowest available energy levels.', cat: 'atomic' },
-            { term: 'Excited State', def: 'A state where an electron has absorbed energy and moved to a higher energy level.', cat: 'atomic' },
-            { term: 'Ionic Bond', def: 'A bond formed by the electrostatic attraction between oppositely charged ions.', cat: 'bonding' },
-            { term: 'Covalent Bond', def: 'A bond formed by the sharing of electron pairs between atoms.', cat: 'bonding' },
-            { term: 'Electronegativity', def: 'A measure of the ability of an atom to attract shared electrons in a covalent bond.', cat: 'bonding' },
-            { term: 'Polar Bond', def: 'A covalent bond where electrons are unequally shared due to different electronegativities.', cat: 'bonding' },
-            { term: 'Metallic Bond', def: 'Bonding in metals involving a lattice of positive ions surrounded by delocalised electrons.', cat: 'bonding' },
-            { term: 'Van der Waals Forces', def: 'Weak intermolecular forces caused by temporary dipoles.', cat: 'bonding' },
-            { term: 'Hydrogen Bond', def: 'A strong intermolecular force between H bonded to N, O, or F and a lone pair on another N, O, or F.', cat: 'bonding' },
-            { term: 'Alkane', def: 'A saturated hydrocarbon with only single C-C bonds. General formula: CₙH₂ₙ₊₂', cat: 'organic' },
-            { term: 'Alkene', def: 'An unsaturated hydrocarbon containing a C=C double bond. General formula: CₙH₂ₙ', cat: 'organic' },
-            { term: 'Functional Group', def: 'A group of atoms responsible for the characteristic reactions of a compound.', cat: 'organic' },
-            { term: 'Homologous Series', def: 'A family of compounds with the same functional group and general formula.', cat: 'organic' },
-            { term: 'Isomers', def: 'Compounds with the same molecular formula but different structural arrangements.', cat: 'organic' },
-            { term: 'Addition Reaction', def: 'A reaction where atoms are added across a multiple bond.', cat: 'organic' },
-            { term: 'Substitution Reaction', def: 'A reaction where one atom or group is replaced by another.', cat: 'organic' },
-            { term: 'Polymerisation', def: 'The process of joining many small monomer molecules to form a large polymer.', cat: 'organic' },
-            { term: 'Acid', def: 'A substance that donates protons (H⁺) or accepts electron pairs.', cat: 'acids' },
-            { term: 'Base', def: 'A substance that accepts protons (H⁺) or donates electron pairs.', cat: 'acids' },
-            { term: 'pH', def: 'A measure of hydrogen ion concentration: pH = -log₁₀[H⁺]', cat: 'acids' },
-            { term: 'Buffer Solution', def: 'A solution that resists changes in pH when small amounts of acid or base are added.', cat: 'acids' },
-            { term: 'Neutralisation', def: 'The reaction between an acid and a base to form salt and water.', cat: 'acids' },
-            { term: 'Titration', def: 'A technique to determine the concentration of a solution by reacting it with a solution of known concentration.', cat: 'acids' },
-            { term: 'Oxidation', def: 'Loss of electrons, gain of oxygen, or increase in oxidation state.', cat: 'redox' },
-            { term: 'Reduction', def: 'Gain of electrons, loss of oxygen, or decrease in oxidation state.', cat: 'redox' },
-            { term: 'Oxidising Agent', def: 'A substance that causes oxidation by accepting electrons (it gets reduced).', cat: 'redox' },
-            { term: 'Reducing Agent', def: 'A substance that causes reduction by donating electrons (it gets oxidised).', cat: 'redox' },
-            { term: 'Electrolysis', def: 'Using electrical energy to cause a non-spontaneous chemical reaction.', cat: 'redox' },
-            { term: 'Electrode', def: 'A conductor through which electricity enters or leaves an electrolyte.', cat: 'redox' },
-            { term: 'Anode', def: 'The electrode where oxidation occurs.', cat: 'redox' },
-            { term: 'Cathode', def: 'The electrode where reduction occurs.', cat: 'redox' },
-            { term: 'Mole', def: 'The amount of substance containing 6.022 × 10²³ particles.', cat: 'atomic' },
-            { term: 'Molar Mass', def: 'The mass of one mole of a substance, expressed in g/mol.', cat: 'atomic' },
-            { term: 'Enthalpy', def: 'The heat content of a system at constant pressure.', cat: 'redox' },
-            { term: 'Exothermic', def: 'A reaction that releases heat to the surroundings (ΔH < 0).', cat: 'redox' },
-            { term: 'Endothermic', def: 'A reaction that absorbs heat from the surroundings (ΔH > 0).', cat: 'redox' },
-            { term: 'Activation Energy', def: 'The minimum energy required for a reaction to occur.', cat: 'redox' },
-            { term: 'Catalyst', def: 'A substance that increases reaction rate without being consumed, by lowering activation energy.', cat: 'redox' },
-            { term: 'Equilibrium', def: 'A state where the rates of forward and reverse reactions are equal.', cat: 'redox' },
-            { term: 'Le Chatelier\'s Principle', def: 'When a system at equilibrium is disturbed, it shifts to counteract the change.', cat: 'redox' }
-        ].sort((a, b) => a.term.localeCompare(b.term));
-
-        let currentGlossaryCategory = 'all';
-
-        function initGlossary() {
-            renderGlossary(glossaryTerms);
-        }
-
-        function renderGlossary(terms) {
-            const html = terms.map(t => `
-                <div style="padding: 1rem; border-bottom: 1px solid var(--glass-border);">
-                    <div style="font-weight: 600; color: var(--accent-cyan); margin-bottom: 0.25rem;">${t.term}</div>
-                    <div style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">${t.def}</div>
-                    <span style="font-size: 0.7rem; background: var(--bg-tertiary); padding: 0.2rem 0.5rem; border-radius: 10px; color: var(--text-muted); margin-top: 0.5rem; display: inline-block;">${t.cat}</span>
-                </div>
-            `).join('');
-            document.getElementById('glossaryContent').innerHTML = html || '<p style="color: var(--text-muted); text-align: center; padding: 2rem;">No terms found.</p>';
-        }
-
-        function filterGlossary(query) {
-            const filtered = glossaryTerms.filter(t => 
-                (currentGlossaryCategory === 'all' || t.cat === currentGlossaryCategory) &&
-                (t.term.toLowerCase().includes(query.toLowerCase()) || t.def.toLowerCase().includes(query.toLowerCase()))
-            );
-            renderGlossary(filtered);
-        }
-
-        function filterGlossaryCategory(cat) {
-            currentGlossaryCategory = cat;
-            document.querySelectorAll('[data-glossary]').forEach(b => b.classList.remove('active'));
-            document.querySelector(`[data-glossary="${cat}"]`).classList.add('active');
-            filterGlossary(document.getElementById('glossarySearch').value);
-        }
-
-        // ==================== EXAM MODE ====================
-        let examQuestions = [];
-        let examCurrentQ = 0;
-        let examAnswers = [];
-        let examTimerInterval = null;
-        let examTimeRemaining = 0;
-        let examStartTime = null;
-
-        function startExamMode() {
-            const numQ = parseInt(document.getElementById('examQuestions').value);
-            const timeLimit = parseInt(document.getElementById('examTime').value);
-            
-            // Gather all quiz questions
-            examQuestions = Object.values(quizData).flat().sort(() => Math.random() - 0.5).slice(0, numQ);
-            examCurrentQ = 0;
-            examAnswers = new Array(numQ).fill(null);
-            examTimeRemaining = timeLimit * 60;
-            examStartTime = Date.now();
-            
-            document.getElementById('examSetup').style.display = 'none';
-            document.getElementById('examInProgress').style.display = 'block';
-            document.getElementById('examResults').style.display = 'none';
-            
-            if (timeLimit > 0) {
-                examTimerInterval = setInterval(updateExamTimer, 1000);
-            } else {
-                document.getElementById('examTimer').textContent = '∞';
-            }
-            
-            showExamQuestion();
-        }
-
-        function updateExamTimer() {
-            if (examTimeRemaining > 0) {
-                examTimeRemaining--;
-                const mins = Math.floor(examTimeRemaining / 60);
-                const secs = examTimeRemaining % 60;
-                document.getElementById('examTimer').textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
-                if (examTimeRemaining <= 60) {
-                    document.getElementById('examTimer').style.color = 'var(--accent-magenta)';
-                }
-            } else {
-                clearInterval(examTimerInterval);
-                finishExam();
-            }
-        }
-
-        function showExamQuestion() {
-            const q = examQuestions[examCurrentQ];
-            const total = examQuestions.length;
-            
-            document.getElementById('examQuestionNum').textContent = `${examCurrentQ + 1} of ${total}`;
-            document.getElementById('examAnswered').textContent = `${examAnswers.filter(a => a !== null).length} / ${total}`;
-            
-            const letters = ['A', 'B', 'C', 'D'];
-            document.getElementById('examQuestionContent').innerHTML = `
-                <div style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem;">${q.q}</div>
-                <div class="answers">
-                    ${q.options.map((opt, i) => `
-                        <div class="answer-option ${examAnswers[examCurrentQ] === i ? 'selected' : ''}" data-index="${i}" onclick="selectExamAnswer(${i})">
-                            <span class="answer-letter">${letters[i]}</span>
-                            <span>${opt}</span>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
-            
-            document.getElementById('examNextBtn').textContent = examCurrentQ === total - 1 ? 'Finish Exam' : 'Next Question →';
-        }
-
-        function selectExamAnswer(index) {
-            examAnswers[examCurrentQ] = index;
-            document.querySelectorAll('#examQuestionContent .answer-option').forEach((opt, i) => {
-                opt.classList.toggle('selected', i === index);
-            });
-            document.getElementById('examAnswered').textContent = `${examAnswers.filter(a => a !== null).length} / ${examQuestions.length}`;
-        }
-
-        function nextExamQuestion() {
-            if (examCurrentQ < examQuestions.length - 1) {
-                examCurrentQ++;
-                showExamQuestion();
-            } else {
-                finishExam();
-            }
-        }
-
-        function endExamEarly() {
-            if (confirm('Are you sure you want to end the exam? Unanswered questions will be marked incorrect.')) {
-                finishExam();
-            }
-        }
-
-        function finishExam() {
-            clearInterval(examTimerInterval);
-            
-            let correct = 0;
-            examQuestions.forEach((q, i) => {
-                if (examAnswers[i] === q.correct) correct++;
-            });
-            
-            const percent = Math.round((correct / examQuestions.length) * 100);
-            const timeSpent = Math.floor((Date.now() - examStartTime) / 1000);
-            const mins = Math.floor(timeSpent / 60);
-            const secs = timeSpent % 60;
-            
-            document.getElementById('examInProgress').style.display = 'none';
-            document.getElementById('examResults').style.display = 'block';
-            
-            document.getElementById('examFinalScore').textContent = `${percent}%`;
-            document.getElementById('examScoreLabel').textContent = `${correct} out of ${examQuestions.length} correct`;
-            document.getElementById('examCorrectCount').textContent = correct;
-            document.getElementById('examWrongCount').textContent = examQuestions.length - correct;
-            document.getElementById('examTimeSpent').textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
-            
-            // Calculate grade
-            let grade = 'H8';
-            if (percent >= 90) grade = 'H1';
-            else if (percent >= 80) grade = 'H2';
-            else if (percent >= 70) grade = 'H3';
-            else if (percent >= 60) grade = 'H4';
-            else if (percent >= 50) grade = 'H5';
-            else if (percent >= 40) grade = 'H6';
-            else if (percent >= 30) grade = 'H7';
-            
-            document.getElementById('examGrade').innerHTML = `
-                <div style="font-size: 0.9rem; opacity: 0.8;">Predicted Grade</div>
-                <div style="font-size: 2.5rem; font-weight: 700;">${grade}</div>
-            `;
-            
-            addXP(correct * 5 + (percent >= 70 ? 50 : 0));
-        }
-
-        function resetExamMode() {
-            document.getElementById('examSetup').style.display = 'block';
-            document.getElementById('examResults').style.display = 'none';
-            document.getElementById('examTimer').style.color = 'var(--accent-cyan)';
-        }
-
-        function reviewExamAnswers() {
-            // Show all questions with correct answers highlighted
-            alert('Review feature coming soon! For now, retake the exam and note which topics need more practice.');
-        }
-
         // ==================== KEYBOARD ====================
         document.addEventListener('keydown', (e) => {
             if (document.getElementById('flashcards').classList.contains('active')) { if (e.key === ' ' || e.key === 'Enter') { document.getElementById('flashcard').click(); e.preventDefault(); } if (e.key === 'ArrowLeft') document.getElementById('prevCard').click(); if (e.key === 'ArrowRight') document.getElementById('nextCard').click(); }
             if (e.key === 'Escape') document.getElementById('elementModal').classList.remove('active');
         });
-
-        // ==================== PWA SERVICE WORKER ====================
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js')
-                    .then(reg => console.log('ChemMaster LC: Service Worker registered', reg.scope))
-                    .catch(err => console.log('ChemMaster LC: SW registration failed', err));
-            });
-        }
     </script>
 </body>
 </html>

@@ -1,0 +1,1073 @@
+{
+  "curriculum": {
+    "title": "Irish Leaving Certificate Mathematics",
+    "levels": ["Higher", "Ordinary"],
+    "examStructure": {
+      "paper1": {
+        "name": "Paper 1",
+        "duration": "2 hours 30 minutes",
+        "marks": 300,
+        "sections": [
+          {
+            "name": "Section A",
+            "marks": 150,
+            "questions": "6 short questions (25 marks each)",
+            "topics": "Concepts and Skills - all topics"
+          },
+          {
+            "name": "Section B",
+            "marks": 150,
+            "questions": "2 questions from 3 options (75 marks each)",
+            "topics": "Contexts and Applications"
+          }
+        ],
+        "mainTopics": [
+          "Algebra",
+          "Functions",
+          "Calculus",
+          "Probability",
+          "Statistics"
+        ]
+      },
+      "paper2": {
+        "name": "Paper 2",
+        "duration": "2 hours 30 minutes",
+        "marks": 300,
+        "sections": [
+          {
+            "name": "Section A",
+            "marks": 150,
+            "questions": "6 short questions (25 marks each)",
+            "topics": "Concepts and Skills - all topics"
+          },
+          {
+            "name": "Section B",
+            "marks": 150,
+            "questions": "2 questions from 3 options (75 marks each)",
+            "topics": "Contexts and Applications"
+          }
+        ],
+        "mainTopics": [
+          "Geometry and Trigonometry",
+          "Number",
+          "Financial Maths"
+        ]
+      }
+    },
+    "strands": [
+      {
+        "id": "strand1",
+        "name": "Statistics and Probability",
+        "topics": [
+          {
+            "id": "stats1",
+            "name": "Descriptive Statistics",
+            "level": ["Higher", "Ordinary"],
+            "paper": "Paper 1",
+            "subtopics": [
+              "Measures of central tendency (mean, median, mode)",
+              "Measures of spread (range, interquartile range, standard deviation)",
+              "Data representation (histograms, bar charts, pie charts, stem-and-leaf plots)",
+              "Box plots and cumulative frequency graphs",
+              "Comparing distributions",
+              "Outliers and data cleaning"
+            ],
+            "keyFormulas": [
+              "Mean: x̄ = Σx/n",
+              "Standard Deviation: σ = √(Σ(x-x̄)²/n)",
+              "Variance: σ² = Σ(x-x̄)²/n",
+              "IQR = Q3 - Q1"
+            ],
+            "learningOutcomes": [
+              "Calculate and interpret measures of center and spread",
+              "Construct and interpret statistical diagrams",
+              "Use technology to analyze data sets",
+              "Compare two or more data sets",
+              "Identify and justify outliers"
+            ],
+            "examQuestionTypes": [
+              "Calculate mean, median, mode from raw data or frequency tables",
+              "Draw and interpret box plots",
+              "Compare two data sets using appropriate statistics",
+              "Interpret histograms and frequency distributions",
+              "Calculate standard deviation using formula or technology"
+            ]
+          },
+          {
+            "id": "prob1",
+            "name": "Probability",
+            "level": ["Higher", "Ordinary"],
+            "paper": "Paper 1",
+            "subtopics": [
+              "Basic probability concepts and notation",
+              "Sample space and events",
+              "Complementary events",
+              "Addition rule for mutually exclusive events",
+              "Multiplication rule for independent events",
+              "Conditional probability (Higher level)",
+              "Tree diagrams",
+              "Expected value",
+              "Counting principles and permutations (Higher level)",
+              "Combinations (Higher level)"
+            ],
+            "keyFormulas": [
+              "P(A) = n(A)/n(S)",
+              "P(A') = 1 - P(A)",
+              "P(A or B) = P(A) + P(B) - P(A and B)",
+              "P(A and B) = P(A) × P(B) for independent events",
+              "P(A|B) = P(A and B)/P(B) (Higher)",
+              "nPr = n!/(n-r)! (Higher)",
+              "nCr = n!/(r!(n-r)!) (Higher)",
+              "E(X) = Σ x·P(x)"
+            ],
+            "learningOutcomes": [
+              "Calculate probabilities of single and compound events",
+              "Use tree diagrams to solve probability problems",
+              "Apply the addition and multiplication rules",
+              "Calculate expected values",
+              "Solve problems involving conditional probability (Higher)",
+              "Use counting principles and combinations (Higher)"
+            ],
+            "examQuestionTypes": [
+              "Simple probability from given information",
+              "Tree diagram problems with replacement/without replacement",
+              "Expected value calculations (games, lotteries)",
+              "Conditional probability word problems (Higher)",
+              "Counting problems using permutations and combinations (Higher)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "strand2",
+        "name": "Geometry and Trigonometry",
+        "topics": [
+          {
+            "id": "geom1",
+            "name": "Synthetic Geometry",
+            "level": ["Higher", "Ordinary"],
+            "paper": "Paper 2",
+            "subtopics": [
+              "Axioms, theorems, and proofs",
+              "Constructions (perpendicular bisector, angle bisector, etc.)",
+              "Circle theorems",
+              "Theorems on triangles",
+              "Theorems on quadrilaterals",
+              "Similar triangles",
+              "Pythagoras' theorem"
+            ],
+            "keyTheorems": [
+              "Angle at center is twice angle at circumference",
+              "Angles in the same segment are equal",
+              "Angle in a semicircle is a right angle",
+              "Opposite angles of a cyclic quadrilateral are supplementary",
+              "Tangent is perpendicular to radius at point of contact",
+              "Tangents from external point are equal",
+              "Alternate segment theorem",
+              "Similar triangles theorems",
+              "Pythagoras' theorem: a² + b² = c²"
+            ],
+            "learningOutcomes": [
+              "State and prove circle theorems",
+              "Apply theorems to solve geometric problems",
+              "Perform standard geometric constructions",
+              "Prove theorems using logical reasoning",
+              "Solve problems involving similar figures"
+            ],
+            "examQuestionTypes": [
+              "Prove a theorem (must know full proof)",
+              "Apply theorems to find angles in circle diagrams",
+              "Construction questions with justification",
+              "Similar triangles - finding lengths",
+              "Multi-step geometry problems combining theorems"
+            ]
+          },
+          {
+            "id": "trig1",
+            "name": "Trigonometry",
+            "level": ["Higher", "Ordinary"],
+            "paper": "Paper 2",
+            "subtopics": [
+              "Right-angled triangle trigonometry (SOH CAH TOA)",
+              "Sine rule",
+              "Cosine rule",
+              "Area of a triangle",
+              "3D trigonometry",
+              "Trigonometric ratios of special angles (0°, 30°, 45°, 60°, 90°)",
+              "Radian measure (Higher level)",
+              "Trigonometric graphs (Higher level)",
+              "Trigonometric identities (Higher level)",
+              "Compound angle formulas (Higher level)"
+            ],
+            "keyFormulas": [
+              "sin θ = opposite/hypotenuse",
+              "cos θ = adjacent/hypotenuse",
+              "tan θ = opposite/adjacent",
+              "Sine Rule: a/sin A = b/sin B = c/sin C",
+              "Cosine Rule: a² = b² + c² - 2bc cos A",
+              "Area = ½ab sin C",
+              "Arc length: s = rθ (Higher)",
+              "Sector area: A = ½r²θ (Higher)",
+              "sin²θ + cos²θ = 1 (Higher)",
+              "tan θ = sin θ/cos θ (Higher)",
+              "sin(A±B) = sin A cos B ± cos A sin B (Higher)",
+              "cos(A±B) = cos A cos B ∓ sin A sin B (Higher)"
+            ],
+            "learningOutcomes": [
+              "Solve right-angled triangle problems",
+              "Apply sine and cosine rules to solve any triangle",
+              "Calculate areas of triangles",
+              "Solve 3D problems involving angles and distances",
+              "Work with radian measure (Higher)",
+              "Sketch and interpret trigonometric graphs (Higher)",
+              "Prove and apply trigonometric identities (Higher)"
+            ],
+            "examQuestionTypes": [
+              "Find angles and sides in right-angled triangles",
+              "Sine/cosine rule problems",
+              "Calculate area of triangle given two sides and included angle",
+              "3D problems (angles of elevation, depression)",
+              "Prove trigonometric identities (Higher)",
+              "Solve trigonometric equations (Higher)",
+              "Graph transformations (Higher)"
+            ]
+          },
+          {
+            "id": "coord1",
+            "name": "Co-ordinate Geometry of the Line",
+            "level": ["Higher", "Ordinary"],
+            "paper": "Paper 2",
+            "subtopics": [
+              "Distance between two points",
+              "Midpoint of a line segment",
+              "Slope/gradient of a line",
+              "Equation of a line (y = mx + c)",
+              "Point-slope form",
+              "Parallel and perpendicular lines",
+              "Intersection of lines",
+              "Division of a line segment in a given ratio (Higher level)",
+              "Collinearity (Higher level)"
+            ],
+            "keyFormulas": [
+              "Distance: d = √[(x₂-x₁)² + (y₂-y₁)²]",
+              "Midpoint: M = ((x₁+x₂)/2, (y₁+y₂)/2)",
+              "Slope: m = (y₂-y₁)/(x₂-x₁)",
+              "Equation: y - y₁ = m(x - x₁)",
+              "Parallel lines: m₁ = m₂",
+              "Perpendicular lines: m₁ × m₂ = -1",
+              "Section formula (Higher): ((mx₂+nx₁)/(m+n), (my₂+ny₁)/(m+n))"
+            ],
+            "learningOutcomes": [
+              "Calculate distance and midpoint between points",
+              "Find slope and equation of a line",
+              "Determine if lines are parallel or perpendicular",
+              "Find intersection point of two lines",
+              "Solve geometric problems using coordinate geometry",
+              "Apply section formula (Higher)"
+            ],
+            "examQuestionTypes": [
+              "Find equation of line through two points",
+              "Find equation of line parallel/perpendicular to given line",
+              "Prove geometric properties using coordinates",
+              "Find intersection points",
+              "Area of triangle using coordinates (Higher)"
+            ]
+          },
+          {
+            "id": "coord2",
+            "name": "Co-ordinate Geometry of the Circle",
+            "level": ["Higher", "Ordinary"],
+            "paper": "Paper 2",
+            "subtopics": [
+              "Equation of a circle (center-radius form)",
+              "General equation of a circle",
+              "Finding center and radius",
+              "Equation of tangent to a circle (Higher level)",
+              "Intersection of line and circle",
+              "Position of a point relative to a circle"
+            ],
+            "keyFormulas": [
+              "Circle equation: (x-h)² + (y-k)² = r²",
+              "General form: x² + y² + 2gx + 2fy + c = 0",
+              "Center: (-g, -f), Radius: √(g²+f²-c)",
+              "Tangent perpendicular to radius (Higher)"
+            ],
+            "learningOutcomes": [
+              "Write and interpret equation of a circle",
+              "Convert between different forms of circle equation",
+              "Find equation of tangent to circle (Higher)",
+              "Determine intersection of line and circle",
+              "Solve problems combining line and circle"
+            ],
+            "examQuestionTypes": [
+              "Find equation of circle given center and radius",
+              "Find center and radius from general equation",
+              "Determine if point is inside, on, or outside circle",
+              "Find equation of tangent at given point (Higher)",
+              "Intersection problems"
+            ]
+          },
+          {
+            "id": "transforms1",
+            "name": "Transformations",
+            "level": ["Higher"],
+            "paper": "Paper 2",
+            "subtopics": [
+              "Translations",
+              "Rotations about origin",
+              "Reflections in x-axis, y-axis, and lines",
+              "Enlargements (dilations)",
+              "Axial symmetry",
+              "Central symmetry",
+              "Composition of transformations"
+            ],
+            "keyFormulas": [
+              "Translation: (x,y) → (x+a, y+b)",
+              "Reflection in x-axis: (x,y) → (x,-y)",
+              "Reflection in y-axis: (x,y) → (-x,y)",
+              "Rotation matrices (Higher level)"
+            ],
+            "learningOutcomes": [
+              "Perform and describe transformations",
+              "Find images and pre-images",
+              "Combine transformations",
+              "Identify symmetries",
+              "Use matrix representation of transformations"
+            ],
+            "examQuestionTypes": [
+              "Find image of point/shape under transformation",
+              "Identify transformation from diagram",
+              "Compose two or more transformations",
+              "Matrix representation problems"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "strand3",
+        "name": "Number",
+        "topics": [
+          {
+            "id": "num1",
+            "name": "Number Systems",
+            "level": ["Higher", "Ordinary"],
+            "paper": "Paper 2",
+            "subtopics": [
+              "Natural numbers, integers, rationals, irrationals, real numbers",
+              "Operations with real numbers",
+              "Order of operations (BOMDAS/PEMDAS)",
+              "Number properties and patterns",
+              "Divisibility rules",
+              "Prime numbers and factorization",
+              "HCF and LCM",
+              "Sets and set notation",
+              "Venn diagrams"
+            ],
+            "keyFormulas": [
+              "a/b + c/d = (ad + bc)/bd",
+              "a/b × c/d = ac/bd",
+              "√(ab) = √a × √b",
+              "Rationalize denominator: 1/√a = √a/a"
+            ],
+            "learningOutcomes": [
+              "Classify numbers into sets",
+              "Perform operations with different number types",
+              "Solve problems involving HCF and LCM",
+              "Use set notation and Venn diagrams",
+              "Rationalize surds"
+            ],
+            "examQuestionTypes": [
+              "Simplify numerical expressions",
+              "HCF and LCM word problems",
+              "Venn diagram problems with sets",
+              "Surd operations and rationalization",
+              "Number pattern identification"
+            ]
+          },
+          {
+            "id": "num2",
+            "name": "Arithmetic",
+            "level": ["Higher", "Ordinary"],
+            "paper": "Paper 2",
+            "subtopics": [
+              "Percentages",
+              "Ratio and proportion",
+              "Direct and inverse variation",
+              "Scientific notation",
+              "Estimation and approximation",
+              "Error bounds",
+              "Significant figures and decimal places"
+            ],
+            "keyFormulas": [
+              "Percentage: (part/whole) × 100%",
+              "Percentage change: (change/original) × 100%",
+              "Direct variation: y = kx",
+              "Inverse variation: y = k/x",
+              "Scientific notation: a × 10ⁿ where 1 ≤ a < 10"
+            ],
+            "learningOutcomes": [
+              "Solve percentage problems",
+              "Apply ratio and proportion",
+              "Work with direct and inverse variation",
+              "Use scientific notation",
+              "Round to appropriate accuracy"
+            ],
+            "examQuestionTypes": [
+              "Percentage increase/decrease",
+              "Ratio division problems",
+              "Variation problems",
+              "Scientific notation calculations",
+              "Estimation and error bounds"
+            ]
+          },
+          {
+            "id": "fin1",
+            "name": "Financial Mathematics",
+            "level": ["Higher", "Ordinary"],
+            "paper": "Paper 2",
+            "subtopics": [
+              "Simple interest",
+              "Compound interest",
+              "Annual Equivalent Rate (AER)",
+              "Depreciation",
+              "Loans and mortgages",
+              "Savings and investments",
+              "Income tax and deductions",
+              "Value Added Tax (VAT)",
+              "Exchange rates",
+              "Compound interest formula applications"
+            ],
+            "keyFormulas": [
+              "Simple Interest: I = PRT/100",
+              "Compound Interest: A = P(1 + r/100)ⁿ",
+              "AER = (1 + r/n)ⁿ - 1",
+              "Depreciation: V = P(1 - r/100)ⁿ",
+              "Total Amount: A = P + I"
+            ],
+            "learningOutcomes": [
+              "Calculate simple and compound interest",
+              "Compare interest rates and AER",
+              "Solve problems involving loans and savings",
+              "Calculate tax and deductions",
+              "Work with exchange rates and conversions"
+            ],
+            "examQuestionTypes": [
+              "Compare simple vs compound interest",
+              "Calculate AER and compare rates",
+              "Loan repayment calculations",
+              "Depreciation of assets",
+              "Income tax calculations",
+              "Real-world financial scenarios"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "strand4",
+        "name": "Algebra",
+        "topics": [
+          {
+            "id": "alg1",
+            "name": "Expressions and Operations",
+            "level": ["Higher", "Ordinary"],
+            "paper": "Paper 1",
+            "subtopics": [
+              "Algebraic notation and terminology",
+              "Simplifying expressions",
+              "Expanding brackets",
+              "Factorizing expressions",
+              "Operations with algebraic fractions",
+              "Index laws",
+              "Factorizing quadratics",
+              "Difference of two squares",
+              "Perfect square trinomials"
+            ],
+            "keyFormulas": [
+              "aᵐ × aⁿ = aᵐ⁺ⁿ",
+              "aᵐ ÷ aⁿ = aᵐ⁻ⁿ",
+              "(aᵐ)ⁿ = aᵐⁿ",
+              "a⁰ = 1",
+              "a⁻ⁿ = 1/aⁿ",
+              "(a+b)² = a² + 2ab + b²",
+              "(a-b)² = a² - 2ab + b²",
+              "a² - b² = (a+b)(a-b)"
+            ],
+            "learningOutcomes": [
+              "Simplify algebraic expressions",
+              "Expand and factorize expressions",
+              "Apply index laws",
+              "Manipulate algebraic fractions",
+              "Recognize and use special products"
+            ],
+            "examQuestionTypes": [
+              "Simplify complex expressions",
+              "Factorize quadratics and cubics",
+              "Algebraic fraction operations",
+              "Apply index laws to simplify",
+              "Complete the square"
+            ]
+          },
+          {
+            "id": "alg2",
+            "name": "Equations and Inequalities",
+            "level": ["Higher", "Ordinary"],
+            "paper": "Paper 1",
+            "subtopics": [
+              "Solving linear equations",
+              "Solving simultaneous equations (2 equations, 2 unknowns)",
+              "Solving quadratic equations (factorization, formula, completing square)",
+              "Linear inequalities",
+              "Quadratic inequalities (Higher level)",
+              "Word problems leading to equations",
+              "Cubic equations (Higher level)"
+            ],
+            "keyFormulas": [
+              "Quadratic formula: x = (-b ± √(b²-4ac))/(2a)",
+              "Discriminant: Δ = b² - 4ac",
+              "Sum of roots: α + β = -b/a",
+              "Product of roots: αβ = c/a",
+              "Completing square: x² + bx = (x + b/2)² - (b/2)²"
+            ],
+            "learningOutcomes": [
+              "Solve various types of equations",
+              "Solve simultaneous equations algebraically and graphically",
+              "Apply quadratic formula and discriminant",
+              "Solve and graph inequalities",
+              "Formulate and solve word problems"
+            ],
+            "examQuestionTypes": [
+              "Solve simultaneous equations by elimination/substitution",
+              "Solve quadratic equations by various methods",
+              "Apply discriminant to determine nature of roots",
+              "Word problems (age, number, motion, mixture)",
+              "Inequality problems and graphing (Higher)"
+            ]
+          },
+          {
+            "id": "alg3",
+            "name": "Sequences and Series",
+            "level": ["Higher", "Ordinary"],
+            "paper": "Paper 1",
+            "subtopics": [
+              "Patterns and sequences",
+              "Arithmetic sequences",
+              "Arithmetic series",
+              "Geometric sequences (Higher level)",
+              "Geometric series (Higher level)",
+              "Sum to infinity (Higher level)",
+              "Sigma notation (Higher level)"
+            ],
+            "keyFormulas": [
+              "Arithmetic: tₙ = a + (n-1)d",
+              "Arithmetic sum: Sₙ = n/2[2a + (n-1)d] or n/2(a + l)",
+              "Geometric: tₙ = arⁿ⁻¹ (Higher)",
+              "Geometric sum: Sₙ = a(rⁿ-1)/(r-1) or a(1-rⁿ)/(1-r) (Higher)",
+              "Sum to infinity: S∞ = a/(1-r) for |r| < 1 (Higher)"
+            ],
+            "learningOutcomes": [
+              "Identify and describe patterns",
+              "Find nth term of sequences",
+              "Calculate sum of arithmetic series",
+              "Work with geometric sequences and series (Higher)",
+              "Apply formulas to solve problems"
+            ],
+            "examQuestionTypes": [
+              "Find nth term formula",
+              "Calculate sum of series",
+              "Determine number of terms",
+              "Word problems involving sequences",
+              "Geometric series applications (Higher)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "strand5",
+        "name": "Functions",
+        "topics": [
+          {
+            "id": "func1",
+            "name": "Introduction to Functions",
+            "level": ["Higher", "Ordinary"],
+            "paper": "Paper 1",
+            "subtopics": [
+              "Function notation f(x)",
+              "Domain and range",
+              "Graphing functions",
+              "Linear functions",
+              "Quadratic functions",
+              "Cubic functions (Higher level)",
+              "Exponential functions (Higher level)",
+              "Transformations of graphs",
+              "Composite functions (Higher level)",
+              "Inverse functions (Higher level)"
+            ],
+            "keyFormulas": [
+              "Linear: f(x) = mx + c",
+              "Quadratic: f(x) = ax² + bx + c",
+              "Vertex form: f(x) = a(x-h)² + k",
+              "Exponential: f(x) = aˣ (Higher)",
+              "Composite: (f∘g)(x) = f(g(x)) (Higher)"
+            ],
+            "learningOutcomes": [
+              "Understand function notation and terminology",
+              "Determine domain and range",
+              "Sketch graphs of various functions",
+              "Analyze transformations",
+              "Work with composite and inverse functions (Higher)"
+            ],
+            "examQuestionTypes": [
+              "Evaluate functions at given values",
+              "Sketch and interpret graphs",
+              "Find domain and range",
+              "Graph transformations",
+              "Composite function calculations (Higher)",
+              "Find inverse functions (Higher)"
+            ]
+          },
+          {
+            "id": "func2",
+            "name": "Graphing and Analysis",
+            "level": ["Higher", "Ordinary"],
+            "paper": "Paper 1",
+            "subtopics": [
+              "x and y intercepts",
+              "Axis of symmetry",
+              "Maximum and minimum points",
+              "Increasing and decreasing functions",
+              "Solving equations graphically",
+              "Intersection of graphs",
+              "Sketching curves",
+              "Asymptotes (Higher level)"
+            ],
+            "keyFormulas": [
+              "Axis of symmetry (quadratic): x = -b/(2a)",
+              "Vertex: (-b/(2a), f(-b/(2a)))",
+              "y-intercept: f(0)",
+              "x-intercept: solve f(x) = 0"
+            ],
+            "learningOutcomes": [
+              "Find key features of graphs",
+              "Sketch accurate graphs",
+              "Interpret graphs in context",
+              "Solve problems graphically",
+              "Analyze function behavior"
+            ],
+            "examQuestionTypes": [
+              "Sketch graph from equation",
+              "Find maximum/minimum points",
+              "Determine axis of symmetry and intercepts",
+              "Solve systems graphically",
+              "Interpret real-world function graphs"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "strand6",
+        "name": "Calculus",
+        "topics": [
+          {
+            "id": "calc1",
+            "name": "Differential Calculus",
+            "level": ["Higher"],
+            "paper": "Paper 1",
+            "subtopics": [
+              "Limits and continuity",
+              "Derivative as rate of change",
+              "Derivative from first principles",
+              "Differentiation rules (power, sum, difference)",
+              "Product rule",
+              "Quotient rule",
+              "Chain rule",
+              "Derivatives of polynomials, exponentials, logarithms",
+              "Derivatives of trigonometric functions",
+              "Second derivative",
+              "Applications: tangents and normals",
+              "Applications: maxima and minima",
+              "Applications: rates of change",
+              "Applications: optimization problems"
+            ],
+            "keyFormulas": [
+              "f'(x) = lim[h→0] (f(x+h) - f(x))/h",
+              "d/dx(xⁿ) = nxⁿ⁻¹",
+              "d/dx(eˣ) = eˣ",
+              "d/dx(ln x) = 1/x",
+              "d/dx(sin x) = cos x",
+              "d/dx(cos x) = -sin x",
+              "d/dx(tan x) = sec²x",
+              "Product rule: (uv)' = u'v + uv'",
+              "Quotient rule: (u/v)' = (u'v - uv')/v²",
+              "Chain rule: dy/dx = dy/du × du/dx",
+              "Slope of tangent at (a,f(a)): m = f'(a)",
+              "Slope of normal: m = -1/f'(a)"
+            ],
+            "learningOutcomes": [
+              "Find derivatives using various methods",
+              "Apply differentiation rules",
+              "Find equations of tangents and normals",
+              "Determine stationary points and classify them",
+              "Solve optimization problems",
+              "Interpret derivatives in context"
+            ],
+            "examQuestionTypes": [
+              "Differentiate from first principles",
+              "Find derivatives using rules",
+              "Find equation of tangent/normal at point",
+              "Find stationary points and classify (max/min/inflection)",
+              "Optimization word problems",
+              "Rates of change problems",
+              "Curve sketching using calculus"
+            ]
+          },
+          {
+            "id": "calc2",
+            "name": "Integral Calculus",
+            "level": ["Higher"],
+            "paper": "Paper 1",
+            "subtopics": [
+              "Antiderivatives/indefinite integrals",
+              "Integration as reverse of differentiation",
+              "Definite integrals",
+              "Fundamental theorem of calculus",
+              "Integration rules",
+              "Integration by substitution",
+              "Area under a curve",
+              "Area between two curves",
+              "Applications to motion (velocity, displacement)"
+            ],
+            "keyFormulas": [
+              "∫xⁿ dx = xⁿ⁺¹/(n+1) + C (n ≠ -1)",
+              "∫1/x dx = ln|x| + C",
+              "∫eˣ dx = eˣ + C",
+              "∫cos x dx = sin x + C",
+              "∫sin x dx = -cos x + C",
+              "∫sec²x dx = tan x + C",
+              "∫ₐᵇ f(x)dx = F(b) - F(a)",
+              "Area = ∫ₐᵇ f(x)dx"
+            ],
+            "learningOutcomes": [
+              "Find indefinite integrals",
+              "Evaluate definite integrals",
+              "Calculate areas using integration",
+              "Apply integration to motion problems",
+              "Use substitution method"
+            ],
+            "examQuestionTypes": [
+              "Find indefinite integrals",
+              "Evaluate definite integrals",
+              "Calculate area under curve",
+              "Find area between two curves",
+              "Motion problems (displacement from velocity)",
+              "Integration by substitution"
+            ]
+          }
+        ]
+      }
+    ],
+    "formulaSheet": {
+      "algebra": [
+        "(a+b)² = a² + 2ab + b²",
+        "(a-b)² = a² - 2ab + b²",
+        "a² - b² = (a+b)(a-b)",
+        "Quadratic formula: x = (-b ± √(b²-4ac))/(2a)",
+        "aᵐ × aⁿ = aᵐ⁺ⁿ",
+        "aᵐ ÷ aⁿ = aᵐ⁻ⁿ"
+      ],
+      "geometry": [
+        "Distance: d = √[(x₂-x₁)² + (y₂-y₁)²]",
+        "Midpoint: M = ((x₁+x₂)/2, (y₁+y₂)/2)",
+        "Slope: m = (y₂-y₁)/(x₂-x₁)",
+        "Circle: (x-h)² + (y-k)² = r²"
+      ],
+      "trigonometry": [
+        "sin θ = opp/hyp, cos θ = adj/hyp, tan θ = opp/adj",
+        "Sine Rule: a/sin A = b/sin B = c/sin C",
+        "Cosine Rule: a² = b² + c² - 2bc cos A",
+        "Area of triangle: A = ½ab sin C",
+        "sin²θ + cos²θ = 1"
+      ],
+      "calculus": [
+        "d/dx(xⁿ) = nxⁿ⁻¹",
+        "∫xⁿ dx = xⁿ⁺¹/(n+1) + C",
+        "Product rule: (uv)' = u'v + uv'",
+        "Chain rule: dy/dx = dy/du × du/dx"
+      ],
+      "statistics": [
+        "Mean: x̄ = Σx/n",
+        "Standard Deviation: σ = √(Σ(x-x̄)²/n)",
+        "Probability: P(A) = n(A)/n(S)"
+      ],
+      "financial": [
+        "Simple Interest: I = PRT/100",
+        "Compound Interest: A = P(1 + r/100)ⁿ",
+        "AER = (1 + r/n)ⁿ - 1"
+      ]
+    },
+    "commonTheorems": [
+      {
+        "name": "Pythagoras' Theorem",
+        "statement": "In a right-angled triangle, a² + b² = c²",
+        "mustKnowProof": true,
+        "level": ["Higher", "Ordinary"]
+      },
+      {
+        "name": "Angle at Centre Theorem",
+        "statement": "The angle at the centre of a circle is twice the angle at the circumference, standing on the same arc",
+        "mustKnowProof": true,
+        "level": ["Higher", "Ordinary"]
+      },
+      {
+        "name": "Angles in Same Segment",
+        "statement": "Angles in the same segment of a circle are equal",
+        "mustKnowProof": true,
+        "level": ["Higher", "Ordinary"]
+      },
+      {
+        "name": "Angle in Semicircle",
+        "statement": "The angle in a semicircle is a right angle",
+        "mustKnowProof": true,
+        "level": ["Higher", "Ordinary"]
+      },
+      {
+        "name": "Cyclic Quadrilateral",
+        "statement": "Opposite angles of a cyclic quadrilateral are supplementary (add to 180°)",
+        "mustKnowProof": true,
+        "level": ["Higher", "Ordinary"]
+      },
+      {
+        "name": "Tangent-Radius Theorem",
+        "statement": "A tangent to a circle is perpendicular to the radius at the point of contact",
+        "mustKnowProof": true,
+        "level": ["Higher", "Ordinary"]
+      },
+      {
+        "name": "Tangents from External Point",
+        "statement": "Tangents to a circle from an external point are equal in length",
+        "mustKnowProof": true,
+        "level": ["Higher", "Ordinary"]
+      },
+      {
+        "name": "Alternate Segment Theorem",
+        "statement": "The angle between a tangent and a chord is equal to the angle in the alternate segment",
+        "mustKnowProof": true,
+        "level": ["Higher", "Ordinary"]
+      }
+    ],
+    "studyTips": [
+      "Practice past papers regularly - they follow similar patterns",
+      "Know all theorem proofs off by heart for geometry",
+      "Make formula flashcards and review daily",
+      "Time yourself on Section A questions (25 marks in ~20-25 minutes)",
+      "Show all working - partial credit is awarded",
+      "For Section B, choose questions you're most confident with",
+      "Calculus requires lots of practice - do questions daily (Higher level)",
+      "Probability tree diagrams must be clearly labeled",
+      "Always check if answer makes sense in context",
+      "Learn to use calculator efficiently for statistics"
+    ],
+    "examTips": [
+      "Read questions carefully - underlining key information",
+      "Attempt all of Section A - no choice required",
+      "In Section B, read all questions before choosing",
+      "Budget time: ~75 minutes per section",
+      "Show clear mathematical reasoning and steps",
+      "Draw diagrams neatly and label clearly",
+      "Check units in answers",
+      "If stuck, move on and return later",
+      "Leave space to add work if you think of more",
+      "Double-check calculations, especially with calculator"
+    ]
+  },
+  "sampleQuestions": {
+    "algebra": [
+      {
+        "question": "Solve the simultaneous equations: 3x + 2y = 13, 5x - y = 7",
+        "type": "Simultaneous Equations",
+        "marks": 25,
+        "level": ["Higher", "Ordinary"]
+      },
+      {
+        "question": "Solve x² - 5x + 6 = 0",
+        "type": "Quadratic Equation",
+        "marks": 15,
+        "level": ["Higher", "Ordinary"]
+      },
+      {
+        "question": "Find the sum of the first 20 terms of the arithmetic sequence: 3, 7, 11, 15, ...",
+        "type": "Arithmetic Series",
+        "marks": 25,
+        "level": ["Higher", "Ordinary"]
+      }
+    ],
+    "geometry": [
+      {
+        "question": "Prove that the angle in a semicircle is a right angle",
+        "type": "Theorem Proof",
+        "marks": 25,
+        "level": ["Higher", "Ordinary"]
+      },
+      {
+        "question": "Find the equation of the line passing through (2, -3) and perpendicular to y = 2x + 1",
+        "type": "Line Equation",
+        "marks": 25,
+        "level": ["Higher", "Ordinary"]
+      },
+      {
+        "question": "A circle has equation x² + y² - 6x + 4y - 12 = 0. Find its centre and radius.",
+        "type": "Circle",
+        "marks": 25,
+        "level": ["Higher", "Ordinary"]
+      }
+    ],
+    "trigonometry": [
+      {
+        "question": "In triangle ABC, a = 7cm, b = 9cm, and angle C = 35°. Find the area of the triangle.",
+        "type": "Area Formula",
+        "marks": 15,
+        "level": ["Higher", "Ordinary"]
+      },
+      {
+        "question": "Solve the triangle ABC where a = 8cm, b = 10cm, c = 12cm",
+        "type": "Cosine Rule",
+        "marks": 25,
+        "level": ["Higher", "Ordinary"]
+      },
+      {
+        "question": "Prove the identity: tan²x + 1 = sec²x",
+        "type": "Identity Proof",
+        "marks": 25,
+        "level": ["Higher"]
+      }
+    ],
+    "calculus": [
+      {
+        "question": "Differentiate f(x) = 3x⁴ - 2x³ + 5x - 7 from first principles",
+        "type": "First Principles",
+        "marks": 25,
+        "level": ["Higher"]
+      },
+      {
+        "question": "Find the equation of the tangent to y = x³ - 2x² + 1 at x = 2",
+        "type": "Tangent",
+        "marks": 25,
+        "level": ["Higher"]
+      },
+      {
+        "question": "A rectangular field is to be fenced with 200m of fencing. Find the dimensions that give maximum area.",
+        "type": "Optimization",
+        "marks": 50,
+        "level": ["Higher"]
+      },
+      {
+        "question": "Find the area enclosed by y = x² and y = 2x + 3",
+        "type": "Area Between Curves",
+        "marks": 50,
+        "level": ["Higher"]
+      }
+    ],
+    "probability": [
+      {
+        "question": "A bag contains 5 red and 3 blue marbles. Two marbles are drawn without replacement. Find the probability both are red.",
+        "type": "Tree Diagram",
+        "marks": 25,
+        "level": ["Higher", "Ordinary"]
+      },
+      {
+        "question": "A die is rolled twice. What is the expected value of the sum?",
+        "type": "Expected Value",
+        "marks": 25,
+        "level": ["Higher", "Ordinary"]
+      }
+    ],
+    "statistics": [
+      {
+        "question": "The mean of five numbers is 12. Four of the numbers are 8, 10, 15, and 13. Find the fifth number.",
+        "type": "Mean",
+        "marks": 15,
+        "level": ["Higher", "Ordinary"]
+      },
+      {
+        "question": "Draw a box plot for the data: 12, 15, 18, 20, 22, 25, 28, 30, 35",
+        "type": "Box Plot",
+        "marks": 25,
+        "level": ["Higher", "Ordinary"]
+      }
+    ],
+    "financial": [
+      {
+        "question": "€5000 is invested at 4% compound interest per annum. Find the value after 3 years.",
+        "type": "Compound Interest",
+        "marks": 15,
+        "level": ["Higher", "Ordinary"]
+      },
+      {
+        "question": "Compare the return on €10,000 invested for 5 years at: (a) 5% simple interest (b) 4.5% compound interest",
+        "type": "Interest Comparison",
+        "marks": 25,
+        "level": ["Higher", "Ordinary"]
+      }
+    ]
+  },
+  "flashcardTopics": [
+    {
+      "category": "Algebra Formulas",
+      "cards": [
+        {"front": "Quadratic Formula", "back": "x = (-b ± √(b²-4ac))/(2a)"},
+        {"front": "Difference of Two Squares", "back": "a² - b² = (a+b)(a-b)"},
+        {"front": "Perfect Square (a+b)²", "back": "(a+b)² = a² + 2ab + b²"},
+        {"front": "Sum of Arithmetic Series", "back": "Sₙ = n/2[2a + (n-1)d]"},
+        {"front": "nth term Arithmetic Sequence", "back": "tₙ = a + (n-1)d"}
+      ]
+    },
+    {
+      "category": "Circle Theorems",
+      "cards": [
+        {"front": "Angle at Centre", "back": "Angle at centre is twice angle at circumference on same arc"},
+        {"front": "Angle in Semicircle", "back": "Angle in semicircle is 90°"},
+        {"front": "Tangent-Radius", "back": "Tangent is perpendicular to radius at point of contact"},
+        {"front": "Cyclic Quadrilateral", "back": "Opposite angles sum to 180°"},
+        {"front": "Alternate Segment", "back": "Angle between tangent and chord equals angle in alternate segment"}
+      ]
+    },
+    {
+      "category": "Trigonometry",
+      "cards": [
+        {"front": "Sine Rule", "back": "a/sin A = b/sin B = c/sin C"},
+        {"front": "Cosine Rule", "back": "a² = b² + c² - 2bc cos A"},
+        {"front": "Area of Triangle", "back": "Area = ½ab sin C"},
+        {"front": "sin²θ + cos²θ", "back": "= 1"},
+        {"front": "tan θ", "back": "= sin θ / cos θ"}
+      ]
+    },
+    {
+      "category": "Calculus (Higher)",
+      "cards": [
+        {"front": "Power Rule", "back": "d/dx(xⁿ) = nxⁿ⁻¹"},
+        {"front": "Product Rule", "back": "(uv)' = u'v + uv'"},
+        {"front": "Quotient Rule", "back": "(u/v)' = (u'v - uv')/v²"},
+        {"front": "Chain Rule", "back": "dy/dx = dy/du × du/dx"},
+        {"front": "Integration of xⁿ", "back": "∫xⁿ dx = xⁿ⁺¹/(n+1) + C"}
+      ]
+    },
+    {
+      "category": "Coordinate Geometry",
+      "cards": [
+        {"front": "Distance Formula", "back": "d = √[(x₂-x₁)² + (y₂-y₁)²]"},
+        {"front": "Midpoint Formula", "back": "M = ((x₁+x₂)/2, (y₁+y₂)/2)"},
+        {"front": "Slope Formula", "back": "m = (y₂-y₁)/(x₂-x₁)"},
+        {"front": "Parallel Lines", "back": "m₁ = m₂"},
+        {"front": "Perpendicular Lines", "back": "m₁ × m₂ = -1"}
+      ]
+    },
+    {
+      "category": "Financial Maths",
+      "cards": [
+        {"front": "Simple Interest", "back": "I = PRT/100"},
+        {"front": "Compound Interest", "back": "A = P(1 + r/100)ⁿ"},
+        {"front": "AER Formula", "back": "AER = (1 + r/n)ⁿ - 1"},
+        {"front": "Depreciation", "back": "V = P(1 - r/100)ⁿ"}
+      ]
+    }
+  ]
+}
